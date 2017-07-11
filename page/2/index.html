@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-03.css2知识点总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/03.css2知识点总结/" class="article-date">
+  <time datetime="2017-07-11T12:49:59.256Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#CSS基础知识点 CSS 语法由三部分构成：选择器、属性和值</p>
+<p>##引入css样式</p>
+<ol>
+<li>css的三种引入方式<ol>
+<li>行内的样式，内联样式，权重无穷大<br> 格式：style=“k：v；”</li>
+<li>head &gt; style模式，内部样式<br> 格式，键值对，k：v；</li>
+<li>link模式，外部样式<br> rel=“stylesheet”，</li>
+<li>优先级： ！important&gt;行内样式&gt;id选择器&gt;类选择器&gt;标签选择器&gt;通配符&gt;继承</li>
+</ol>
+</li>
+<li>注释：被注释的内容 不起作用<br> html   <!-- 需要被注释的内容 --><br> css  /<em> 需要被注释的内容 </em>/<br> js //和/**/<br> 快捷键     control+ /</li>
+<li>w3c的三层分离标准  html 结构；css 样式  js 行为</li>
+<li><p>常用基本CSS样式：</p>
+<ol>
+<li>width，宽度：块元素和宽度可以继承自父元素；行内块和块元素的宽度都不从父元素继承，</li>
+<li>height，高度；1.行内块的高度作用于行高，由行高决定；2.行内元素的高度作用于字体，由字体高度决定；3.块元素的高度由标准文档流的内容（内容或者盒子）撑高</li>
+<li><p>文本相关属性：<br> color，规定文本颜色，三种表示方法</p>
+<pre><code>1.关键字，red，yellow...
+2. rgb（red，green，blue）模式，（0,0,0）黑色，（255,255,255）白色；rgb（red百分比%，green百分比%，blue百分比%）模式； rgba：rgb+透明度，透明度的值是0——1之间的值
+
+3.十六进制，#red十六进制 green十六进制  blue十六进制；如#ffffff，表示白色
+</code></pre><p> font</p>
+<pre><code>font-style,字体风格（italic、normal。。）默认normal
+font-weight，字体粗细，bold，normal ; 100-900之间的整百的值   900就是加粗
+font-size，字体大小，像素，small。。。；% 基于父类字体大小属性的百分比，em
+font-family，字体系列，不要用中文表示，”Microsoft yahei“，备选字体用逗号隔开，且多个单词的字体系列用双引号包裹
+font: font-style  font-weight   font-size/lineheight   font-family;
+</code></pre><p> text相关</p>
+<pre><code>text-decoration ，文本装饰，如下划线，underline，none，overline等
+text-indent，首行缩进，2em或者20px；em表示一个文本的距离
+text-align，内容在容器中水平居中：
+    left，center，right，
+    文本、、行内元素（a、span）、行内块元素（img、input。。。）都可以认为具有文本一样的水平居中特性，都可以用text-align：center;使他们在父容器中水平居中对齐，
+容器元素，块级元素居中：margin：0 auto；p标签是块级元素
+</code></pre><p> line-height：px、% 、2em、直接数字，相当于当前行内文本文字的倍数，行高可以和font属性合写：font: style weight  size/lineheight family;</p>
+<pre><code>行高由上间距，文字的高度和下间距组成，
+块级元素和行内块元素的高度作用在行高上，
+行内元素的高度只直接作用在问字上，只有文字大小决定，与行高无关
+注意
+    1.在设置行高的时候，如果单位是em或者%，那么计算行高会先根据父亲的字体大小计算出来结果以后再把这个结果继承给子元素。
+    2.在设置行高的时候，如果没有单位，那这个值认为是缩放因子，那么计算行高会把这个数值会先继承给子元素，然后子元素拿到这个数值再根据自己的字体大小计算出行高。
+</code></pre></li>
+<li>背景<br> background属性<br> background-color，设置背景颜色，<br> background-image：URL（图片地址）；<pre><code>图片比容器要小很多，默认水平和垂直方向有一个平铺
+</code></pre> background-repeat：repeat-x，repeat-y,no-repeat 背景图片是否重复，如果图片的尺寸小于容器的尺寸，默认是重复的，<pre><code>no-repeat 不平铺
+repeat-x    repeat-y    repeat
+</code></pre> background-position：x y; 背景图片的位置，x，y可以是坐标值，也可以是英文单词<br> x：left、center、right ；y：top、center、bottom<pre><code>x轴   y轴    10px  20px
+水平方向  left center right
+垂直方向  top  center bottom
+</code></pre> 背景属性连写：background：color image repeat position   ；cirp<br> background-attachment：fixed；背景是否被固定，使背景图不随着当前盒子里的的其余内容而滚动<br> 连写形式：     backgroud： background-color  background-image  background-repeat   backgournd-position background-attachment<br> background可以应用到盒子的padding，边框（可以给边框设置transparent属性来观察），内容区</li>
+</ol>
+</li>
+</ol>
+<h3 id="选择器-—————"><a href="#选择器-—————" class="headerlink" title="选择器 —————"></a>选择器 —————</h3><ol>
+<li><p>基本选择器，</p>
+<ol>
+<li>标签选择器，所有的标签都能做标签选择器，且能够找到页面上所有的该类标签<br> p {color:red} 页面上所有的p标签字体颜色都会成红色</li>
+<li>类选择器，能够找到页面上属于该class的标签<br> 每一个类要尽可能小，有“公共”的概念，能够让更多的标签使用。<br> 每个标签都可以属于多个类，一个类可以作用于任何的标签<br> .className {};     .one {color:red};  页面上所有类名为one的标签字体颜色都是红色。<br> 类名中只能包括字母，数字，下划线，中连接线，且不能以数字开头，且不能以中连接线+数字开头</li>
+<li><p>id选择器，因为id的唯一性，所以能够找到唯一对应的id，id名不能和标签名相同<br> id名中只能包括字母，数字，下划线，中连接线，且不能以数字开头，且不能以中连接线+数字开头；最好是有意义<br>————– 类和id 的区别 —————————<br> 类相当于   人名    可以给多个标签设置相同的类名，  我们可以给一个标签设置多个类名    class= “one   two”；<br> id相当于是人的身份证一样   一个标签最好是一个id名， 一个id名只能设置一个标签，id其实不是给css用的， 是给js用的</p>
+</li>
+<li><p>后代选择器， 用空格隔开，比如.div p表示的是所有包裹在div种的后代p，</p>
+<pre><code>只要是嵌套在这个标签里面的标签，都是这标签的后代
+</code></pre></li>
+<li>交集选择器，比如div.aab，表示既是div又是类.aab的那个div标签，注意中间不能有空格，<pre><code>有标签选择器，和类选择器一起构成交集   ，标签选择器要写在前面  
+</code></pre></li>
+<li>并集选择器，用逗号表示，例如div，p表示页面上所有的div和p都被选中</li>
+<li>通配符*，表示选中了页面上所有的元素（标签）；效率非常低，实际开发中不推荐使用。<br>元素的查找顺序，从右往左找</li>
+</ol>
+</li>
+<li><p>css3常用选择器</p>
+<pre><code>儿子选择器，div&gt;p 表示选中div种的所有亲儿子p，不能是孙子辈
+序选择器：ul  li：first-child{   }；表示选中ul中的第一个li标签
+下一个兄弟选择器：+；比如h1+p表示选中的是所有h1后面的第一个标签为p的兄弟
+</code></pre><h3 id="样式的层叠和继承"><a href="#样式的层叠和继承" class="headerlink" title="样式的层叠和继承"></a>样式的层叠和继承</h3><ol>
+<li>css的继承性；关于文字样式的，都能够继承； 所有关于盒子的、定位的、布局的属性都不能继承。<br>  可以继承的属性<pre><code>color
+font开头的
+text开头的
+line开头的
+</code></pre>  特例：<pre><code>a标签的颜色不能继承，因为浏览器默认设置颜色
+    1.a标签的颜色不能从祖父辈元素那继承过来，如果要改变a的颜色，color属性只能直接作用在a标签上
+h系列标签的字体大小也不能继承，浏览器默认设置过
+</code></pre></li>
+<li><p>层叠性；就是css处理冲突的能力。当不同选择器，对一个标签的同一个样式，有不同的值，听谁的？这就是冲突。 所有的权重计算，没有任何兼容问题！</p>
+<p>  相同的属性样式用不同的选择器作用在同一个标签上，样式属性就冲突了，那么就肯定有一个样式层叠另外一个样式<br>  优先级从低到高</p>
+<pre><code>浏览器默认样式
+继承
+通配符
+标签选择器
+类选择器
+id选择器
+行内样式
+!important 不能继承的
+</code></pre><p>  权重</p>
+<pre><code>优先级算法: (0,0,0,0)
+    1.!important   2.id选择器的个数   3.类选择器的个数   4.标签选择器的个数
+</code></pre><p>  元素权重的比较原则：<br>  选择器从右往左开始判断是否被选中</p>
+<pre><code>判断该元素是否被选中，如果被选中了，数权重，（权重的计算方法：id的数量，类的数量，标签的数量）。如果权重一样，则在样式表里谁写在后面听谁的。
+判断该元素是否被选中了，如果没有被选中，比较谁描述的最近（就近原则）；如果描述的是同样的近，则开始比较权重；如果权重再一样，则在样式表里谁写在后面听谁的。
+可以提升被选中的任何元素的某一个属性的权重为无穷大：！important，格式为k：v ！important；
+但是如果某个元素未被选中，样式通过继承的，则！important不能提升该元素任何属性的权重。
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<h3 id="盒模型，盒子就是页面上的一块区域，包括margin-border-padding-content"><a href="#盒模型，盒子就是页面上的一块区域，包括margin-border-padding-content" class="headerlink" title="盒模型，盒子就是页面上的一块区域，包括margin,border,padding,content"></a>盒模型，盒子就是页面上的一块区域，包括margin,border,padding,content</h3><ol>
+<li>盒模型概念理解:每一个标签都可以看做一个个盒子<br> 所有的标签都是盒子。无论是div、span、a都是盒子。图片、表单元素一律看做文本。————–在页面上万物皆盒子</li>
+<li>盒模型的构成：margin + border + padding + content<br> 1.盒子外边距：margin，margin-top、right、bottom、left，上右下左<pre><code>margin的合并: 上下排列的相邻连个盒子外边距会有合并现象，以大者为准
+margin的塌陷: 一个大盒子包着小盒子，如果大盒子没有边框，则给小盒子设置margin时大盒子会随着小盒子一起下移，margin塌陷
+    解决办法: 1.给大盒子加border
+             2.给大盒子设置padding
+             3.小盒子浮动
+             4.增加overflow：hide;属性 --不推荐
+</code></pre><ol>
+<li>盒子边框：border，共有12种写法<br> 按四个方向分：border-top、right、bottom、left，上右下左<pre><code>每个方向上的border包含3个属性，width，style，color
+</code></pre> 按属性分:width（边框宽）,style（线型）,color（边框颜色）,三个属性<pre><code>每个属性代表上、右、下、左 四个方向
+</code></pre> 连写模式：border：1px，solid，red；其中颜色默认为黑色，可以 省略，如果没有边框则border：none；或者边框的宽度设置0、或者设置border-style：none；<br> border-top<pre><code>border-top-style
+    实现 solid  虚线 dashed
+border-top-width
+    10px
+border-top-color
+    red
+连写 border-top:  1px  solid  red;
+</code></pre> border-right …<br> border-bottom …<br> border-left …<br> 统一给四个边框设置border<pre><code>border-width border-style border-color
+连写  border：1px  dashed  green;
+特殊案例： 表格的边框   table，th，td { border-collapse:collapse }   
+</code></pre> tip:要想产生边框，必须要设置border-style和border-size；<br> 关于padding和margin几个实用的冷门技巧：<pre><code>1. 当使用%百分比表示padding任意方向的大小时，都是以盒子父亲的宽度为基准；---可以理解为只有父盒子的宽度可以继承，而父盒子的高度不可以继承。
+2. 当使用%百分比表示margin任意方向的大小时，都是以盒子父亲的宽度width为基准
+3. 当使用em表示padding任意方向的大小时，都是以盒子中内容字体大小为基准；---看到em就和字体或者行高有关
+4. 当使用em表示margin任意方向的大小时，都是以盒子中内容字体大小为基准；---看到em就和字体或者行高有关
+</code></pre></li>
+<li>盒子内边距：padding，padding-top、right、bottom、left<br> 计算盒子的大小<pre><code>盒子真实占用宽 =  border-left-width  + padding-left +width  + pdding-right  +border-right-width
+盒子真实占有高 = border-top-width + padding-top  +height + padding-bottom + border-bottom-width
+页面上布局，如果给一个盒子留的位置是固定的，如果你给这个盒子加了边框或者padding，那么你就要相应的减小内容。 总之就是要保证盒子的大小不变，从而不影响布局，不影响其他的元素 。
+</code></pre> padding特殊：<pre><code>一般的情况下，块级元素只设置padding会改变盒子的大小 ----小盒子的宽是由大盒子继承过来的，设置小盒子的左右padding，不会改变小盒子的大小。
+</code></pre></li>
+<li>部分元素默认由自带的margin和padding<br> body  上下左右都有8个像素的margin<br> p标签带有上下   当前字体大小的   margin<br> h1-h6  标签 带上下margin<br> ul标签  上下的当前字体的marign  以及  40个像素的左padding<br> 清除 ：     *  { margin：0   ；padding ：0}<br>5.宽高 ————-<br> css属性- width：盒子内容的宽度<br> css属性- height：盒子内容的高度<br> 盒子真实占有宽度：width+左右padding+左右boder<br> 盒子真实占有高度：height+上下padding+上下border<h3 id="标准文档流，html文档就是从上到下的流"><a href="#标准文档流，html文档就是从上到下的流" class="headerlink" title="标准文档流，html文档就是从上到下的流"></a>标准文档流，html文档就是从上到下的流</h3></li>
+</ol>
+</li>
+<li>文档流的微观表现<br> 1.空白折叠现象，图片元素是文本级，也有空白折叠现象<ol>
+<li>高矮不齐，基线对齐；</li>
+<li>自动换行，一行显示不完，会自动换行</li>
+</ol>
+</li>
+<li>标签元素的分类 —-以下分类,其实意义不大,仅供参考<ol>
+<li>html中标签元素的分类：<br> 文本级：p ，span，img，a，bius。。。<br> 容器级：可以存放其他任何标签，div，h系列，li，dt，dd…..</li>
+<li>css中标签的元素分类：<br> 行内元素：除了p之外的文本级标签都是行内元素，不可以设置宽高，多个行内元素可以在同一行；宽高和文本内容一致<br> 块级元素：独占一行，可以设置宽高，如果不设置宽高默认为父亲的100%; 容器级标签和p都是块级元素<br> 行内元素和块级元素可以通过属性display：inline或者block；来设置</li>
+<li>元素的显示方式 display可以改变元素的分类—<br> 修改display属性的值，可以改变标签的性质，脱离标准流的元素不行<pre><code>行内元素display：inline  ---&gt; 一行可以显示多个,无法设置宽高
+块元素 display：block       ---&gt;默认独占一行,可以设置宽高 ,一行上只能显示一个
+行内块元素display：inline-block ---&gt; 可以设置宽高，一行内显示多个
+元素的显示方式是可以相互转换的 display: inline-block
+行内元素  默认
+    a span b u i s  stong ins del em
+块元素 默认
+    div p  h1-h6  ul  li  ol dl  dt  dd 
+行内块 默认
+    input  img
+</code></pre>###标准流等级森严，行内元素和块级元素很多限制；能并排的行内元素不能设置宽高，所以只能脱离标准流，</li>
+</ol>
+</li>
+<li><p>脱标的常用三种方式：脱标之后没有行内和块级元素的等级了，</p>
+<ol>
+<li><p>float:left; float:right; 浮动的特点；</p>
+<ol>
+<li>浮动的元素脱离标准流，没有行内和块级之分</li>
+<li>浮动的元素互相贴靠，前提：在同一个结构下;比如上下两个浮动的元素中间隔着标准流，浮动不会越过标准流，去找另一个浮动的元素 —-&gt; 浮动的元素找浮动的元素，不浮动就找不浮动</li>
+<li>浮动的元素有字围效果，标准流中的 文字不会被浮动起来的 元素遮挡住；</li>
+<li>收缩:一个浮动的元素，如果没有设置width，那么将自动收缩为文字的宽度;特点和行内块一样;可以设置宽高,同时一行上可以显示多个</li>
+<li>清除浮动的方法 核心:clear:both —-&gt; 两个浮动的元素上下并列时,后面的元素会去贴靠前面的元素，有时候不需要这个特性<ol>
+<li>给处在标准流中的父元素设置高度：给父盒子加高度，缺点是不能适应页面的快速变化</li>
+<li>添加属性:clear:both, 表示自己内部的元素不受其他盒子的影响，缺点是margin失效了</li>
+<li>额外标签法，给这个额外的标签设置clear：both ;相当于在两部分浮动元素中间建一个墙，隔开两部分浮动，让后面的浮动元素，不去追前面的浮动元素。<pre><code>内部标签法：父亲有高度了 ----内墙法:给前面的浮动元素建立内墙
+外部标签法，父亲还是没有高度 ---在前后两个浮动的元素中间建墙
+</code></pre></li>
+<li>overflow:hedden; 在父元素中使用overflow:hidden来清除浮动。弊端：如果使用负值定位，会被隐藏 /<em>这个现象，不能解释，就是浏览器的小偏方</em>/</li>
+<li>使用伪元素来清除浮动</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>绝对定位</p>
+</li>
+<li>固定定位</li>
+</ol>
+</li>
+</ol>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><ol>
+<li>定位的属性值：x方向，left表示从左往右多少像素，right，表示从右往左有多少像素; y方向：top表示从上往下有多少像素；bottom表示从下往上有多少像素;当给定像素是负数时候，移动方向和正值相反</li>
+<li><p>定位的类型:</p>
+<ol>
+<li><p>static 静态定位，盒子默认static,元素不脱标</p>
+</li>
+<li><p>realatIve，相对定位 —-特点:不脱标，老家留坑，形影分离<br> 格式:position:realatIve;left100px:top200px;<br> 作用:1.微调元素，2.作为绝对定位的参考，子绝父相</p>
+</li>
+<li>absolute，绝对定位, —-绝对定位特点：脱离标准流<br> 绝对定位的元素，直接从父元素 border 作为定位值的起始参考<br> 如果小盒子在大盒子中要定位并且水平居中：left：50%；margin-left：负的宽度（width）的一半，同样垂直居中同理<br> 绝对定位的元素参考：<br> 1.如果元素没有父元素，2.如果绝对定位的元素有父元素，但是父元素没有定位，都”找干爹“<pre><code>参考点：如果用top描述，定位参考点是页面的左上角，不是浏览器的左上角
+如果是bottom描述，定位参考点是当前html文档的首屏窗口对应的左下角
+</code></pre><ol>
+<li>如果绝对定位的元素有父元素，而且父元素有定位（非static），那么这个绝对定位的元素偏移是以自己的父元素为基础<br> 一个绝对定位的元素，如果父辈元素中出现了定位了（可以是相对，绝对，固定）的元素，那么将以父辈这个元素，为参考，以最近的父辈元素为准</li>
+</ol>
+</li>
+<li><p>fixed，固定定位，固定定位脱离标准流<br> 固定定位，相对浏览器窗口定位，无论页面如何滚动，盒子显示的位置不变</p>
+<pre><code>trbl永远是相对于浏览器的边框来的
+</code></pre><p>5.和定位元素相关的属性:z-index，表示层级，只能设置在非static定位元素上，<br> 1.只有定位了的元素才有z-index<br> 2.如果大家都没有z-index值，或者z-index值一样，那么谁写在html后面，谁在上面能压住别人，定位了的元素永远能够压住没有定位的元素<br> 3.从父现象:父元素的z-index值小，儿子(子元素)再牛逼都没有用</p>
+<h3 id="行高-—-行高包括-顶线-中线-基线-底线"><a href="#行高-—-行高包括-顶线-中线-基线-底线" class="headerlink" title="行高 — 行高包括:顶线  中线  基线  底线"></a>行高 — 行高包括:顶线  中线  基线  底线</h3></li>
+</ol>
+</li>
+<li>w3c中定义行高：两行文本基线之间的距离</li>
+<li>我们自己理解的行高—两行文字之间的距离; 距离和w3c中规定的行高是一样的。</li>
+<li>行高用于居中:当行高等于容器的高度height,容器中文本就会在容器中垂直方向居中<h3 id="css精灵技术"><a href="#css精灵技术" class="headerlink" title="css精灵技术"></a>css精灵技术</h3></li>
+<li>“css精灵”，英语css sprite，所以也叫做“css雪碧”技术。是一种CSS图像合并技术，该方法是将小图标和背景图像合并到一张图片上，然后利用css的背景定位来显示需要显示的图片部分。</li>
+<li>css精灵有什么优点，就是减少了http请求。比如4张小图片，原本需要4个http请求。但是用了css精灵，小图片变为了一张图，http请求只有1个了。</li>
+<li>精灵图的使用:<ol>
+<li>盒子大小一定要和需要显示的小背景图大小一样</li>
+<li>background-position：-x -y</li>
+<li>制作精灵图，切片导出，用魔法棒把背景去掉，再倒入新的图片中<h3 id="超链接的美化，a标签，爱恨准则"><a href="#超链接的美化，a标签，爱恨准则" class="headerlink" title="超链接的美化，a标签，爱恨准则"></a>超链接的美化，a标签，爱恨准则</h3></li>
+</ol>
+</li>
+<li>去掉下划线：text-decoration：none；</li>
+<li>所有的a不继承text、font这些东西。因为a自己有一个伪类的权重;伪类，love，hate，</li>
+<li>伪类样式必须按照lvha顺序写，—–&gt; a标签中，描述盒子； 伪类中描述文字的样式、背景。使用顺序： lv  ha，买了个lv，hahaha<pre><code>:link，表示，用户没有点击过这个链接的样式
+:visited，表示， 用户访问过了这个链接的样式
+:hover，表示， 用户鼠标悬停的时候链接的样式
+:actived，表示， 用户用鼠标点击这个链接，但是不松手，此刻的样式
+实际使用中，：link，：viseted，：actived，都包含在对a标签的描述中，只写：hover伪类
+</code></pre></li>
+</ol>
+<h3 id="零散的—-知识点："><a href="#零散的—-知识点：" class="headerlink" title="零散的—-知识点："></a>零散的—-知识点：</h3><ol>
+<li>定位元素如果同时设置在x方向left和right那么以left为准，right不起作用，在y方向上同时设置top，bottom时以top为准</li>
+<li>盒子属性里、文本属性等属性里能设置负值的是margin，和z-index，text-indent</li>
+<li>给父盒子设置overflow：hidden属性后，原先溢出后横跨在父盒子border上的内容也会被隐藏，也就是只能显示父盒子border内的内容</li>
+<li>背景应用于由内容、padding、边框组成的区域，边框也可以被背景渲染。</li>
+<li>css样式初始化<ol>
+<li>清除标签的margin和padding:html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{margin:0;padding:0}</li>
+<li>清除img的边框img { border: 0};</li>
+<li>清除li标签之前的小点ul{list-style: none;}</li>
+<li>给页面设置一个统一的字体大小和颜色，还要设置body的背景颜色。body {font-size: 12px;color: #434343;font-family: “宋体”;background-color:“#ffffff”}</li>
+<li>清除浮动<br> .clearfix:after {content: “”;height: 0;line-height: 0;display: block;visibility: hidden;clear: both;};.clearfix {_zoom: 1;//兼容ie6}</li>
+<li>a标签设置字体颜色，去掉下划线，以及a:hover<br> a {color: #434343;text-decoration: none;}<br> a:hover {color: green;}</li>
+<li>设置浮动：<br> .fl {float: left;}<br> .fr {float: right;}</li>
+</ol>
+</li>
+<li>浏览器默认的字体大小为16px；默认行高18px</li>
+<li>浮动和绝对定位和固定定位的盒子，脱离标准流都不会再继承父亲的宽度,需要手动设置宽高;</li>
+<li>元素的嵌套<ol>
+<li>a标签可以嵌套所有的元素 —display:block;</li>
+<li>行内元素只能包含行内元素</li>
+<li>块级元素可以包含所有的行内元素和部分块级元素。</li>
+<li>p标签，h标签都不能包含其他块级元素; p标签里不可以嵌套div</li>
+</ol>
+</li>
+<li>元素的隐藏<br> overflow:hidden//将超出的部分裁剪掉<br> visibility: hidden//可以将元素隐藏，但是在页面上还保留着原来的位置。（停薪留职）<br> display: none;//可以将元素隐藏，并且在页面不占据位置。</li>
+<li>overflow:溢出<pre><code>hidden：会将超出容器的部分隐藏起来
+scroll：给容器加上滚动条
+auto：根据具体情况判断容器是否要加上滚动条
+visible，可见的，默认
+</code></pre></li>
+<li>vertical—align： —-在行内块元素在一行时经常使用这个属性；<ol>
+<li>如果文本与图片在同一行中，那么将来文字与图片的默认对齐方式是文字的基线对齐图片的底线。文字的基线对齐行内块的底部。行内块元素之间bottom对齐<br>top，顶线对齐<br>middle，中线对齐<br>bottom，底线对齐<br>baseline基线对齐，默认</li>
+</ol>
+</li>
+<li>浏览器默认样式：<br>1)body标签默认带有margin: 8px的属性<br>1)body标签默认带有margin: 8px的属性<br>2) h标签也默认带有margin-top和margin-bottom<br> 4)ul默认带有上下的margin以及左边的padding</li>
+<li>img input是行内块元素，当和行内元素在同一行时候，基线对齐。且行内块元素不可以转化为行内元素</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/03.css2知识点总结/" data-id="cj4zksgrp0001ykf4ytlzz52h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-02.html5知识点总结&amp;面试题.1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/02.html5知识点总结&面试题.1/" class="article-date">
+  <time datetime="2017-07-11T12:49:59.226Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##h5定义<br>h5是一个泛称，由HTML5+CSS3+JS等多种技术组合成的一个应用开发平台，第一个将web作为应用开发平台的HTML语言。<br>h5特点：新增语义化标签；新增属性；新增cavans元素</p>
+<p>##html5语法  沿用了HTML的语法(已往过去的语法，是SGML语法的一个子集)，更简洁，更人性化。</p>
+<ol>
+<li>DOCTYPE及字符编码<br>DOCTYPE：&lt;!doctype html&gt;<br>字符编码：<meta charset="utf-8"> ③ 给文档指定语言：<html lang="zh-CN"></html></li>
+<li><p>标签名大小写都可以</p>
+</li>
+<li><p>布尔值<br> <input type="checkbox" checked> 在这里checked写上就表示true，如果不写就表示false。而不用像HTML4<br> 中要写成checked=”checked”了</p>
+</li>
+<li>省略引号<br> <input type="text"><br> <input type="text"><br> <input type="text">  上面三种写法都可以，当然如果属性值中出现空格，就必须写引号或双引号；建议：属性中，引号最好是双引号</li>
+</ol>
+<p>1、不允许写结束符的标签：area , basebr , col,command , embed , hr , img , input , keygen , link , meta , param , source , track , wbr<xx><br>2、可以省略结束符的标签：li , dt , dd , p , rt , optgroup , colgroup , thread , tbody , tr , td , th省略 <br>3、可以完全省略的标签：html , head , body , colgroup , tbody</xx></p>
+<ol>
+<li><p>增加标签：语义化标签</p>
+<ol>
+<li>结构标签<ol>
+<li>nav :导航</li>
+<li>header：某个区块的头部信息/标题；</li>
+<li>main 主体内容</li>
+<li>section：独立内容区块，可以用h1~h6组成大纲，表示文档结构，也可以有章节、页眉、页脚或页眉的其他部分；</li>
+<li>article：特殊独立区块，表示这篇页眉中的核心内容；表示文章 如文章、评论、帖子、博客；</li>
+<li>aside：表示侧边栏 如文章的侧栏；标签内容之外与标签内容相关的辅助信息；</li>
+<li>footer：底部信息；</li>
+<li>figure：表示媒介内容分组，例如某个有图片与内容的新闻块。</li>
+<li>hgroup：头部信息/标题的补充内容（不常用）；</li>
+</ol>
+</li>
+</ol>
+<hr>
+<ol>
+<li><p>表单标签  —&gt; pc端各浏览器之间兼容性以及一致性不好；部分类型是针对移动设备生效的，且具有一定的兼容性问题，在实际开发中可选择性使用。</p>
+<ol>
+<li>新增输入类型：<br>（1）email：必须输入邮件；<br>（2）url：必须输入url地址；<br>（3）tel 手机号码<br>（4）number：必须输入数值；<br>（5）range：必须输入一定范围内的数值；<br>（6）search：搜索常规的文本域；搜索框<br>（7）color 拾色器<br>（8）Date Pickers：日期选择器；—兼容性不佳<br> a.date：选取日、月、年<br> b.month：选取月、年<br> c.week：选取周和年<br> d.time：选取时间（小时和分钟）<br> e.datetime：选取时间、日、月、年（UTC时间）<br> f.datetime-local：选取时间、日、月、年（本地时间）</li>
+<li>表单元素（标签）<br> <datalist> 下拉选项，使用中文时要注意<br> <keygen> 生成加密字符串<br> </datalist><output> 不可当做数据提交？<br> <meter> 表示度量器，不建议用作进度条</meter></output></li>
+<li>表单属性<br> placeholder 占位符<br> autofocus 获取焦点<br> multiple 文件上传多选或多个邮箱地址<br> autocomplete 自动完成，用于form元素，也可用于部分input，默认值on<br> form 指定表单项属于哪个form，处理复杂表单时会需要<br> novalidate 关闭验证，可用于<form>标签，（只适应用form）<br> required 验证条件，必填项<br> pattern 正则表达式 自定义验证规则<br> –4.表单事件<br> oninput 用户输入内容时触发，可用于移动端输入字数统计<br> onincalid 验证不通过时触发</form></li>
+<li><p>媒体标签<br>（1）audio：音频<br>一般使用：<audio src="xx.mp3"></audio><br>由于版权限制，不同浏览器支持的播放格式不同，需要进行兼容性处理：<br> <audio controls></audio></p>
+<pre><code>&lt;source src=&quot;xx.mp3&quot;&gt;
+&lt;source src=&quot;xx.wav&quot;&gt;
+&lt;source src=&quot;xx.ogg&quot;&gt;
+您的浏览器不支持HTML音频播放功能
+</code></pre><p> <br> 属性：<br> autoplay 自动播放<br> controls 是否显示默认的播放控件<br> loop 循环播放<br> preload 预加载 同时设置autoplay时此属性失效<br> 另外可以使用js操作audio元素，实现自动播放停止等功能；详情见手册api<br> 方法:load() play() pause()<br> 属性:currentSrc currentTime duration<br> 事件: onended<br> 还有许多其他方法,在应用时可以去MDN上查看</p>
+<p>（2）video：视频  使用基本上与<audio>标签使用一致；可以使用width,height设置播放窗口的宽高<br>（3）embed：嵌入内容（包括各种媒体），Midi、Wav、AU、MP3、Flash、AIFF等 ；不常用</audio></p>
+</li>
+</ol>
+</li>
+<li>其他功能标签<br> （1）canvas：使用JS代码做内容进行图像绘制；<br> （2）mark：标注（像荧光笔做笔记）<br> （3）progress：进度条；<progress max="最大进度条的值" value="当前进度条的值"><br> （4）time：数据标签，给搜索引擎使用；<pre><code>发布日期&lt;time datetime=&quot;2014-12-25T09:00&quot;&gt;9:00&lt;/time&gt;                                     
+更新日期&lt;time  datetime=&quot;2015-01-23T04:00&quot; pubdate&gt;4:00&lt;/time&gt; 
+</code></pre> （5）ruby和rt：对某一个字进行注释；<ruby><rt>注释内容</rt><rp>浏览器不支持时如何显示</rp>&lt;/ruby<br> （6）wbr：软换行，页面宽度到需要换行时换行；<br> （7）command：按钮；<br> （8）deteils ：展开菜单；<br> （9）dateilst：文本域下拉提示；<br> （10）keygen:加密；</ruby></progress></li>
+<li>一些元素特有属性<br> 1.charset属性：meta属性之一,定义页面的字符集<ol>
+<li>manifest属性：定义页面需要用到的离线应用文件，一般放在<html>标签里</html></li>
+<li>sizes属性：<link>新增属性，当link的rel=”icon”时，用以设置图标大小</li>
+<li>defer属性：script 标签属性，表示脚本加载完毕后，只有当页面也加载完毕才执行（推迟执行）</li>
+<li>async属性：script 标签属性，脚本加载完毕后马上执行，即使页面还没有加载完毕（异步执行）</li>
+<li>media属性：<a>元素属性：表示对何种设备进行优化</a></li>
+<li>hreflang属性：<a>的属性，表示超链接指向的网址使用的语言</a></li>
+<li>ref属性：<a>的属性,定义超链接是否是外部链接</a></li>
+<li>reversed属性:<ol>的属性，定义序号是否倒叙</ol></li>
+<li>start属性：<ol>的属性，定义序号的起始值</ol></li>
+<li>scoped属性：内嵌CSS样式的属性，定义该样式只局限于拥有该内嵌样式的元素，适用于单页开发</li>
+<li>seamless:<iframe>的属性，定义该框架没有边框没有边距</iframe></li>
+<li>srcdoc:<iframe>的属性,定义该框架的内容，会覆盖src属性的内容<br>14.sandbox:<iframe>的属性，定义该框架在安全级别上受到严格限制，比如不允许打开框架中的超链接等，相当于将框架中的内容设置为异源</iframe></iframe></li>
+</ol>
+</li>
+<li>HTML5全局属性：<ol>
+<li>可直接在标签里插入的：<br> data-自定义属性名字；—-常用</li>
+<li>hidden（直接放上去就是隐藏）；</li>
+<li>spellcheck=”true”（语法纠错）；</li>
+<li>tabindex=”1”（Tab跳转顺序）；</li>
+<li>contenteditable=”true”(可编辑状态，单击内容，可修改)；<br>6.在JavaScript里插入的 window.document.designMode = ‘on’（JavaScript的全局属性，整个页面的文本都可以编辑了）</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ol>
+<li><p>h5增加的一些DOM操作API和其他API<br> 1.DOM操作的扩展</p>
+<pre><code>1.获取元素
+    document.getElementsByClassName(className) 通过类名获取元素，返回一个伪数组
+    document.querySelector(selector) 通过css选择器获取元素，返回符合条件的第一个dom元素
+    document.querySelectorAll(selector) 通过css选择器获取元素，返回一个伪数组；
+
+2. 类名操作   所有类名操作都是在classList属性下的:
+    node.classList.add(className) 添加类
+    node.classList.remove(className) 移除类
+    node.classList.toggle(className) 切换类
+    node.classList.contains(className) 检测是否存在类
+
+3. 自定义属性
+    1. 设置自定义属性: &lt;div data-name=&quot;name&quot; data-gender=&quot;female&quot;&gt;&lt;div&gt;
+    2. 获取自定义属性: node.dataset是以对象的形式存在的；通过node.dataset[&quot;name&quot;]可以获取到自定义属性的值；
+    3.以data-my-name=&quot;name&quot;格式设置属性时,获取时需要使用驼峰格式；node.dataset[&quot;myName&quot;]
+</code></pre><ol>
+<li><p>其他API  ———————–</p>
+<ol>
+<li>拖拽<br> 拖拽元素：设置了draggable=”true”属性的元素，其中图片和链接默认是可拖拽的<br> 目标元素：拖拽后鼠标松开时被拖拽元素所在位置的元素称为目标元素；页面中任何一个元素都可以成为目标元素<br> 事件：拖拽元素的事件<br> ondrag 整个拖拽过程都会调用<br> ondragstart 拖拽开始是调用<br> ondragleave 当鼠标离开拖拽元素时调用（拖拽出拖拽元素的基础位置时）<br> ondragend 拖拽结束时调用<br> 目标元素的事件<br> ondragenter 拖拽元素进入时调用<br> ondragover  拖拽元素停留在目标元素上时调用<br> ondragleave 拖拽元素离开目标元素时调用<br> ondrop      在目标元素上松开鼠标时调用<br> 数据传递<br> event.dataTransfer.setData()  设置数据<br> event.dataTransfer.getData()  获取数据</li>
+<li>历史管理<br> window.history对象，可以管理历史记录，可用于单页面应用，可以无刷新改变网页内容。<br> 旧版本<br> history.back() 回退<br> history.forward() 前进<br> history.go(n) 前进/后退n步，正值前进，负值后退<br> history.length 历史记录条数<br> h5新增方法：<br> //追加一条历史记录<br> //一般data设置为null,titile设置为空，url为以当前域为基础增加一条历史记录，不可跨域设置。<br> pushState(data,title,url)<br> //用法与pushState()基本相同，此方法替换当前url,不会改变历史记录条数<br> replaceState(data,title,url)<br> 事件监听：onpopstate事件：前进或者后退时触发,通过事件对象ev.state可以读取到存储的数据,监听者给window</li>
+<li><p>地理定位 基于位置服务(Location Base Service)</p>
+<pre><code>获取地理信息方式：1.IP地址； 2.三维坐标；3.GPS；4.WiFi； 5.手机信号；6.用户自定义数据
+</code></pre><p>1.隐私<br>HTML5中Geolocation规范提供了保护用户隐私的机制,必须先得到用户明确的许可,才能获取用户的位置信息.</p>
+<p>2.地理信息API详解</p>
+<pre><code>1.navigator.geolocation.getCurrentPosition(successCallback,errorCallback,options)获取当前地理信息
+2.navigator.geolocation.watchPosition(successCallback,errorCallback,options)重复获取当前地理信息
+
+当成功获取地理信息后,会调用successCallback,并返回一个包含位置信息的对象position.
+4.position.coords.latitude 纬度
+5.position.coords.longtitude 经度
+6.position.coords.accuracy 精度
+7.position.coords.altitude 海拔高度
+获取地理信息失败后,会调用errorCallback,并返回错误信息error
+可选参数options对象可以调整位置信息数据收集方式
+8. enableHighAccuracy 高精度模式
+timeout 超时设置,单位为ms
+maximumAge 表示浏览完重新获取位置信息的时间间隔,单位为ms
+</code></pre></li>
+<li><p>Web存储 为了满足各种需求,会经常性的需要在本地存储大量的数据,传统方式使用document.cookie进行存储,但cookie存储大小只有4k左右,并且解析相对复杂;HTML5提出了sessionStorage和localStorage来存储本地数据.</p>
+<pre><code>特性:
+    1.设置、读取方便
+    2.容量较大、sessionStorage约为5M,localStorage约为20M
+    3.只能存储字符串,可以将对象JSON.stringfy()编码后存储
+1. window.sessionStorage
+    生命周期为关闭浏览器窗口
+    在同一个窗口下数据可以共享，同一个浏览器窗口下打开多个不同的页面之间不可共享
+2. window.localStorgae  永久生效,除非手动删除;可以多窗口共享
+方法详解:
+    setItem(key,value) 设置存储内容
+    getItem(key,value) 读取存储内容
+    removeItem(key) 删除键值为key的存储内容
+    clear() 清空所有存储内容
+    key(n) 以索引值来获取存储内容
+    其他web存储：WebSQL,IndexDB
+</code></pre></li>
+<li><p>全屏<br> 规范允许所有元素都可以全屏,但实际测试结果关闭全屏功能只能添加到document元素上;HTML5规范允许用户自定义网页上的任一元素全屏显示<br> requestFullScreen() 开启全屏显示<br> cancelFullScreen() 关闭全屏显示<br> 不同浏览器需要添加前缀<br> webkitRequestFullScreen、mozRequestFullScreen<br> webkitCancelFullScreen、mozCancelFullScreen<br> 检测当前是否处于全屏状态<br> document.fullScreen<br> //不同浏览器需要添加前缀<br> document.webkitIsFullScreen<br> document.mozFullScreen<br> 全屏伪类<br> :full-screen.box{}<br> :-webkit-full-screen{}<br> :moz-full-screen{}</p>
+</li>
+<li><p>网络状态<br> 给window绑定事件<br> window.navigator.onLine在用户网络连接时调用,返回布尔值<br> window.navigator.offLine在用户网络断开时调用</p>
+</li>
+<li><p>缓存的使用方法：<br> 创建一个cache manifest文件构建一个离线应用<br> 优势<br> 可配置需要缓存的资源<br> 网络无法连接时仍可使用<br> 本地读取缓存资源,提升访问速度,增强用户体验<br> 减少请求,缓解服务器负担<br> 缓存清单<br> 缓存清单是一个普通饿文本文件,其中列出了浏览器应缓存以供离线访问的资源,推荐使用.appcache为后缀名,添加MIME类型<br> 假设创建了一个名为demo.appcache的文件,然后在需要应用缓存的页面的根元素(html)添加属性manifest = “demo.appcache”,路径要正确.<br> manifest文件格式<br> 顶行写CACHE MANIFEST<br> CACHE: 换行 指定我们需要缓存的静态资源,如.css、.js、image等<br> NETWORK: 换行 指定需要在线访问的资源,可使用通配符<br> FALLBACK: 换行 当被缓存的文件找不到时的备用资源<br> CACHE MANIFEST<br> CACHE:<br> #此部分写需要缓存的资源 （#是注释的意思）<br> ./images/img1.jpg<br> ./images/img2.jpg<br> ./images/img3.jpg<br> ./images/img4.jpg<br> ./images/img5.jpg</p>
+<p> NETWORK:<br> #此部分要写需要有网络才可访问的资源，无网络则不访问<br> #./js/main.js<br> *<br> FALLBACK:<br> #当访问不到某个资源的情况下，自动由另一个资源替换<br> ./css/online.css ./css/offline.css<br> ./online.html ./offline.html<br> 其他<br> CACHE:可以省略,这种情况下要将需要缓存的资源写在CACHE MANIFEST<br> 可以指定多个CACHE: NETWORK: FALLBACK:,无顺序限制<br> #表示注释,只有当demo.appcache文件内容发生改变或者手动清除缓存后,才会重新缓存<br> chrome可以通过chrome://appcache-internals/工具和离线（offline）模式来调试管理应用缓存</p>
+</li>
+<li><p>文件读取<br> 通过FileReader对象可以读取本地存储的文件,可以使用File对象来指定所要读取的文件或数据,其中File对象可以来自用户在一个<input>元素上选择文件后返回的FileList对象,也可以来自自由拖放操作生成的DataTransfer.</p>
+<p> 8.1 FileList对象</p>
+<pre><code>由于HTML5中可以为表单添加multiple属性,因此通过&lt;input&gt;上传文件后得到一个FileList对象(伪数组).
+</code></pre><p> 8.2 FileReader对象</p>
+<pre><code>HTML5新增内置对象,可以实例化一个对象
+实例方法:readAsDataURL()以DataURL形式读取文件
+事件监听:onload 当文件读取完成时调用
+属性:result 文件读取结果
+</code></pre></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="面试题——————————————————————————–"><a href="#面试题——————————————————————————–" class="headerlink" title="面试题——————————————————————————–"></a>面试题——————————————————————————–</h3><p>标签语义化的作用？</p>
+<ol>
+<li>当页面加载失败的时候，还能够呈现出清晰的结构</li>
+<li>有利于SEO优化，利于被搜索引擎收录（即便于网络爬虫的识别）</li>
+<li>在项目开发及维护时，语义化的也很大程度上降低开发难度，节省成本</li>
+</ol>
+<p>h5标签兼容性的处理？</p>
+<ol>
+<li>在不支持HTML5新标签的浏览器里，会将这些新的标签解析成行内元素(inline)对待，所以我们只需要将其转换成块元素(block)即可使用，2. 在IE9版本以下，并不能正常解析这些新标签，但是却可以识别通过document.createElement(‘tagName’)创建的自定义标签，于是我们的解决方案就是将HTML5的新标签全部通过document.createElement(‘tagName’)来创建一遍，这样IE低版本也能正常解析HTML5新标签了，在实际开发中我们更多采用的是通过检测IE浏览器的版本来 加载第三方的一个JS库(html5shiv.js)来解决兼容问题。<!--[if lte IE 8]>
+     <script src="./js/htmml5shiv.min.js"></script>
+<![endif]-->
+</li>
+</ol>
+<h3 id="GML（标准通用标记语言）和HTML（超文本标记语言），XML（可扩展标记语言）和HTML的之间有什么关系？"><a href="#GML（标准通用标记语言）和HTML（超文本标记语言），XML（可扩展标记语言）和HTML的之间有什么关系？" class="headerlink" title="GML（标准通用标记语言）和HTML（超文本标记语言），XML（可扩展标记语言）和HTML的之间有什么关系？"></a>GML（标准通用标记语言）和HTML（超文本标记语言），XML（可扩展标记语言）和HTML的之间有什么关系？</h3><p>SGML（标准通用标记语言）是一个标准，告诉我们怎么去指定文档标记。他是只描述文档标记应该是怎么样的元语言，HTML是被用SGML描述的标记语言。<br>因此利用SGML创建了HTML参照和必须共同遵守的DTD，你会经常在HTML页面的头部发现“DOCTYPE”属性，用来定义用于解析目标DTD<br>现在解析SGML是一件痛苦的事情，所以创建了XML使事情更好。XML使用了SGML，例如：在SGML中你必须使用起始和结束标签，但是在XML你可以有自动关闭的结束标签。<br>XHTML创建于XML，他被使用在HTML4.0中。你可以参考下面代码片段中展示的XML DTD<br>总之，SGML是所有类型的父类，较旧的HTML利用SGML，HTML4.0使用派生自XML的XHTML</p>
+<h3 id="什么是HTML5？"><a href="#什么是HTML5？" class="headerlink" title="什么是HTML5？"></a>什么是HTML5？</h3><p>HTML5是最新的HTML标准，他的主要目标是提供所有内容而不需要任何的像flash，silverlight等的额外插件，这些内容来自动画，视频，富GUI等<br>HTML5是万维网联盟（W3C）和网络超文本应用技术工作组（WHATWG）之间合作输出的</p>
+<h3 id="为什么HTML5里面我们不需要DTD（Document-Type-Definition文档类型定义）？"><a href="#为什么HTML5里面我们不需要DTD（Document-Type-Definition文档类型定义）？" class="headerlink" title="为什么HTML5里面我们不需要DTD（Document Type Definition文档类型定义）？"></a>为什么HTML5里面我们不需要DTD（Document Type Definition文档类型定义）？</h3><p>HTML5没有使用SGML或者XHTML，他是一个全新的东西，因此你不需要参考DTD，对于HTML5，你仅需放置下面的文档类型代码告诉浏览器识别这是HTML5文档</p>
+<h3 id="如果我不放入-lt-DOCTYPE-html-gt-，HTML5还会工作么？"><a href="#如果我不放入-lt-DOCTYPE-html-gt-，HTML5还会工作么？" class="headerlink" title="如果我不放入&lt;! DOCTYPE html&gt; ，HTML5还会工作么？"></a>如果我不放入&lt;! DOCTYPE html&gt; ，HTML5还会工作么？</h3><p>不会，浏览器将不能识别他是HTML文档，同时HTML5的标签将不能正常工作</p>
+<h3 id="哪些浏览器支持HTML5？"><a href="#哪些浏览器支持HTML5？" class="headerlink" title="哪些浏览器支持HTML5？"></a>哪些浏览器支持HTML5？</h3><p>几乎所有的浏览器Safari，Chrome，Firefox，Opera，IE都支持HTML5</p>
+<h3 id="HTML5的页面结构同HTML4或者更前的HTML有什么区别？"><a href="#HTML5的页面结构同HTML4或者更前的HTML有什么区别？" class="headerlink" title="HTML5的页面结构同HTML4或者更前的HTML有什么区别？"></a>HTML5的页面结构同HTML4或者更前的HTML有什么区别？</h3><p>一个典型的WEB页面包含头部，脚部，导航，中心区域，侧边栏。现在如果我们想在在HTML4的HTML区域中呈现这些内容，我们可能要使用DIV标签。<br>但是在HTML5中通过为这些区域创建元素名称使他们更加清晰，也使得你的HTML更加可读</p>
+<p>以下是形成页面结构的HTML5元素的更多细节：</p>
+<p><header>：代表HTML的头部数据</header></p>
+<p><footer>：页面的脚部区域</footer></p>
+<p><nav>：页面导航元素</nav></p>
+<p><article>：自包含的内容</article></p>
+<p><section>：使用内部article去定义区域或者把分组内容放到区域里</section></p>
+<p><aside>：代表页面的侧边栏内容</aside></p>
+<h3 id="什么是SVG（Scalable-Vector-Graphics可缩放矢量图形）？"><a href="#什么是SVG（Scalable-Vector-Graphics可缩放矢量图形）？" class="headerlink" title="什么是SVG（Scalable Vector Graphics可缩放矢量图形）？"></a>什么是SVG（Scalable Vector Graphics可缩放矢量图形）？</h3><p>SVG（Scalable Vector Graphics可缩放矢量图形）表示可缩放矢量图形。他是基于文本的图形语言，使用文本，线条，点等来进行图像绘制，这使得他轻便，显示更加迅速<br>我们能看到使用HTML5的SVG的简单例子么？<br>比方说，我们希望使用HTML5 SVG去显示以下简单的线条。</p>
+<h3 id="4-div-css的布局较table布局有什么优点？"><a href="#4-div-css的布局较table布局有什么优点？" class="headerlink" title="4.div+css的布局较table布局有什么优点？"></a>4.div+css的布局较table布局有什么优点？</h3><p>•改版的时候更方便 只要改css文件。<br>•页面加载速度更快、结构化清晰、页面显示简洁。<br>•表现与结构相分离。<br>•易于优化（seo）搜索引擎更友好，排名更容易靠前。</p>
+<h4 id="6-你能描述一下渐进增强和优雅降级之间的不同吗"><a href="#6-你能描述一下渐进增强和优雅降级之间的不同吗" class="headerlink" title="6.你能描述一下渐进增强和优雅降级之间的不同吗?"></a>6.你能描述一下渐进增强和优雅降级之间的不同吗?</h4><p>•渐进增强 progressive enhancement：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。<br>•优雅降级 graceful degradation：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+<p>　　区别：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。　<br>　<br>　　“优雅降级”观点<br>　　“优雅降级”观点认为应该针对那些最高级、最完善的浏览器来设计网站。而将那些被认为“过时”或有功能缺失的浏览器下的测试工作安排在开发周期的最后阶段，并把测试对象限定为主流浏览器（如 IE、Mozilla 等）的前一个版本。<br>　　在这种设计范例下，旧版的浏览器被认为仅能提供“简陋却无妨 (poor, but passable)” 的浏览体验。你可以做一些小的调整来适应某个特定的浏览器。但由于它们并非我们所关注的焦点，因此除了修复较大的错误之外，其它的差异将被直接忽略。<br>　　“渐进增强”观点<br>　　“渐进增强”观点则认为应关注于内容本身。<br>　　内容是我们建立网站的诱因。有的网站展示它，有的则收集它，有的寻求，有的操作，还有的网站甚至会包含以上的种种，但相同点是它们全都涉及到内容。这使得“渐进增强”成为一种更为合理的设计范例。这也是它立即被 Yahoo! 所采纳并用以构建其“分级式浏览器支持 (Graded Browser Support)”策略的原因所在。</p>
+<p>　　那么问题了。现在产品经理看到IE6,7,8网页效果相对高版本现代浏览器少了很多圆角，阴影（CSS3），要求兼容（使用图片背景，放弃CSS3），你会如何说服他？<br>　　（自由发挥）</p>
+<h3 id="7-为什么利用多个域名来存储网站资源会更有效？"><a href="#7-为什么利用多个域名来存储网站资源会更有效？" class="headerlink" title="7.为什么利用多个域名来存储网站资源会更有效？"></a>7.为什么利用多个域名来存储网站资源会更有效？</h3><p>•CDN缓存更方便<br>•突破浏览器并发限制<br>•节约cookie带宽<br>•节约主域名的连接数，优化页面响应速度<br>•防止不必要的安全问题</p>
+<h4 id="13-在css-js代码上线之后开发人员经常会优化性能，从用户刷新网页开始，一次js请求一般情况下有哪些地方会有缓存处理？"><a href="#13-在css-js代码上线之后开发人员经常会优化性能，从用户刷新网页开始，一次js请求一般情况下有哪些地方会有缓存处理？" class="headerlink" title="13.在css/js代码上线之后开发人员经常会优化性能，从用户刷新网页开始，一次js请求一般情况下有哪些地方会有缓存处理？"></a>13.在css/js代码上线之后开发人员经常会优化性能，从用户刷新网页开始，一次js请求一般情况下有哪些地方会有缓存处理？</h4><p>　　答案：dns缓存，cdn缓存，浏览器缓存，服务器缓存。</p>
+<h3 id="12-知道什么是微格式吗？谈谈理解。在前端构建中应该考虑微格式吗？"><a href="#12-知道什么是微格式吗？谈谈理解。在前端构建中应该考虑微格式吗？" class="headerlink" title="12.知道什么是微格式吗？谈谈理解。在前端构建中应该考虑微格式吗？"></a>12.知道什么是微格式吗？谈谈理解。在前端构建中应该考虑微格式吗？</h3><p>　　答案：<br>　　微格式（Microformats）是一种让机器可读的语义化XHTML词汇的集合，是结构化数据的开放标准。是为特殊应用而制定的特殊格式。<br>　　优点：将智能数据添加到网页上，让网站内容在搜索引擎结果界面可以显示额外的提示。（应用范例：豆瓣，有兴趣自行google）</p>
+<h3 id="11-知道的网页制作会用到的图片格式有哪些？"><a href="#11-知道的网页制作会用到的图片格式有哪些？" class="headerlink" title="11.知道的网页制作会用到的图片格式有哪些？"></a>11.知道的网页制作会用到的图片格式有哪些？</h3><p>　　答案：<br>　　png-8，png-24，jpeg，gif，svg。<br>　　但是上面的那些都不是面试官想要的最后答案。面试官希望听到是Webp,Apng。（是否有关注新技术，新鲜事物）<br>　　科普一下Webp：WebP格式，谷歌（google）开发的一种旨在加快图片加载速度的图片格式。图片压缩体积大约只有JPEG的2/3，并能节省大量的服务器带宽资源和数据空间。Facebook Ebay等知名网站已经开始测试并使用WebP格式。<br>　　在质量相同的情况下，WebP格式图像的体积要比JPEG格式图像小40%。</p>
+<p>Apng：全称是“Animated Portable Network Graphics”, 是PNG的位图动画扩展，可以实现png格式的动态图片效果。04年诞生，但一直得不到各大浏览器厂商的支持，直到日前得到 iOS safari 8的支持，有望代替GIF成为下一代动态图标准。</p>
+<h3 id="10-简述一下src与href的区别。"><a href="#10-简述一下src与href的区别。" class="headerlink" title="10.简述一下src与href的区别。"></a>10.简述一下src与href的区别。</h3><p>　　答案：<br>　　src用于替换当前元素，href用于在当前文档和引用资源之间确立联系。<br>　　src是source的缩写，指向外部资源的位置，指向的内容将会嵌入到文档中当前标签所在位置；在请求src资源时会将其指向的资源下载并应用到文档内，例如js脚本，img图片和frame等元素。<br>　　<script src="js.js"></script><br>　　当浏览器解析到该元素时，会暂停其他资源的下载和处理，直到将该资源加载、编译、执行完毕，图片和框架等元素也如此，类似于将所指向资源嵌入当前标签内。这也是为什么将js脚本放在底部而不是头部。</p>
+<p>　　href是Hypertext Reference的缩写，指向网络资源所在位置，建立和当前元素（锚点）或当前文档（链接）之间的链接，如果我们在文档中添加<br>　　<link href="common.css" rel="stylesheet"><br>　　那么浏览器会识别该文档为css文件，就会并行下载资源并且不会停止对当前文档的处理。这也是为什么建议使用link方式来加载css，而不是使用@import方式。</p>
+<h3 id="9-请描述一下cookies，sessionStorage和localStorage的区别？"><a href="#9-请描述一下cookies，sessionStorage和localStorage的区别？" class="headerlink" title="9.请描述一下cookies，sessionStorage和localStorage的区别？　"></a>9.请描述一下cookies，sessionStorage和localStorage的区别？　</h3><p>　<br>　　sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。而localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。<br>　　web storage和cookie的区别<br>•Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用。<br>•除此之外，Web Storage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCookie，getCookie。但是Cookie也是不可以或缺的：Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生。</p>
+<h3 id="14-一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"><a href="#14-一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。" class="headerlink" title="14.一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"></a>14.一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。</h3><p>图片懒加载，在页面上的未可视区域可以添加一个滚动条事件，判断图片位置与浏览器顶端的距离与页面的距离，如果前者小于后者，优先加载。<br>如果为幻灯片、相册等，可以使用图片预加载技术，将当前展示图片的前一张和后一张优先下载。<br>如果图片为css图片，可以使用CSSsprite，SVGsprite，Iconfont、Base64等技术。<br>如果图片过大，可以使用特殊编码的图片，加载时会先加载一张压缩的特别厉害的缩略图，以提高用户体验。<br>如果图片展示区域小于图片的真实大小，则因在服务器端根据业务需要先行进行图片压缩，图片压缩后大小与展示一致。 </p>
+<h3 id="15-你如何理解HTML结构的语义化？"><a href="#15-你如何理解HTML结构的语义化？" class="headerlink" title="15.你如何理解HTML结构的语义化？　　"></a>15.你如何理解HTML结构的语义化？　　</h3><p>去掉或样式丢失的时候能让页面呈现清晰的结构：<br>html本身是没有表现的，我们看到例如</p><h1>是粗体，字体大小2em，加粗；<strong>是加粗的，不要认为这是html的表现，这些其实html默认的css样式在起作用，所以去掉或样式丢失的时候能让页面呈现清晰的结构不是语义化的HTML结构的优点，但是浏览器都有有默认样式，默认样式的目的也是为了更好的表达html的语义，可以说浏览器的默认样式和语义化的HTML结构是不可分割的。<br>屏幕阅读器（如果访客有视障）会完全根据你的标记来“读”你的网页.<br>　　例如,如果你使用的含语义的标记,屏幕阅读器就会“逐个拼出”你的单词,而不是试着去对它完整发音.<br>PDA、手机等设备可能无法像普通电脑的浏览器一样来渲染网页（通常是因为这些设备对CSS的支持较弱）<br>　　使用语义标记可以确保这些设备以一种有意义的方式来渲染网页.理想情况下,观看设备的任务是符合设备本身的条件来渲染网页.<br>　　语义标记为设备提供了所需的相关信息,就省去了你自己去考虑所有可能的显示情况（包括现有的或者将来新的设备）.例如,一部手机可以选择使一段标记了标题的文字以粗体显示.而掌上电脑可能会以比较大的字体来显示.无论哪种方式一旦你对文本标记为标题,您就可以确信读取设备将根据其自身的条件来合适地显示页面.<br>搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重<br>　　过去你可能还没有考虑搜索引擎的爬虫也是网站的“访客”,但现在它们他们实际上是极其宝贵的用户.没有他们的话,搜索引擎将无法索引你的网站,然后一般用户将很难过来访问.<br>你的页面是否对爬虫容易理解非常重要,因为爬虫很大程度上会忽略用于表现的标记,而只注重语义标记.<br>　　因此,如果页面文件的标题被标记,而不是,那么这个页面在搜索结果的位置可能会比较靠后.除了提升易用性外,语义标记有利于正确使用CSS和JavaScript,因为其本身提供了许多“钩钩”来应用页面的样式与行为.<br>SEO主要还是靠你网站的内容和外部链接的。<br>便于团队开发和维护<br>　　W3C给我们定了一个很好的标准，在团队中大家都遵循这个标准，可以减少很多差异化的东西，方便开发和维护，提高开发效率，甚至实现模块化开发。<p></p>
+<h3 id="16-谈谈以前端角度出发做好SEO需要考虑什么？"><a href="#16-谈谈以前端角度出发做好SEO需要考虑什么？" class="headerlink" title="　　16.谈谈以前端角度出发做好SEO需要考虑什么？"></a>　　16.谈谈以前端角度出发做好SEO需要考虑什么？</h3><p>了解搜索引擎如何抓取网页和如何索引网页<br>　　你需要知道一些搜索引擎的基本工作原理，各个搜索引擎之间的区别，搜索机器人（SE robot 或叫 web crawler）如何进行工作，搜索引擎如何对搜索结果进行排序等等。<br>Meta标签优化<br>　　主要包括主题（Title)，网站描述(Description)，和关键词（Keywords）。还有一些其它的隐藏文字比如Author（作者），Category（目录），Language（编码语种）等。<br>如何选取关键词并在网页中放置关键词<br>　　搜索就得用关键词。关键词分析和选择是SEO最重要的工作之一。首先要给网站确定主关键词（一般在5个上下），然后针对这些关键词进行优化，包括关键词密度（Density），相关度（Relavancy），突出性（Prominency）等等。<br>了解主要的搜索引擎<br>　　虽然搜索引擎有很多，但是对网站流量起决定作用的就那么几个。比如英文的主要有Google，Yahoo，Bing等；中文的有百度，搜狗，有道等。不同的搜索引擎对页面的抓取和索引、排序的规则都不一样。还要了解各搜索门户和搜索引擎之间的关系，比如AOL网页搜索用的是Google的搜索技术，MSN用的是Bing的技术。<br>主要的互联网目录<br>　　Open Directory自身不是搜索引擎，而是一个大型的网站目录，他和搜索引擎的主要区别是网站内容的收集方式不同。目录是人工编辑的，主要收录网站主页；搜索引擎是自动收集的，除了主页外还抓取大量的内容页面。<br>按点击付费的搜索引擎<br>　　搜索引擎也需要生存，随着互联网商务的越来越成熟，收费的搜索引擎也开始大行其道。最典型的有Overture和百度，当然也包括Google的广告项目Google Adwords。越来越多的人通过搜索引擎的点击广告来定位商业网站，这里面也大有优化和排名的学问，你得学会用最少的广告投入获得最多的点击。<br>搜索引擎登录<br>　　网站做完了以后，别躺在那里等着客人从天而降。要让别人找到你，最简单的办法就是将网站提交（submit）到搜索引擎。如果你的是商业网站，主要的搜索引擎和目录都会要求你付费来获得收录（比如Yahoo要299美元），但是好消息是（至少到目前为止）最大的搜索引擎Google目前还是免费，而且它主宰着60％以上的搜索市场。<br>链接交换和链接广泛度（Link Popularity）<br>　　网页内容都是以超文本（Hypertext）的方式来互相链接的，网站之间也是如此。除了搜索引擎以外，人们也每天通过不同网站之间的链接来Surfing（“冲浪”）。其它网站到你的网站的链接越多，你也就会获得更多的访问量。更重要的是，你的网站的外部链接数越多，会被搜索引擎认为它的重要性越大，从而给你更高的排名。<br>合理的标签使用</p>
+<h3 id="3-CSS中可以通过哪些属性定义，使得一个DOM元素不显示在浏览器可视范围内？"><a href="#3-CSS中可以通过哪些属性定义，使得一个DOM元素不显示在浏览器可视范围内？" class="headerlink" title="3.CSS中可以通过哪些属性定义，使得一个DOM元素不显示在浏览器可视范围内？"></a>3.CSS中可以通过哪些属性定义，使得一个DOM元素不显示在浏览器可视范围内？</h3><p>最基本的：<br>设置display属性为none，或者设置visibility属性为hidden<br>技巧性：<br>设置宽高为0，设置透明度为0，设置z-index位置在-1000</p>
+<h3 id="4-超链接访问过后hover样式就不出现的问题是什么？如何解决？"><a href="#4-超链接访问过后hover样式就不出现的问题是什么？如何解决？" class="headerlink" title="4.超链接访问过后hover样式就不出现的问题是什么？如何解决？"></a>4.超链接访问过后hover样式就不出现的问题是什么？如何解决？</h3><p>答案：被点击访问过的超链接样式不在具有hover和active了,解决方法是改变CSS属性的排列顺序: L-V-H-A（link,visited,hover,active）</p>
+<h3 id="7-行内元素和块级元素的具体区别是什么？行内元素的padding和margin可设置吗？"><a href="#7-行内元素和块级元素的具体区别是什么？行内元素的padding和margin可设置吗？" class="headerlink" title="7.行内元素和块级元素的具体区别是什么？行内元素的padding和margin可设置吗？"></a>7.行内元素和块级元素的具体区别是什么？行内元素的padding和margin可设置吗？</h3><p>块级元素(block)特性：<br>•总是独占一行，表现为另起一行开始，而且其后的元素也必须另起一行显示;<br>•宽度(width)、高度(height)、内边距(padding)和外边距(margin)都可控制;<br>内联元素(inline)特性：<br>•和相邻的内联元素在同一行;<br>•宽度(width)、高度(height)、内边距的top/bottom(padding-top/padding-bottom)和外边距的top/bottom(margin-top/margin-bottom)都不可改变（也就是padding和margin的left和right是可以设置的），就是里面文字或图片的大小。<br>那么问题来了，浏览器还有默认的天生inline-block元素（拥有内在尺寸，可设置高宽，但不会自动换行），有哪些？<br>答案：<input> 、<img> 、<button> 、</button><textarea> 、<label>。</label></textarea></p>
+<h3 id="8-什么是外边距重叠？重叠的结果是什么？"><a href="#8-什么是外边距重叠？重叠的结果是什么？" class="headerlink" title="8.什么是外边距重叠？重叠的结果是什么？"></a>8.什么是外边距重叠？重叠的结果是什么？</h3><p>答案：<br>外边距重叠就是margin-collapse。<br>在CSS当中，相邻的两个盒子（可能是兄弟关系也可能是祖先关系）的外边距可以结合成一个单独的外边距。这种合并外边距的方式被称为折叠，并且因而所结合成的外边距称为折叠外边距。<br>折叠结果遵循下列计算规则：<br>1.两个相邻的外边距都是正数时，折叠结果是它们两者之间较大的值。<br>2.两个相邻的外边距都是负数时，折叠结果是两者绝对值的较大值。<br>3.两个外边距一正一负时，折叠结果是两者的相加的和。</p>
+<h3 id="9-rgba-和opacity的透明效果有什么不同？"><a href="#9-rgba-和opacity的透明效果有什么不同？" class="headerlink" title="9.rgba()和opacity的透明效果有什么不同？"></a>9.rgba()和opacity的透明效果有什么不同？</h3><p>答案：<br>rgba()和opacity都能实现透明效果，但最大的不同是opacity作用于元素，以及元素内的所有内容的透明度，<br>而rgba()只作用于元素的颜色或其背景色。（设置rgba透明的元素的子元素不会继承透明效果！）</p>
+<h3 id="10-css中可以让文字在垂直和水平方向上重叠的两个属性是什么？"><a href="#10-css中可以让文字在垂直和水平方向上重叠的两个属性是什么？" class="headerlink" title="10.css中可以让文字在垂直和水平方向上重叠的两个属性是什么？"></a>10.css中可以让文字在垂直和水平方向上重叠的两个属性是什么？</h3><p>答案：<br>垂直方向：line-height<br>水平方向：letter-spacing<br>那么问题来了，关于letter-spacing的妙用知道有哪些么？<br>答案:可以用于消除inline-block元素间的换行符空格间隙问题。</p>
+<h3 id="11-如何垂直居中一个浮动元素？"><a href="#11-如何垂直居中一个浮动元素？" class="headerlink" title="11.如何垂直居中一个浮动元素？"></a>11.如何垂直居中一个浮动元素？</h3><p>CSS Code复制内容到剪贴板<br>// 方法一：已知元素的高宽   </p>
+<p>#div1{<br>    background-color:#6699FF;<br>    width:200px;<br>    height:200px;   </p>
+<pre><code>position: absolute;        //父元素需要相对定位   
+top: 50%;   
+left: 50%;   
+margin-top:-100px ;   //二分之一的height，width  
+margin-left: -100px;   
+}   
+</code></pre><p>//方法二:未知元素的高宽   </p>
+<p>  #div1{<br>    width: 200px;<br>    height: 200px;<br>    background-color: #6699FF;   </p>
+<pre><code>margin:auto;   
+position: absolute;        //父元素需要相对定位   
+left: 0;   
+top: 0;   
+rightright: 0;   
+bottombottom: 0;   
+}  
+</code></pre><p>那么问题来了，如何垂直居中一个<img>?（用更简便的方法。）<br>CSS Code复制内容到剪贴板</p>
+<p>#container     //<img>的容器设置如下<br> {<br>     display:table-cell;<br>     text-align:center;<br>     vertical-align:middle;<br> }  </p>
+<h3 id="13-描述一个”reset”的CSS文件并如何使用它。知道normalize-css吗？你了解他们的不同之处？"><a href="#13-描述一个”reset”的CSS文件并如何使用它。知道normalize-css吗？你了解他们的不同之处？" class="headerlink" title="13.描述一个”reset”的CSS文件并如何使用它。知道normalize.css吗？你了解他们的不同之处？　"></a>13.描述一个”reset”的CSS文件并如何使用它。知道normalize.css吗？你了解他们的不同之处？　</h3><p>　　重置样式非常多，凡是一个前端开发人员肯定有一个常用的重置CSS文件并知道如何使用它们。他们是盲目的在做还是知道为什么这么做呢？原因是不同的浏览器对一些元素有不同的默认样式，如果你不处理，在不同的浏览器下会存在必要的风险，或者更有戏剧性的性发生。 </p>
+<p>　　你可能会用Normalize来代替你的重置样式文件。它没有重置所有的样式风格，但仅提供了一套合理的默认样式值。既能让众多浏览器达到一致和合理，但又不扰乱其他的东西（如粗体的标题）。 </p>
+<p>在这一方面，无法做每一个复位重置。它也确实有些超过一个重置，它处理了你永远都不用考虑的怪癖，像HTML的audio元素不一致或line-height不一致。 </p>
+<h3 id="14-Sass、LESS是什么？大家为什么要使用他们？"><a href="#14-Sass、LESS是什么？大家为什么要使用他们？" class="headerlink" title="14.Sass、LESS是什么？大家为什么要使用他们？"></a>14.Sass、LESS是什么？大家为什么要使用他们？</h3><p>　　他们是CSS预处理器。他是CSS上的一种抽象层。他们是一种特殊的语法/语言编译成CSS。 </p>
+<p>　　例如Less是一种动态样式语言. 将CSS赋予了动态语言的特性，如变量，继承，运算， 函数. LESS 既可以在客户端上运行 (支持IE 6+, Webkit, Firefox)，也可一在服务端运行 (借助 Node.js)。 </p>
+<p>为什么要使用它们？ </p>
+<p>•结构清晰，便于扩展。<br>•可以方便地屏蔽浏览器私有语法差异。这个不用多说，封装对浏览器语法差异的重复处理，减少无意义的机械劳动。<br>•可以轻松实现多重继承。<br>•完全兼容 CSS 代码，可以方便地应用到老项目中。LESS 只是在 CSS 语法上做了扩展，所以老的 CSS 代码也可以与 LESS 代码一同编译。 </p>
+<h4 id="15-display-none与visibility-hidden的区别是什么？"><a href="#15-display-none与visibility-hidden的区别是什么？" class="headerlink" title="15.display:none与visibility:hidden的区别是什么？"></a>15.display:none与visibility:hidden的区别是什么？</h4><p>•display : 隐藏对应的元素但不挤占该元素原来的空间。<br>•visibility: 隐藏对应的元素并且挤占该元素原来的空间。<br>　　即是，使用CSS display:none属性后，HTML元素（对象）的宽度、高度等各种属性值都将“丢失”;而使用visibility:hidden属性后，HTML元素（对象）仅仅是在视觉上看不见（完全透明），而它所占据的空间位置仍然存在。　　 </p>
+<p>16.知道css有个content属性吗？有什么作用？有什么应用？ </p>
+<p>　　答案：<br>　　知道。css的content属性专门应用在 before/after 伪元素上，用于来插入生成内容。 </p>
+<p>　　最常见的应用是利用伪类清除浮动。<br>CSS Code复制内容到剪贴板<br>//一种常见利用伪类清除浮动的代码<br> .clearfix:after {<br>    content:”.”;       //这里利用到了content属性<br>    display:block;<br>    height:0;<br>    visibility:hidden;<br>    clear:both; }   </p>
+<p>.clearfix {<br>    *zoom:1;<br>}<br>after伪元素通过 content 在元素的后面生成了内容为一个点的块级元素，再利用clear:both清除浮动。 </p>
+<p>　　那么问题继续还有，知道css计数器（序列数字字符自动递增）吗？如何通过css content属性实现css计数器？ </p>
+<p>　　答案：css计数器是通过设置counter-reset 、counter-increment 两个属性 、及 counter()/counters()一个方法配合after / before 伪类实现。 </p>
+<h3 id="13-一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"><a href="#13-一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。" class="headerlink" title="13.一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"></a>13.一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。</h3><p>图片懒加载，在页面上的未可视区域可以添加一个滚动条事件，判断图片位置与浏览器顶端的距离与页面的距离，如果前者小于后者，优先加载。<br>如果为幻灯片、相册等，可以使用图片预加载技术，将当前展示图片的前一张和后一张优先下载。<br>如果图片为css图片，可以使用CSSsprite，SVGsprite，Iconfont、Base64等技术。<br>如果图片过大，可以使用特殊编码的图片，加载时会先加载一张压缩的特别厉害的缩略图，以提高用户体验。<br>如果图片展示区域小于图片的真实大小，则因在服务器端根据业务需要先行进行图片压缩，图片压缩后大小与展示一致。</p>
+<h3 id="14-你如何理解HTML结构的语义化？"><a href="#14-你如何理解HTML结构的语义化？" class="headerlink" title="14.你如何理解HTML结构的语义化？"></a>14.你如何理解HTML结构的语义化？</h3><p>去掉或样式丢失的时候能让页面呈现清晰的结构<br>屏幕阅读器（如果访客有视障）会完全根据你的标记来“读”你的网页.<br>搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重<br>你的页面是否对爬虫容易理解非常重要,因为爬虫很大程度上会忽略用于表现的标记,而只注重语义标记.<br>便于团队开发和维护</p>
+<h3 id="15-谈谈以前端角度出发做好SEO需要考虑什么？"><a href="#15-谈谈以前端角度出发做好SEO需要考虑什么？" class="headerlink" title="15.谈谈以前端角度出发做好SEO需要考虑什么？"></a>15.谈谈以前端角度出发做好SEO需要考虑什么？</h3><p>了解搜索引擎如何抓取网页和如何索引网页<br>Meta标签优化<br>了解主要的搜索引擎<br>主要的互联网目录<br>搜索引擎登录<br>链接交换和链接广泛度（Link Popularity）<br>合理的标签使用</p>
+<h4 id="31、简述同步和异步的区别"><a href="#31、简述同步和异步的区别" class="headerlink" title="31、简述同步和异步的区别"></a>31、简述同步和异步的区别</h4><p>答案解析：</p>
+<p>同步是阻塞模式，异步是非阻塞模式。</p>
+<p>同步就是指一个进程在执行某个请求的时候，若该请求需要一段时间才能返回信息，那么这个进程将会一直等待下去，直到收到返回信息才继续执行下去；</p>
+<p>异步是指进程不需要一直等下去，而是继续执行下面的操作，不管其他进程的状态。当有消息返回时系统会通知进程进行处理，这样可以提高执行的效率。</p>
+</strong></h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/02.html5知识点总结&面试题.1/" data-id="cj4zksgrh0000ykf46ffgxtt7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-移动web总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/移动web总结/" class="article-date">
+  <time datetime="2017-07-11T12:49:59.068Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###基本知识点:</p>
+<p>1.常用的移动设备屏幕尺寸:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">根据屏幕尺寸，换算开发时需要用到的rem单位，图片尺寸; </div><div class="line">	@media screen and (max-width=<span class="number">375</span>px)&#123;</div><div class="line">      html &#123;</div><div class="line">        font-size: (<span class="number">375</span>/<span class="number">20</span>)px;</div><div class="line">      &#125;</div><div class="line">     &#125;</div><div class="line">	rem: (sass样式)</div><div class="line">	@<span class="function"><span class="keyword">function</span> <span class="title">p2r</span>(<span class="params">$size</span>) </span>&#123;</div><div class="line">    	@<span class="keyword">return</span> $size / <span class="number">32</span> * <span class="number">1</span>rem;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>主流安卓屏幕尺寸:<ol>
+<li>屏幕:  540 <em> 960 [倍率1.5]  =  逻辑像素: 360 </em> 640;</li>
+<li>屏幕:  720<em> 1280[倍率2]  =  逻辑像素: 360 </em> 640;</li>
+<li>屏幕:  1080<em> 1920[倍率3]  =  逻辑像素: 360 </em> 640;</li>
+</ol>
+</li>
+<li>iphone屏幕尺寸:<ol>
+<li>机型: 3GS  屏幕:  320 <em> 480 [倍率1]  =  逻辑像素: 320 </em> 480;</li>
+<li>机型: iphone4  屏幕:  640 <em> 960 [倍率2]  =  逻辑像素: 320 </em> 480;</li>
+<li>机型: iphone5  屏幕:  640 <em> 1136 [倍率2]  =  逻辑像素: 320 </em> 568;</li>
+<li>机型: iphone6  屏幕:  750<em> 1334 [倍率2]  =  逻辑像素: 375 </em> 667; </li>
+<li>机型: iphone6Puls  屏幕:  1080 <em> 1920 [倍率3]  =  逻辑像素: 414 </em> 736;<br>###问答题:<br>#####1、简述移动开发的注意点,如何做好不同手机的适配,你以前的项目是怎么做的?<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">注意点:</div><div class="line">	<span class="number">1.</span>单位的使用,根据手机屏幕的大小，显示的像素有区别</div><div class="line">    如:iPhone3G及以下  <span class="number">1</span>点==<span class="number">1</span>个像素</div><div class="line">	  iPhone4 Retain  <span class="number">1</span>点==<span class="number">2</span>个像素   </div><div class="line">	  iPhone6/<span class="number">7</span> Plus  <span class="number">1</span>点==<span class="number">3</span>个像素</div><div class="line">    <span class="number">2.</span>细节的处理: </div><div class="line">      <span class="number">3.1</span> 禁止自动识别电话和android自动识别邮箱</div><div class="line">      <span class="number">3.2</span> 禁止长按链接与图片弹出菜单</div><div class="line">      <span class="number">3.3</span> 去除A连接input标签,点击出现自带的阴影样式</div><div class="line">      <span class="number">3.4</span> 单击延迟;click 事件因为要等待双击确认,会有 <span class="number">300</span>ms 的延迟,体验并不是很好。</div><div class="line">制作项目的过程与适配不同的屏幕:</div><div class="line">    <span class="number">1.</span>适配不同的屏幕一般使用css3的媒体查询@media screen and (max-width=xxx)&#123;.icon&#123;some styles&#125;&#125;,然后根据当前屏幕尺寸换算成使用于当前页面的rem值;</div><div class="line">    <span class="number">2.</span>细节处理:</div><div class="line">     <span class="number">2.1</span> 禁止自动识别电话和android自动识别邮箱:</div><div class="line">         &lt;meta content="telephone=no" name="format-detection" /&gt;</div><div class="line">         &lt;meta content="email=no" name="format-detection" /&gt;</div><div class="line">     2.2 禁止长按链接与图片弹出菜单:</div><div class="line">          a, img &#123;</div><div class="line">            -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */</div><div class="line">          &#125;</div><div class="line">     2.3 去除A连接input标签,点击出现自带的阴影样式:</div><div class="line">         a,input&#123;</div><div class="line">            -webkit-tap-highlight-color:rgba(0,0,0,0);</div><div class="line">         &#125;</div><div class="line">     2.4 单击延迟:</div><div class="line">            使用封装的 tap 事件来代替click 事件,所谓的 tap 事件由 touchstart 事件+ touchmove判断+            touchend 事件封装组成。</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h5 id="2-px和em的区别。"><a href="#2-px和em的区别。" class="headerlink" title="2.px和em的区别。"></a>2.px和em的区别。</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">px和em都是长度单位，区别是，px的值是固定的，指定是多少就是多少，计算比较容易。em得值不是固定的，并且em会继承父级元素的字体大小。</div><div class="line">浏览器的默认字体高都是<span class="number">16</span>px。所以未经调整的浏览器都符合: <span class="number">1</span>em=<span class="number">16</span>px。那么<span class="number">12</span>px=<span class="number">0.75</span>em, <span class="number">10</span>px=<span class="number">0.625</span>em。</div></pre></td></tr></table></figure>
+<h5 id="3-移动端常用类库及优缺点"><a href="#3-移动端常用类库及优缺点" class="headerlink" title="3.移动端常用类库及优缺点"></a>3.移动端常用类库及优缺点</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">normalize</div><div class="line">http:<span class="comment">//necolas.github.io/normalize.css/</span></div><div class="line">最受欢迎的css reset</div><div class="line">保留有用的默认值，这个区别于其他的CSS resets 标准化大范围的HTML elements的样式纠正bugs，使浏览器具体通用性 通过一些巧妙的改进来增强可用性 用具体的说明来讲解代码的用处</div><div class="line"></div><div class="line">topcoat</div><div class="line">http:<span class="comment">//topcoat.io/topcoat/</span></div><div class="line">一套非常精致的UI元素类库，提供了常用了基础组件</div><div class="line"></div><div class="line">Bootstrap</div><div class="line">http:<span class="comment">//getbootstrap.com/2.3.2/</span></div><div class="line">这个就不说了，他的最大问题是名气太大，看多了就有点反胃。</div><div class="line"></div><div class="line">Zurb Foundation</div><div class="line">http:<span class="comment">//foundation.zurb.com/</span></div><div class="line">Zurb Foundation和Bootstrap一样，也是一款非常知名的css框架。</div><div class="line">Foundation 最大的特色是 Mobile first。它对不同终端支持非常好，对内容结构在不同类型设备中的的呈现方式进行了相应的预设。 (js组件依赖Zepto)</div><div class="line">Foundation还有很多预设模块http:<span class="comment">//foundation.zurb.com/templates.html.</span></div><div class="line">如果你打算快速开发一个适应多个平台响应式的网站，Foundation绝对是你的首选。</div><div class="line"></div><div class="line">Semantic UI framework</div><div class="line">http:<span class="comment">//semantic-ui.com/</span></div><div class="line">Semantic UI framework是一款拥有丰富组件的UI框架，JS的易用性非常好，而且流畅（我没用过，他自己这说的）。</div><div class="line">组件确实丰富，展开左侧的菜单，我们想要用到的组件基本上都有。</div><div class="line">他的官方网站上没放案例，大家自己去体验吧。</div><div class="line"></div><div class="line">Gumby</div><div class="line">http:<span class="comment">//gumbyframework.com/</span></div><div class="line">Gumby与bootstrap比较类似，唯一不同的是他比较注重移动设备。</div><div class="line">另外Gumby也有一个在线自定义的工具 http:<span class="comment">//gumbyframework.com/customize</span></div><div class="line"></div><div class="line">Ratchet</div><div class="line">http:<span class="comment">//maker.github.io/ratchet/</span></div><div class="line">Ratchet是一个帮助开发人员仅使用简单 HTML，CSS 和 Javascript 组件就能够快速的制作出 iPhone 应用程序的原型。Ratchet 提供了众多效果类似原生应用的界面组件！开发简单的手机应用可以试试。</div><div class="line">作为一个高保证的原型工具也不错。</div><div class="line"></div><div class="line">HTML kickstart</div><div class="line">http:<span class="comment">//www.99lime.com/elements/</span></div><div class="line">极简的网站开发框架，适合只掌握了CSS和HTML的开发者。</div><div class="line">不是很有特色，就是提供一堆常用控件让你组合成一个站点。</div><div class="line"></div><div class="line">Responsable</div><div class="line">http:<span class="comment">//responsablecss.com/</span></div><div class="line">看名字就能明白，Responsable提供响应式布局解决方案。</div><div class="line">相对其他整合比较深入的库，这个更加单纯。</div><div class="line"></div><div class="line">responsiveaeon</div><div class="line">http:<span class="comment">//newaeonweb.com.br/responsiveaeon/</span></div><div class="line">ResponsiveAeon 是一个基于 HTML5/CSS3的框架，可以用来快速创建响应式布局。需要JavaScript框架支持IE、模态盒（modal boxex）以及PSD/AIPNG文件。</div><div class="line"></div><div class="line">Clank</div><div class="line">http:<span class="comment">//getclank.com/</span></div><div class="line">与上面介绍的Ratchet差不多，能帮我们快速的制作出手机应用程序的原型。</div><div class="line"></div><div class="line">metroui</div><div class="line">http:<span class="comment">//metroui.org.ua/</span></div><div class="line">Metro UI CSS是一个独立的开发框架，开发者可以使用它开发出Windows8样式的UI，也可以搭配其它框架使用。</div><div class="line"></div><div class="line">Flat-UI</div><div class="line">http:<span class="comment">//designmodo.github.io/Flat-UI/</span></div><div class="line">Flat UI是一套精美的扁平风格 UI 工具包，基于 Twitter Bootstrap 实现。这套界面工具包含许多基本的和复杂的 UI 部件，例如按钮，输入框，组合按钮，复选框，单选按钮，标签，菜单，进度条和滑块，导航元素等等。</div><div class="line"></div><div class="line">zepto</div><div class="line">http:<span class="comment">//www.css88.com/doc/zeptojs_api/</span></div><div class="line">类jQuery的库,主要是以操作dom元素为主,有点在于操作dom元素比较便捷,有选择性的添加需要使用的文件，轻便,缺点就是添加需要使用的文件就以为着需要增加发送请求的问题;</div></pre></td></tr></table></figure>
+<p>#####4. Zepto库和JQ区别<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">两者都是用于操作dom元素,但是Zepto相对jQuery更加轻量，主要用在移动端，可以自行选择需要的组件，jQuery也有对应的jQuerymobile移动端框架，jQuery是一个包含了所有功能的整体;</div></pre></td></tr></table></figure></p>
+<p>#####5. 移动端（比如：Android IOS）怎么做好用户体验?<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>知道目标用户的动机或者需求</div><div class="line">产品能够满足某些人的某类需要，能够为他们创造自己产品所倡导的价值，</div><div class="line">这是头等重要的用户体验，没有这一点一切产品形态的东西都会是空谈。</div><div class="line">我曾经的文章：用户动机是“以用户为中心”的方法论</div><div class="line"><span class="number">2.</span>确保移动产品信息结构清晰</div><div class="line">产品总共有多少个主体要素，这些要素以何种方式组织起来最为轻巧简练，</div><div class="line">让用户只通过简单的使用就能形成一些基本结构化的印象，</div><div class="line">知道它是怎么回事儿了，知道什么东西可能应该在哪儿了融入自己的设计理念，注重用户体验，选择合适的技术</div><div class="line"><span class="number">3.</span>流畅的用户操作流程</div><div class="line">这是交互设计中的重中之重，如何让用户的操作流程在上边信息结构简练的基础上，</div><div class="line">让用户的每一条指令，每一步操作，都基本符合他的预期，</div><div class="line">以更自然、流畅的方式完成了他所要操作的任务，中间尽可能让用户少犯错误。</div><div class="line">我曾经的一篇文章，提到了交互过程的三要素：</div><div class="line">学会三点，即可打造良好的交互设计效果</div><div class="line"><span class="number">4.</span>保证产品的可靠性、稳定性</div><div class="line">在用户已经熟悉、依赖上一个产品以后，</div><div class="line">没有什么比可靠性、稳定性的问题更令人感到憎恶了。</div><div class="line">这也不难理解为什么iPhone4的天线问题会有如此大的关注。</div><div class="line"><span class="number">5.</span>合理的页面布局，合理内容的主次位置</div><div class="line">产品的每一个页面有它存在的意思，那是因为它肯定要完成一个它必须能完成的任务。</div><div class="line">这个必须能完成的任务，是不是放在了页面的主体首要位置是这个页面体验好坏的关键。</div><div class="line">有的设计总想拐着弯的抢占它的主体位置，你这就是在挑战用户的忍耐程度。</div><div class="line">我曾经的一篇文章：交互设计的主与次</div><div class="line"><span class="number">6.</span>推荐内容的相关性程度精准度，增加用户黏性</div><div class="line">页面布局除了保证主体内容的主体位置以外，</div><div class="line">相对次要的侧栏位置也是好好利用的设计空间所在。</div><div class="line">如何通过机器或人为参与，提高侧栏内容的相关性程度，</div><div class="line">能给用户带来意外性的体验提升。</div><div class="line"><span class="number">7.</span> 统一界面的配色、风格、字号、间距等。</div><div class="line">如果你设计的产品不是在创作一副油画或者某些产品的形象工程，</div><div class="line">如果你设计的产品是确定直接给用户操作使用，</div><div class="line">那么，那些无关的UI修饰则是能抽象的抽象能淡化的淡化。</div><div class="line">只要尽可能保持设计使用上的一致性以及坚持下去这种一致性就可以了（别反复换）。</div><div class="line">世界一流公司的产品，Microsoft、Google、Apple等等，无一不是如此。</div><div class="line">如果上边第<span class="number">1</span>条用户动机你抓准了，用户不会因为你的配色，你能否换肤而弃用你的产品的。</div><div class="line">那些优秀的平面设计师、手绘插图设计师，在互联网产品上发挥视觉设计的余地真的不是很大。</div><div class="line">曾经的文章：淡化UI、部分还原精实感的设计</div><div class="line"><span class="number">8.</span> 合适的客服出现位置与咨询按钮</div><div class="line">机器能够让用户自主完成的事情总是有限的人，但对于用户来说总有例外，</div><div class="line">就是那些用户无法自主完成或产品暂时无法很好满足的服务，机器做不好的，要靠人来补上。</div><div class="line">就像如果你到一个大卖场里去买东西，尽管店里的物品摆放已经经过非常合理的布置了，</div><div class="line">但是你赶时间，你依然希望第一时间买完东西就走，</div><div class="line">这时候你最可信赖的就是直接问店里的店员了。所以，在产品交互体验设计当中，合理的布局在线客服出现位置与咨询按钮非常的重要。</div></pre></td></tr></table></figure></p>
+<p>#####6. px，em，rem的区别？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">答： <span class="number">1</span>）px像素（Pixel）。绝对单位。像素px是相对于显示器屏幕分辨率而言的，是一个虚拟长度单位，是计算机系统的数字化图像长度单位，如果px要换算成物理长度，需要指定精度DPI。</div><div class="line"><span class="number">2</span>）em是相对长度单位，相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。它会继承父级元素的字体大小，因此并不是一个固定的值。</div><div class="line"><span class="number">3</span>）rem是CSS3新增的一个相对单位（root em，根em），使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。</div><div class="line"><span class="number">4</span>）区别：IE无法调整那些使用px作为单位的字体大小，而em和rem可以缩放，rem相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，除了IE8及更早版本外，所有浏览器均已支持rem。</div></pre></td></tr></table></figure></p>
+<p>#####7. 能否简述一下如何使一套设计方案，适应不同的分辨率，有哪些方法可以实现？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">答：流式布局：</div><div class="line">    使用非固定像素来定义网页内容，也就是百分比布局，通过盒子的宽度设置成百分比来根据屏幕的宽度来进行伸缩，不受固定像素的限制，内容向两侧填充。</div><div class="line">    这样的布局方式，就是移动web开发使用的常用布局方式。这样的布局可以适配移动端不同的分辨率设备。</div><div class="line">    响应式开发：</div><div class="line">    那么Ethan Marcotte在<span class="number">2010</span>年<span class="number">5</span>月份提出的一个概念，简而言之，就是一个网站能够兼容多个终端。越来越多的设计师也采用了这种设计。 </div><div class="line">	CSS3中的Media Query（媒介查询），通过查询screen的宽度来指定某个宽度区间的网页布局。 </div><div class="line">超小屏幕（移动设备）    <span class="number">768</span>px以下 </div><div class="line">小屏设备    <span class="number">768</span>px<span class="number">-992</span>px</div><div class="line">中等屏幕    <span class="number">992</span>px<span class="number">-1200</span>px</div><div class="line">宽屏设备    <span class="number">1200</span>px以上 </div><div class="line">    由于响应式开发显得繁琐些，一般使用第三方响应式框架来完成，比如bootstrap来完成一部分工作，当然也可以自己写响应式。</div><div class="line">    阐述下移动web和响应式的区别：</div><div class="line">移动web： </div><div class="line">	应用场景一般在已经有的pc端的网站，开发移动的时候，只需单独开发移动端，开发方面针对想较强，开发效率高，只适配移动设备pad上体验相对较差，代码简洁加载快;</div><div class="line">响应式布局：</div><div class="line">	针对新建站的一些网站，现在要求适配移动端，所以就一套页面兼容各种终端，灵活。兼容各种终端，效率低，可以适配各种终端;代码相对比较复杂，加载慢;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/移动web总结/" data-id="cj4zksgsd000bykf4mgwdg5cx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/11/前端一些常见面试问题/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常用插件/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常见的兼容性问题及解决方案/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/Node.js知识点总结/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/jQuery面试题/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

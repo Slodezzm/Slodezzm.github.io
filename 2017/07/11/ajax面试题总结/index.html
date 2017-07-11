@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="###1.缓存问题:1231、如何使用缓存？可以基于http的头信息控制缓存ajax请求对早期的IE浏览器默认就是缓存的，可以通过时间戳防止缓存 ###2. AJAX请求数据步骤是什么？传输的数据是用的暗文还是明文？12345678910111213141. var xhr = new XMLHttpRequest(); //创建异步对象//get请求2.xhr.open(&apos;get&apos;,&apos;www.x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/07/11/ajax面试题总结/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="###1.缓存问题:1231、如何使用缓存？可以基于http的头信息控制缓存ajax请求对早期的IE浏览器默认就是缓存的，可以通过时间戳防止缓存 ###2. AJAX请求数据步骤是什么？传输的数据是用的暗文还是明文？12345678910111213141. var xhr = new XMLHttpRequest(); //创建异步对象//get请求2.xhr.open(&apos;get&apos;,&apos;www.x">
+<meta property="og:updated_time" content="2017-07-09T00:07:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="###1.缓存问题:1231、如何使用缓存？可以基于http的头信息控制缓存ajax请求对早期的IE浏览器默认就是缓存的，可以通过时间戳防止缓存 ###2. AJAX请求数据步骤是什么？传输的数据是用的暗文还是明文？12345678910111213141. var xhr = new XMLHttpRequest(); //创建异步对象//get请求2.xhr.open(&apos;get&apos;,&apos;www.x">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ajax面试题总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/ajax面试题总结/" class="article-date">
+  <time datetime="2017-07-11T12:49:59.296Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###1.缓存问题:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、如何使用缓存？</div><div class="line">可以基于http的头信息控制缓存</div><div class="line">ajax请求对早期的IE浏览器默认就是缓存的，可以通过时间戳防止缓存</div></pre></td></tr></table></figure></p>
+<p>###2. AJAX请求数据步骤是什么？传输的数据是用的暗文还是明文？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest(); <span class="comment">//创建异步对象</span></div><div class="line"><span class="comment">//get请求</span></div><div class="line"><span class="number">2.</span>xhr.open(<span class="string">'get'</span>,<span class="string">'www.xxx.xxx/xxx?xx=xx&amp;xxx=xx'</span>); <span class="comment">//设置请求行,get方式直接把请求写在链接地址后面即可 : ?xxx=xxxx;</span></div><div class="line"><span class="comment">//post请求</span></div><div class="line"><span class="number">2.</span> xhr.open(<span class="string">'post'</span>,<span class="string">'www.xxx.xx'</span>);</div><div class="line"><span class="number">3.</span> xhr.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);<span class="comment">//post方式需要设置请求头</span></div><div class="line"><span class="number">4.</span> xhr.send(<span class="literal">null</span>);<span class="comment">//请求主体,pos需要把数据以键值对写在主体中 xxx=xxx</span></div><div class="line"><span class="number">5.</span> xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>) &#123;</div><div class="line">      <span class="built_in">JSON</span>.parse(xhr.responseText)</div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">ajax的get和post传输数据的方式都是明文;</div></pre></td></tr></table></figure></p>
+<p>###3.解释jsonp的原理，以及为什么不是真正的ajax;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">jsonp并不是一种数据格式，jsonp是用来解决跨域获取数据的一种解决方案，具体是通过动态创建script标签，然后通过标签的src属性获取js文件中的js脚本，该脚本的内容是一个函数调用，参数就是服务器返回的数据，为了处理这些返回的数据，需要事先在页面定义好回调函数，本质上使用的并不是ajax技术</div><div class="line">Ajax直接请求普通文件存在跨域无权限访问的问题，不管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准;</div></pre></td></tr></table></figure></p>
+<p>###4. 请尽可能详尽的解释ajax的工作原理<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">Ajax的工作原理相当于在用户和服务器之间加了—个中间层(AJAX引擎),使用户操作与服务器响应异步化。并不是所有的用户请求都提交给服务器,像—些数据验证和数据处理等都交给Ajax引擎自己来做, 只有确定需要从服务器读取新数据时再由Ajax引擎代为向服务器提交请求。</div><div class="line"></div><div class="line">Ajax其核心有JavaScript、XMLHTTPRequest、DOM对象组成，通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用JavaScript来操作DOM而更新页面。这其中最关键的一步就是从服务器获得请求数据。让我们来了解这几个对象。</div><div class="line"></div><div class="line">(<span class="number">1</span>).XMLHTTPRequest对象</div><div class="line">Ajax的一个最大的特点是无需刷新页面便可向服务器传输或读写数据(又称无刷新更新页面),这一特点主要得益于XMLHTTP组件XMLHTTPRequest对象。</div><div class="line"></div><div class="line">(<span class="number">2</span>).JavaScript</div><div class="line">JavaScript是一在浏览器中大量使用的编程语言。</div><div class="line"></div><div class="line">(<span class="number">3</span>).DOM Document <span class="built_in">Object</span> Model</div><div class="line">DOM是给HTML和XML文件使用的一组API。它提供了文件的结构表述，让你可以改变其中的內容及可见物。其本质是建立网页与Script或程序语言沟通的桥梁。所有WEB开发人员可操作及建立文件的属性、方法及事件都以对象来展现（例如，<span class="built_in">document</span>就代表“文件本身“这个对像，table对象则代表HTML的表格对象等等）。这些对象可以由当今大多数的浏览器以Script来取用。一个用HTML或XHTML构建的网页也可以看作是一组结构化的数据，这些数据被封在DOM（Document <span class="built_in">Object</span> Model）中，DOM提供了网页中各个对象的读写的支持。</div><div class="line"></div><div class="line">(<span class="number">4</span>).XML</div><div class="line">可扩展的标记语言（Extensible Markup Language）具有一种开放的、可扩展的、可自描述的语言结构，它已经成为网上数据和文档传输的标准,用于其他应用程序交换数据 。</div><div class="line"></div><div class="line">(<span class="number">5</span>).综合</div><div class="line">Ajax引擎，实际上是一个比较复杂的JavaScript应用程序，用来处理用户请求，读写服务器和更改DOM内容。JavaScript的Ajax引擎读取信息，并且互动地重写DOM，这使网页能无缝化重构，也就是在页面已经下载完毕后改变页面内容，这是我们一直在通过JavaScript和DOM在广泛使用的方法，但要使网页真正动态起来，不仅要内部的互动，还需要从外部获取数据，在以前，我们是让用户来输入数据并通过DOM来改变网页内容的，但现在，XMLHTTPRequest，可以让我们在不重载页面的情况下读写服务器上的数据，使用户的输入达到最少。</div><div class="line"></div><div class="line">Ajax使WEB中的界面与应用分离（也可以说是数据与呈现分离），而在以前两者是没有清晰的界限的，数据与呈现分离的分离，有利于分工合作、减少非技术人员对页面的修改造成的WEB应用程序错误、提高效率、也更加适用于现在的发布系统。也可以把以前的一些服务器负担的工作转嫁到客户端，利于客户端闲置的处理能力来处理。</div></pre></td></tr></table></figure></p>
+<p>###5. 同步和异步的区别?<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">同步：阻塞的</div><div class="line">-张三叫李四去吃饭，李四一直忙得不停，张三一直等着，直到李四忙完两个人一块去吃饭</div><div class="line">=浏览器向服务器请求数据，服务器比较忙，浏览器一直等着（页面白屏），直到服务器返回数据，浏览器才能显示页面</div><div class="line">异步：非阻塞的</div><div class="line">-张三叫李四去吃饭，李四在忙，张三说了一声然后自己就去吃饭了，李四忙完后自己去吃</div><div class="line">=浏览器向服务器请求数据，服务器比较忙，浏览器可以自如的干原来的事情（显示页面），服务器返回数据的时候通知浏览器一声，浏览器把返回的数据再渲染到页面，局部更新</div></pre></td></tr></table></figure></p>
+<p>###6. 如何解决跨域问题?<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">	理解跨域的概念：协议、域名、端口都相同才同域，否则都是跨域</div><div class="line">出于安全考虑，服务器不允许ajax跨域获取数据，但是可以跨域获取文件内容，所以基于这一点，可以动态创建script标签，使用标签的src属性访问js文件的形式获取js脚本，并且这个js脚本中的内容是函数调用，该函数调用的参数是服务器返回的数据，为了获取这里的参数数据，需要事先在页面中定义回调函数，在回调函数中处理服务器返回的数据，这就是解决跨域问题的主流解决方案</div></pre></td></tr></table></figure></p>
+<p>###7. 页面编码和被请求的资源编码如果不一致如何处理？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">对于ajax请求传递的参数，如果是get请求方式，参数如果传递中文，在有些浏览器会乱码，不同的浏览器对参数编码的处理方式不同，所以对于get请求的参数需要使用 <span class="built_in">encodeURIComponent</span>函数对参数进行编码处理，后台开发语言都有相应的解码api。对于post请求不需要进行编码</div></pre></td></tr></table></figure></p>
+<p>###8. 请解释一下 JavaScript 的同源策略。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">同源策略是客户端脚本（尤其是Javascript）的重要的安全度量标准。它最早出自Netscape Navigator2<span class="number">.0</span>，其目的是防止某个文档或脚本从多个不同源装载。所谓同源指的是：协议，域名，端口相同，同源策略是一种安全协议，指一段脚本只能读取来自同一来源的窗口和文档的属性。</div></pre></td></tr></table></figure></p>
+<p>###9. GET和POST的区别，何时使用POST？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">GET：一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一般在<span class="number">2000</span>个字符，有的浏览器是<span class="number">8000</span>个字符</div><div class="line">POST：一般用于修改服务器上的资源，对所发送的信息没有限制</div><div class="line">在以下情况中，请使用 POST 请求：</div><div class="line"><span class="number">1.</span> 无法使用缓存文件（更新服务器上的文件或数据库）</div><div class="line"><span class="number">2.</span> 向服务器发送大量数据（POST 没有数据量限制）</div><div class="line"><span class="number">3.</span> 发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠</div></pre></td></tr></table></figure></p>
+<p>###10. Ajax的最大的特点是什么。ajax的缺点<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Ajax可以实现异步通信效果，实现页面局部刷新，带来更好的用户体验；按需获取数据，节约带宽资源； </div><div class="line"><span class="number">10.1</span> ajax的缺点</div><div class="line"> <span class="number">1</span>、ajax不支持浏览器back按钮。</div><div class="line"> <span class="number">2</span>、安全问题 AJAX暴露了与服务器交互的细节。</div><div class="line"> <span class="number">3</span>、对搜索引擎的支持比较弱。</div><div class="line"> <span class="number">4</span>、破坏了程序的异常机制。</div></pre></td></tr></table></figure></p>
+<p>###11.http常见的状态码有那些？分别代表是什么意思？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="number">200</span> OK      <span class="comment">//客户端请求成功</span></div><div class="line"><span class="number">400</span> Bad Request  <span class="comment">//客户端请求有语法错误，不能被服务器所理解</span></div><div class="line"><span class="number">403</span> Forbidden  <span class="comment">//服务器收到请求，但是拒绝提供服务</span></div><div class="line"><span class="number">404</span> Not Found  <span class="comment">//请求资源不存在，输入了错误的URL</span></div><div class="line"><span class="number">500</span> Internal Server <span class="built_in">Error</span> <span class="comment">//服务器发生不可预期的错误</span></div><div class="line"><span class="number">503</span> Server Unavailable  <span class="comment">//服务器当前不能处理客户端的请求，一段时间后可能恢复正常</span></div></pre></td></tr></table></figure></p>
+<p>###12.一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">分为<span class="number">4</span>个步骤：</div><div class="line">\<span class="number">1.</span> 当发送一个 URL 请求时，不管这个 URL 是 Web 页面的 URL 还是 Web 页面上每个资源的 URL，浏览器都会开启一个线程来处理这个请求，同时在远程 DNS 服务器上启动一个 DNS 查询。这能使浏览器获得请求对应的 IP 地址。</div><div class="line">\<span class="number">2.</span> 浏览器与远程 Web 服务器通过 TCP 三次握手协商来建立一个 TCP/IP 连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。</div><div class="line">\<span class="number">3.</span> 一旦 TCP/IP 连接建立，浏览器会通过该连接向远程服务器发送 HTTP 的 GET 请求。远程服务器找到资源并使用 HTTP 响应返回该资源，值为 <span class="number">200</span> 的 HTTP 响应状态表示一个正确的响应。</div><div class="line">\<span class="number">4.</span> 此时，Web 服务器提供资源服务，客户端开始下载资源。</div></pre></td></tr></table></figure></p>
+<p>###13. ajax请求时，如何解析json数据<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">使用<span class="built_in">eval</span>() 或者<span class="built_in">JSON</span>.parse() 鉴于安全性考虑，推荐使用<span class="built_in">JSON</span>.parse()更靠谱，对数据的安全性更好。</div></pre></td></tr></table></figure></p>
+<p>###14.请说出三种减低页面加载时间的方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、压缩css、js文件</div><div class="line"><span class="number">2</span>、合并js、css文件，减少http请求</div><div class="line"><span class="number">3</span>、外部js、css文件放在最底下</div><div class="line"><span class="number">4</span>、减少dom操作，尽可能用变量替代不必要的dom操作</div></pre></td></tr></table></figure></p>
+<p>###15. 为什么利用多个域名来存储网站资源会更有效？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">确保用户在不同地区能用最快的速度打开网站，其中某个域名崩溃用户也能通过其他郁闷访问网站，并且不同的资源放到不同的服务器上有利于减轻单台服务器的压力。</div></pre></td></tr></table></figure></p>
+<p>###16.JSONP的优缺点<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">优点：</div><div class="line">它的兼容性更好，在更加古老的浏览器中都可以运行，不需要XMLHttpRequest或ActiveX的支持；</div><div class="line">能够直接访问响应文本，支持在浏览器与服务器之间双向通信</div><div class="line">缺点：</div><div class="line">JSONP 是从其他域中加载代码执行。如果其他域不安全，很可能会在响应中夹带一些恶意代码，而此时除了完全放弃JSONP 调用之外，没有办法追究。因此在使用不是你自己运维的Web 服务时，一定得保证它安全可靠。</div><div class="line">它只支持GET请求而不支持POST等其它类型的HTTP请求；它只支持跨域HTTP请求这种情况，不能解决不同域的两个页面之间如何进行JavaScript调用的问题</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/ajax面试题总结/" data-id="cj4zksgs10005ykf4i5ce93o7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/11/angularjs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/11/17.vue框架/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/11/前端一些常见面试问题/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常用插件/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常见的兼容性问题及解决方案/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/Node.js知识点总结/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/jQuery面试题/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

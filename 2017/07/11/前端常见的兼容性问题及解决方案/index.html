@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端常见的兼容性问题及解决方案1.IE6中父元素浮动，如果宽度需要内容撑开，里面块级元素的内容也要加浮动12345678&amp;lt;div class=&quot;box&quot;&amp;gt;   &amp;lt;div class=&quot;left&quot;&amp;gt;      &amp;lt;h3&amp;gt;左侧&amp;lt;/h3&amp;gt;   &amp;lt;/div&amp;gt;   &amp;lt;div class=&quot;right&quot;&amp;gt;      &amp;lt;h3&amp;gt;右侧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/07/11/前端常见的兼容性问题及解决方案/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前端常见的兼容性问题及解决方案1.IE6中父元素浮动，如果宽度需要内容撑开，里面块级元素的内容也要加浮动12345678&amp;lt;div class=&quot;box&quot;&amp;gt;   &amp;lt;div class=&quot;left&quot;&amp;gt;      &amp;lt;h3&amp;gt;左侧&amp;lt;/h3&amp;gt;   &amp;lt;/div&amp;gt;   &amp;lt;div class=&quot;right&quot;&amp;gt;      &amp;lt;h3&amp;gt;右侧">
+<meta property="og:image" content="http://yoursite.com/2017/07/11/前端常见的兼容性问题及解决方案/images/hack.png">
+<meta property="og:updated_time" content="2017-07-11T12:26:04.089Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="前端常见的兼容性问题及解决方案1.IE6中父元素浮动，如果宽度需要内容撑开，里面块级元素的内容也要加浮动12345678&amp;lt;div class=&quot;box&quot;&amp;gt;   &amp;lt;div class=&quot;left&quot;&amp;gt;      &amp;lt;h3&amp;gt;左侧&amp;lt;/h3&amp;gt;   &amp;lt;/div&amp;gt;   &amp;lt;div class=&quot;right&quot;&amp;gt;      &amp;lt;h3&amp;gt;右侧">
+<meta name="twitter:image" content="http://yoursite.com/2017/07/11/前端常见的兼容性问题及解决方案/images/hack.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-前端常见的兼容性问题及解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/前端常见的兼容性问题及解决方案/" class="article-date">
+  <time datetime="2017-07-11T12:49:59.441Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前端常见的兼容性问题及解决方案"><a href="#前端常见的兼容性问题及解决方案" class="headerlink" title="前端常见的兼容性问题及解决方案"></a>前端常见的兼容性问题及解决方案</h1><p>1.IE6中父元素浮动，如果宽度需要内容撑开，里面块级元素的内容也要加浮动<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">h3</span>&gt;</span>左侧<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">h3</span>&gt;</span>右侧<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;<span class="attribute">width</span>:<span class="number">400px</span>;&#125;</div><div class="line"><span class="selector-class">.left</span>&#123;<span class="attribute">background</span>:red;<span class="attribute">float</span>:left;&#125;</div><div class="line"><span class="selector-class">.right</span>&#123;<span class="attribute">background</span>:blue;<span class="attribute">float</span>:right;&#125;</div><div class="line"><span class="selector-tag">h3</span>&#123;<span class="attribute">height</span>:<span class="number">30px</span>;<span class="attribute">float</span>:left;&#125;</div></pre></td></tr></table></figure>
+<p>2.IE6中p标签里面不要套用p标签或者h标签</p>
+<p>3.IE6下最小高度问题：当元素的高度小于19px的时候会被当作19px来处理</p>
+<ul>
+<li>解决办法：overflow:hidden<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.box&#123;height:2px;background:red;overflow:hidden&#125;</div><div class="line">&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>3.浮动的div有margin_left属性ie6会加倍,无论兼容视图还是无声明视图</p>
+<blockquote>
+<p>解决方案:<br>　方案一: IE6唯一识别属性_的方式加_display属性_display:inline;<br>　方案二:条件注释<br>&lt;!–[if lte IE 6]&gt;</p>
+<p><style><br>　　.on{ display:inline }<br></style><br>&lt;![endif]–&gt;</p>
+</blockquote>
+<p>4.png图片在IE6里面不能透明</p>
+<ul>
+<li>解决方案<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if IE ]&gt;</div><div class="line">　　　&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">　　　　　#DIVname&#123;</div><div class="line">　　　　　　　　background:none;</div><div class="line">　　　　　　　　filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src=&quot;pngtouming.png&quot;</div><div class="line">　　　　　&#125;</div><div class="line">　　　&lt;/style&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>5.渐变不兼容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#35FEA1,endColorStr=#6E9DFF); /*IE 6 7 8*/</div><div class="line">    background: -ms-linear-gradient(top, #35FEA1,  #6E9DFF);/* IE 10 */</div><div class="line">    background:-moz-linear-gradient(top, #35FEA1,  #6E9DFF); /*火狐*/</div><div class="line">    background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#35FEA1), to(#6E9DFF));/*谷歌*/</div><div class="line">    background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#35FEA1), to(#6E9DFF));/* Safari 4-5, Chrome 1-9*/</div><div class="line">    background: -webkit-linear-gradient(top, #35FEA1,  #6E9DFF);/*Safari5.1 Chrome 10+*/</div><div class="line">    background: -o-linear-gradient(top, #35FEA1,  #6E9DFF);/*Opera 11.10+*/</div></pre></td></tr></table></figure></p>
+<p> 6.display:inline-block ie6/7不支持</p>
+<ul>
+<li>解决方案<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> display:inline-block;</div><div class="line">*display:inline;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>7.默认的body没有body去掉margin情况下ie5、6、7边缘会很宽margin-top加倍,如果处于无声明状态那么所有的ie浏览器margin-top加倍</p>
+<ul>
+<li>解决方案，设置body的margin为0。</li>
+</ul>
+<p>8.min-height不兼容ie6/7，解释为超过高度就撑开，而其他版本浏览器则遮盖下面的层</p>
+<ul>
+<li>解决方案:min-height:200px; height:auto !important; height:200px; overflow:visible;</li>
+</ul>
+<p>9.position:fixed时IE5/6无法识别此属性</p>
+<ul>
+<li>解决方案<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">!--[if lte IE 6]&gt;</div><div class="line">　　　&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">　　　　　 html &#123;</div><div class="line">　　　　　　　　/*这个可以让IE6下滚动时无抖动*/</div><div class="line">　　　　　　　　background: url(about:black) no-repeat fixed</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　　　#demo_t, #demo_b, #demo_l, #demo_r &#123;</div><div class="line">　　　　　　　　position: absolute;</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　　　#demo_t, #demo_b &#123;</div><div class="line">　　　　　　　　/*这个解决body有padding时，IE6下100%不能铺满的问题*/</div><div class="line">　　　　　　　　width: expression(offsetParent.clientWidth);</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　　　/*下面三组规则用于IE6下top计算*/</div><div class="line">　　　　　　#demo_l, #demo_r &#123;</div><div class="line">　　　　　　　　top: expression(offsetParent.scrollTop + 300);</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　　　#demo_t &#123;</div><div class="line">　　　　　　　　top: expression(offsetParent.scrollTop);</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　　　#demo_b &#123;</div><div class="line">　　　　　　　　top: expression(offsetParent.scrollTop + offsetParent.clientHeight-offsetHeight);</div><div class="line">　　　　　　&#125;</div><div class="line">　　&lt;/style&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>10.父元素中的子元素大小超过父元素时父元素会被撑大</p>
+<ul>
+<li>解决方案：设置父元素overflow:hidden</li>
+</ul>
+<p>11.左浮元素margin-bottom失效 </p>
+<ul>
+<li>解决方案：设置高度或者父标签设置padding-bottom代替子标签的margin-bottom，或者再放个标签让父标签浮动，子标签设置margin- bottom</li>
+</ul>
+<p>12.IE6不支持圆角</p>
+<ul>
+<li>解决方案： IE6不支持CSS3的圆角属性，性价比最高的解决方法就是用图片圆角来替代，或者放弃IE6的圆角。 </li>
+</ul>
+<p>13.绝对定位元素的1像素间距bug </p>
+<blockquote>
+<p>当绝对定位元素的父元素高或宽为奇数时，bottom和right会产生错误,唯一的解决办法就是给父元素定义明确的高宽值。</p>
+</blockquote>
+<p>14.IE6调整窗口大小的Bug </p>
+<blockquote>
+<p>当把body居中放置，改变IE浏览器大小的时候，任何在body里面的相对定位元素都会固定不动了。解决办法：给body定义position:relative;就行了。</p>
+</blockquote>
+<p>15.边框点线(IE6)不支持dotted（只是一个像素的时候才出现问题）</p>
+<ul>
+<li>解决办法：切图片做背景</li>
+</ul>
+<p>16.H5新标签低版本的浏览器不支持<br>    新的语义标签能够更方便的让搜索引擎爬取网站关键内容，以便SEO优化，然而低版本的ie浏览器并不支持这种新的标签：</p>
+<ul>
+<li>解决办法：<blockquote>
+<p>1.通过<!--[if lt IE 9]>···<![endif]-->条件判断如果是低版本的浏览器使用js创建相应的元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if lt IE9]&gt; </span></div><div class="line">&lt;script&gt; </div><div class="line">   (function() &#123;</div><div class="line">     if (! </div><div class="line">     /*@cc_on!@*/</div><div class="line">     0) return;</div><div class="line">     var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', ');</div><div class="line">     var i= e.length;</div><div class="line">     while (i--)&#123;</div><div class="line">         document.createElement(e[i])</div><div class="line">     &#125; </div><div class="line">&#125;)() </div><div class="line">&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>2.使用第三方框架，如htmlshim（原理跟上述条件式判断相同）<br>但是不管使用以上哪种方法,都要初始化新标签的CSS.因为HTML5在默认情况下表现为内联元素，对这些元素进行布局我们需要利用CSS手工把它们转为块状元素方便布局</p>
+</blockquote>
+<p>17.ul标签内外边距问题</p>
+<blockquote>
+<p>ul标签在IE6\IE7中，有个默认的外边距，但是在IE8以上及其他浏览器中有个默认的内边距,解决的方案是清除ul的内外边距都为0（margin:0;pandding:0;）。</p>
+</blockquote>
+<p>18.CSS的hack问题</p>
+<ul>
+<li>原理<blockquote>
+<p>由于不同厂商的流览器或某浏览器的不同版本（如IE6-IE11,Firefox/Safari/Opera/Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。这时，我们为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack!</p>
+</blockquote>
+</li>
+<li>hack分类<blockquote>
+<p>CSS Hack大致有3种表现形式，CSS属性前缀法、选择器前缀法和IE条件注释法（即HTML头部引用if IE）Hack，实际项目中CSS Hack大部分是针对IE浏览器不同版本之间的表现差异而引入的。<br>属性前缀法(即类内部Hack)：例如 IE6能识别下划线”<em>“和星号” <em> “，IE7能识别星号” </em> “，但不能识别下划线”</em>“，IE6~IE10都认识”\9”，但firefox前述三个都不能认识。<br>选择器前缀法(即选择器Hack)：例如 IE6能识别<em>html .class{}，IE7能识别</em>+html .class{}或者*:first-child+html .class{}。<br>IE条件注释法(即HTML条件注释Hack)：针对所有IE(注：IE10+已经不再支持条件注释)： <!--[if IE]>IE浏览器显示的内容 <![endif]-->，针对IE6及以下版本： <!--[if lt IE 6]>只在IE6-显示的内容 <![endif]-->。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效。<br>CSS hack书写顺序，一般是将适用范围广、被识别能力强的CSS定义在前面。</p>
+</blockquote>
+</li>
+<li>CSS hack方式一：条件注释法<blockquote>
+<p>HTML条件注释判断IE<!--[if IE]>这段文字只在ie9以下的浏览器显示<!--[if lt IE 9]>--><br>只在IE8上不生效<!--[if ! IE 8]>这段文字在非IE8浏览器显示<![endif]--><br>非IE浏览器生效<!--[if !IE]>这段文字只在非IE浏览器显示<![endif]--></p>
+</blockquote>
+</li>
+<li>CSS hack方式二：类内属性前缀法<br>属性前缀法是在CSS样式属性名前加上一些只有特定浏览器才能识别的hack前缀，以达到预期的页面展现效果。<br>IE浏览器各版本 CSS hack 对照表</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>hack</th>
+<th>写法</th>
+<th>实例</th>
+<th>IE6(S)</th>
+<th>IE6(Q)</th>
+<th>IE7(S)</th>
+<th>IE7(Q)</th>
+<th>IE8(S)</th>
+<th>IE8(Q)</th>
+<th>IE9(S)</th>
+<th>IE9(Q)</th>
+<th>IE10(S)</th>
+<th>IE10(Q)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>*color</td>
+<td>青色</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>+</td>
+<td>+color</td>
+<td>绿色</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-color</td>
+<td>黄色</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>_</td>
+<td>_color</td>
+<td>蓝色</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>#</td>
+<td>#color</td>
+<td>紫色</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>color:red\0</td>
+<td>红色</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>\9\0</td>
+<td>color:red\9\0</td>
+<td>粉色</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>!important</td>
+<td>color:blue !important;color:green;</td>
+<td>棕色</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p>说明：在标准模式中</p>
+<ul>
+<li>“-″减号是IE6专有的hack</li>
+<li>“\9″ IE6/IE7/IE8/IE9/IE10都生效</li>
+<li>“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack</li>
+<li>“\9\0″ 只对IE9/IE10生效，是IE9/10的hack</li>
+</ul>
+<ul>
+<li>CSS hack方式三：选择器前缀法<blockquote>
+<p>选择器前缀法是针对一些页面表现不一致或者需要特殊对待的浏览器，在CSS选择器前加上一些只有某些特定浏览器才能识别的前缀进行hack。<br>目前最常见的是<br><em>html </em>前缀只对IE6生效<br><em>+html </em>+前缀只对IE7生效<br>@media screen\9{…}只对IE6/7生效<br>@media \0screen {body { background: red; }}只对IE8有效<br>@media \0screen\,screen\9{body { background: blue; }}只对IE6/7/8有效<br>@media screen\0 {body { background: green; }} 只对IE8/9/10有效<br>@media screen and (min-width:0\0) {body { background: gray; }} 只对IE9/10有效<br>@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {body { background: orange; }} 只对IE10有效</p>
+</blockquote>
+</li>
+<li>CSS HACK TABLE<br><img src="./images/hack.png" alt="CSS HACK TABLE"></li>
+<li>CSS HACK的利与弊<blockquote>
+<p>一般情况下，我们尽量避免使用CSS hack，但是有些情况为了顾及用户体验实现向下兼容，不得已才使用hack。比如由于IE8及以下版本不支持CSS3,而我们的项目页面使用了大量CSS3新属性在IE9/Firefox/Chrome下正常渲染，这种情况下如果不使用css3pie或htc或条件注释等方法时,可能就得让IE8-的专属hack出马了。使用hack虽然对页面表现的一致性有好处，但过多的滥用会造成html文档混乱不堪，增加管理和维护的负担。相信只要大家一起努力，少用、慎用hack，未来一定会促使浏览器厂商的标准越来越趋于统一，顺利过渡到标准浏览器的主流时代。抛弃那些陈旧的IE hack，必将减轻我们编码的复杂度，少做无用功。</p>
+</blockquote>
+</li>
+</ul>
+<p>19.IE6下图片的下方有空隙</p>
+<ul>
+<li>解决方法：给img设置display:block;</li>
+</ul>
+<p>20.在使用绝对定位或者相对定位后，IE中设置z-index失效</p>
+<ul>
+<li>原因是因为其元素依赖于父元素的z-index，但是父元素默认为0， 子高父低，所以不会改变显示的顺序</li>
+</ul>
+<p>21.IE6下无法设置1px的行高，原因是由其默认行高引起的</p>
+<ul>
+<li>解决方案：为其设置overflow:hidden;或者line-height:1px;</li>
+</ul>
+<p>22.一些JavaScript的兼容问题</p>
+<blockquote>
+<p>a、标准的事件绑定方法函数为addEventListener，但IE下是attachEvent；<br>b、事件的捕获方式不一致，标准浏览器是由外至内，而IE是由内到外，但是最后的结果是将IE的标准定为标准<br>c、我们常说的事件处理时的event属性，在标准浏览器其是传入的，IE下由window.event获取的。并且获取目标元素的方法也不同，标准浏览器是event.target，而IE下是event.srcElement<br>d、在低版本的IE中获取的日期处理函数的值不是与1900的差值，但是在高版本的IE中和标准浏览器保持了一致，获取的值也是与1900的差值。<br>比如：var year= new Date().getYear();<br>e、ajax的实现方式不同，这个我所理解的是获取XMLHttpRequest的不同，IE下是activeXObject<br>f、IE中不能操作tr的innerHtml<br>g、获得DOM节点的父节点、子节点的方式不同<br>其他浏览器：parentNode  parentNode.childNodes<br>IE：parentElement parentElement.children</p>
+</blockquote>
+<p>23.window.location.href问题</p>
+<blockquote>
+<p>说明:IE或者Firefox2.0.x下,可以使用window.location或window.location.href;<br>Firefox1.5.x下,只能使用window.location. </p>
+<ul>
+<li>解决方法：使用window.location来代替window.location.href.</li>
+</ul>
+</blockquote>
+<p>24.相同的文字大小在不同浏览器中显示的大小不一致</p>
+<blockquote>
+<p>说明：同样是font-size:14px的宋体文字，在不同浏览器下占的空间是不一样的，ie下实际占高16px，下留白3px，ff下实际占高17px，上留白1px，下留白3px，opera下就更不一样了。</p>
+<ul>
+<li>解决方案：给文字设置line-height属性，确保文字占据的高度保持一致。</li>
+</ul>
+</blockquote>
+<p>25.IE6中，上下两个div，上面设置了背景，下面一个没有背景，但在页面中发现下面的div也有了背景，怎么解决这个问题？</p>
+<ul>
+<li>解决方案：设置zoom:1</li>
+</ul>
+<p>26.img图片底部留白现象。</p>
+<ul>
+<li>解决方案：给img设置display:block</li>
+</ul>
+<p>27.IE6环境中，如果元素设置了float属性，且没有定义宽度，内部块元素如果定义了height或者zoom:1属性，则这个内部元素就会占满一整行，即使给了宽度？</p>
+<ul>
+<li>解决方案：给float元素设置宽度</li>
+</ul>
+<p>28.绝对定位的div下包含相对定位的div，如果给内层相对定位的div高度height具体值，内层相对层将具有100%的width值，外层绝对层将被撑大。</p>
+<ul>
+<li>解决方案：给内部相对定位的元素设置floa属性</li>
+</ul>
+<p>29.FF低版本浏览器中，width:100%不会查找到拥有真实宽度的父元素，而是在拥有浮动属性的上级元素就停止向上查找了</p>
+<ul>
+<li>解决方案：给有浮动的元素添加属性width:100%</li>
+</ul>
+<p>30.li标签的边距变大</p>
+<ul>
+<li>解决方案：给ul设置(<code>*</code>号必不可少)<code>*display:inline-block</code></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/前端常见的兼容性问题及解决方案/" data-id="cj4zksgss000cykf4qcgqm6s5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/11/前端常用插件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/11/Node.js知识点总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/11/前端一些常见面试问题/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常用插件/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常见的兼容性问题及解决方案/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/Node.js知识点总结/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/jQuery面试题/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

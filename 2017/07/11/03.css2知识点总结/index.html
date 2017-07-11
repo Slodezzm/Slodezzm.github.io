@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#CSS基础知识点 CSS 语法由三部分构成：选择器、属性和值 ##引入css样式  css的三种引入方式 行内的样式，内联样式，权重无穷大 格式：style=“k：v；” head &amp;gt; style模式，内部样式 格式，键值对，k：v； link模式，外部样式 rel=“stylesheet”， 优先级： ！important&amp;gt;行内样式&amp;gt;id选择器&amp;gt;类选择器&amp;gt;标签选择">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/07/11/03.css2知识点总结/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#CSS基础知识点 CSS 语法由三部分构成：选择器、属性和值 ##引入css样式  css的三种引入方式 行内的样式，内联样式，权重无穷大 格式：style=“k：v；” head &amp;gt; style模式，内部样式 格式，键值对，k：v； link模式，外部样式 rel=“stylesheet”， 优先级： ！important&amp;gt;行内样式&amp;gt;id选择器&amp;gt;类选择器&amp;gt;标签选择">
+<meta property="og:updated_time" content="2017-07-08T11:08:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="#CSS基础知识点 CSS 语法由三部分构成：选择器、属性和值 ##引入css样式  css的三种引入方式 行内的样式，内联样式，权重无穷大 格式：style=“k：v；” head &amp;gt; style模式，内部样式 格式，键值对，k：v； link模式，外部样式 rel=“stylesheet”， 优先级： ！important&amp;gt;行内样式&amp;gt;id选择器&amp;gt;类选择器&amp;gt;标签选择">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-03.css2知识点总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/03.css2知识点总结/" class="article-date">
+  <time datetime="2017-07-11T12:49:59.256Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#CSS基础知识点 CSS 语法由三部分构成：选择器、属性和值</p>
+<p>##引入css样式</p>
+<ol>
+<li>css的三种引入方式<ol>
+<li>行内的样式，内联样式，权重无穷大<br> 格式：style=“k：v；”</li>
+<li>head &gt; style模式，内部样式<br> 格式，键值对，k：v；</li>
+<li>link模式，外部样式<br> rel=“stylesheet”，</li>
+<li>优先级： ！important&gt;行内样式&gt;id选择器&gt;类选择器&gt;标签选择器&gt;通配符&gt;继承</li>
+</ol>
+</li>
+<li>注释：被注释的内容 不起作用<br> html   <!-- 需要被注释的内容 --><br> css  /<em> 需要被注释的内容 </em>/<br> js //和/**/<br> 快捷键     control+ /</li>
+<li>w3c的三层分离标准  html 结构；css 样式  js 行为</li>
+<li><p>常用基本CSS样式：</p>
+<ol>
+<li>width，宽度：块元素和宽度可以继承自父元素；行内块和块元素的宽度都不从父元素继承，</li>
+<li>height，高度；1.行内块的高度作用于行高，由行高决定；2.行内元素的高度作用于字体，由字体高度决定；3.块元素的高度由标准文档流的内容（内容或者盒子）撑高</li>
+<li><p>文本相关属性：<br> color，规定文本颜色，三种表示方法</p>
+<pre><code>1.关键字，red，yellow...
+2. rgb（red，green，blue）模式，（0,0,0）黑色，（255,255,255）白色；rgb（red百分比%，green百分比%，blue百分比%）模式； rgba：rgb+透明度，透明度的值是0——1之间的值
+
+3.十六进制，#red十六进制 green十六进制  blue十六进制；如#ffffff，表示白色
+</code></pre><p> font</p>
+<pre><code>font-style,字体风格（italic、normal。。）默认normal
+font-weight，字体粗细，bold，normal ; 100-900之间的整百的值   900就是加粗
+font-size，字体大小，像素，small。。。；% 基于父类字体大小属性的百分比，em
+font-family，字体系列，不要用中文表示，”Microsoft yahei“，备选字体用逗号隔开，且多个单词的字体系列用双引号包裹
+font: font-style  font-weight   font-size/lineheight   font-family;
+</code></pre><p> text相关</p>
+<pre><code>text-decoration ，文本装饰，如下划线，underline，none，overline等
+text-indent，首行缩进，2em或者20px；em表示一个文本的距离
+text-align，内容在容器中水平居中：
+    left，center，right，
+    文本、、行内元素（a、span）、行内块元素（img、input。。。）都可以认为具有文本一样的水平居中特性，都可以用text-align：center;使他们在父容器中水平居中对齐，
+容器元素，块级元素居中：margin：0 auto；p标签是块级元素
+</code></pre><p> line-height：px、% 、2em、直接数字，相当于当前行内文本文字的倍数，行高可以和font属性合写：font: style weight  size/lineheight family;</p>
+<pre><code>行高由上间距，文字的高度和下间距组成，
+块级元素和行内块元素的高度作用在行高上，
+行内元素的高度只直接作用在问字上，只有文字大小决定，与行高无关
+注意
+    1.在设置行高的时候，如果单位是em或者%，那么计算行高会先根据父亲的字体大小计算出来结果以后再把这个结果继承给子元素。
+    2.在设置行高的时候，如果没有单位，那这个值认为是缩放因子，那么计算行高会把这个数值会先继承给子元素，然后子元素拿到这个数值再根据自己的字体大小计算出行高。
+</code></pre></li>
+<li>背景<br> background属性<br> background-color，设置背景颜色，<br> background-image：URL（图片地址）；<pre><code>图片比容器要小很多，默认水平和垂直方向有一个平铺
+</code></pre> background-repeat：repeat-x，repeat-y,no-repeat 背景图片是否重复，如果图片的尺寸小于容器的尺寸，默认是重复的，<pre><code>no-repeat 不平铺
+repeat-x    repeat-y    repeat
+</code></pre> background-position：x y; 背景图片的位置，x，y可以是坐标值，也可以是英文单词<br> x：left、center、right ；y：top、center、bottom<pre><code>x轴   y轴    10px  20px
+水平方向  left center right
+垂直方向  top  center bottom
+</code></pre> 背景属性连写：background：color image repeat position   ；cirp<br> background-attachment：fixed；背景是否被固定，使背景图不随着当前盒子里的的其余内容而滚动<br> 连写形式：     backgroud： background-color  background-image  background-repeat   backgournd-position background-attachment<br> background可以应用到盒子的padding，边框（可以给边框设置transparent属性来观察），内容区</li>
+</ol>
+</li>
+</ol>
+<h3 id="选择器-—————"><a href="#选择器-—————" class="headerlink" title="选择器 —————"></a>选择器 —————</h3><ol>
+<li><p>基本选择器，</p>
+<ol>
+<li>标签选择器，所有的标签都能做标签选择器，且能够找到页面上所有的该类标签<br> p {color:red} 页面上所有的p标签字体颜色都会成红色</li>
+<li>类选择器，能够找到页面上属于该class的标签<br> 每一个类要尽可能小，有“公共”的概念，能够让更多的标签使用。<br> 每个标签都可以属于多个类，一个类可以作用于任何的标签<br> .className {};     .one {color:red};  页面上所有类名为one的标签字体颜色都是红色。<br> 类名中只能包括字母，数字，下划线，中连接线，且不能以数字开头，且不能以中连接线+数字开头</li>
+<li><p>id选择器，因为id的唯一性，所以能够找到唯一对应的id，id名不能和标签名相同<br> id名中只能包括字母，数字，下划线，中连接线，且不能以数字开头，且不能以中连接线+数字开头；最好是有意义<br>————– 类和id 的区别 —————————<br> 类相当于   人名    可以给多个标签设置相同的类名，  我们可以给一个标签设置多个类名    class= “one   two”；<br> id相当于是人的身份证一样   一个标签最好是一个id名， 一个id名只能设置一个标签，id其实不是给css用的， 是给js用的</p>
+</li>
+<li><p>后代选择器， 用空格隔开，比如.div p表示的是所有包裹在div种的后代p，</p>
+<pre><code>只要是嵌套在这个标签里面的标签，都是这标签的后代
+</code></pre></li>
+<li>交集选择器，比如div.aab，表示既是div又是类.aab的那个div标签，注意中间不能有空格，<pre><code>有标签选择器，和类选择器一起构成交集   ，标签选择器要写在前面  
+</code></pre></li>
+<li>并集选择器，用逗号表示，例如div，p表示页面上所有的div和p都被选中</li>
+<li>通配符*，表示选中了页面上所有的元素（标签）；效率非常低，实际开发中不推荐使用。<br>元素的查找顺序，从右往左找</li>
+</ol>
+</li>
+<li><p>css3常用选择器</p>
+<pre><code>儿子选择器，div&gt;p 表示选中div种的所有亲儿子p，不能是孙子辈
+序选择器：ul  li：first-child{   }；表示选中ul中的第一个li标签
+下一个兄弟选择器：+；比如h1+p表示选中的是所有h1后面的第一个标签为p的兄弟
+</code></pre><h3 id="样式的层叠和继承"><a href="#样式的层叠和继承" class="headerlink" title="样式的层叠和继承"></a>样式的层叠和继承</h3><ol>
+<li>css的继承性；关于文字样式的，都能够继承； 所有关于盒子的、定位的、布局的属性都不能继承。<br>  可以继承的属性<pre><code>color
+font开头的
+text开头的
+line开头的
+</code></pre>  特例：<pre><code>a标签的颜色不能继承，因为浏览器默认设置颜色
+    1.a标签的颜色不能从祖父辈元素那继承过来，如果要改变a的颜色，color属性只能直接作用在a标签上
+h系列标签的字体大小也不能继承，浏览器默认设置过
+</code></pre></li>
+<li><p>层叠性；就是css处理冲突的能力。当不同选择器，对一个标签的同一个样式，有不同的值，听谁的？这就是冲突。 所有的权重计算，没有任何兼容问题！</p>
+<p>  相同的属性样式用不同的选择器作用在同一个标签上，样式属性就冲突了，那么就肯定有一个样式层叠另外一个样式<br>  优先级从低到高</p>
+<pre><code>浏览器默认样式
+继承
+通配符
+标签选择器
+类选择器
+id选择器
+行内样式
+!important 不能继承的
+</code></pre><p>  权重</p>
+<pre><code>优先级算法: (0,0,0,0)
+    1.!important   2.id选择器的个数   3.类选择器的个数   4.标签选择器的个数
+</code></pre><p>  元素权重的比较原则：<br>  选择器从右往左开始判断是否被选中</p>
+<pre><code>判断该元素是否被选中，如果被选中了，数权重，（权重的计算方法：id的数量，类的数量，标签的数量）。如果权重一样，则在样式表里谁写在后面听谁的。
+判断该元素是否被选中了，如果没有被选中，比较谁描述的最近（就近原则）；如果描述的是同样的近，则开始比较权重；如果权重再一样，则在样式表里谁写在后面听谁的。
+可以提升被选中的任何元素的某一个属性的权重为无穷大：！important，格式为k：v ！important；
+但是如果某个元素未被选中，样式通过继承的，则！important不能提升该元素任何属性的权重。
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<h3 id="盒模型，盒子就是页面上的一块区域，包括margin-border-padding-content"><a href="#盒模型，盒子就是页面上的一块区域，包括margin-border-padding-content" class="headerlink" title="盒模型，盒子就是页面上的一块区域，包括margin,border,padding,content"></a>盒模型，盒子就是页面上的一块区域，包括margin,border,padding,content</h3><ol>
+<li>盒模型概念理解:每一个标签都可以看做一个个盒子<br> 所有的标签都是盒子。无论是div、span、a都是盒子。图片、表单元素一律看做文本。————–在页面上万物皆盒子</li>
+<li>盒模型的构成：margin + border + padding + content<br> 1.盒子外边距：margin，margin-top、right、bottom、left，上右下左<pre><code>margin的合并: 上下排列的相邻连个盒子外边距会有合并现象，以大者为准
+margin的塌陷: 一个大盒子包着小盒子，如果大盒子没有边框，则给小盒子设置margin时大盒子会随着小盒子一起下移，margin塌陷
+    解决办法: 1.给大盒子加border
+             2.给大盒子设置padding
+             3.小盒子浮动
+             4.增加overflow：hide;属性 --不推荐
+</code></pre><ol>
+<li>盒子边框：border，共有12种写法<br> 按四个方向分：border-top、right、bottom、left，上右下左<pre><code>每个方向上的border包含3个属性，width，style，color
+</code></pre> 按属性分:width（边框宽）,style（线型）,color（边框颜色）,三个属性<pre><code>每个属性代表上、右、下、左 四个方向
+</code></pre> 连写模式：border：1px，solid，red；其中颜色默认为黑色，可以 省略，如果没有边框则border：none；或者边框的宽度设置0、或者设置border-style：none；<br> border-top<pre><code>border-top-style
+    实现 solid  虚线 dashed
+border-top-width
+    10px
+border-top-color
+    red
+连写 border-top:  1px  solid  red;
+</code></pre> border-right …<br> border-bottom …<br> border-left …<br> 统一给四个边框设置border<pre><code>border-width border-style border-color
+连写  border：1px  dashed  green;
+特殊案例： 表格的边框   table，th，td { border-collapse:collapse }   
+</code></pre> tip:要想产生边框，必须要设置border-style和border-size；<br> 关于padding和margin几个实用的冷门技巧：<pre><code>1. 当使用%百分比表示padding任意方向的大小时，都是以盒子父亲的宽度为基准；---可以理解为只有父盒子的宽度可以继承，而父盒子的高度不可以继承。
+2. 当使用%百分比表示margin任意方向的大小时，都是以盒子父亲的宽度width为基准
+3. 当使用em表示padding任意方向的大小时，都是以盒子中内容字体大小为基准；---看到em就和字体或者行高有关
+4. 当使用em表示margin任意方向的大小时，都是以盒子中内容字体大小为基准；---看到em就和字体或者行高有关
+</code></pre></li>
+<li>盒子内边距：padding，padding-top、right、bottom、left<br> 计算盒子的大小<pre><code>盒子真实占用宽 =  border-left-width  + padding-left +width  + pdding-right  +border-right-width
+盒子真实占有高 = border-top-width + padding-top  +height + padding-bottom + border-bottom-width
+页面上布局，如果给一个盒子留的位置是固定的，如果你给这个盒子加了边框或者padding，那么你就要相应的减小内容。 总之就是要保证盒子的大小不变，从而不影响布局，不影响其他的元素 。
+</code></pre> padding特殊：<pre><code>一般的情况下，块级元素只设置padding会改变盒子的大小 ----小盒子的宽是由大盒子继承过来的，设置小盒子的左右padding，不会改变小盒子的大小。
+</code></pre></li>
+<li>部分元素默认由自带的margin和padding<br> body  上下左右都有8个像素的margin<br> p标签带有上下   当前字体大小的   margin<br> h1-h6  标签 带上下margin<br> ul标签  上下的当前字体的marign  以及  40个像素的左padding<br> 清除 ：     *  { margin：0   ；padding ：0}<br>5.宽高 ————-<br> css属性- width：盒子内容的宽度<br> css属性- height：盒子内容的高度<br> 盒子真实占有宽度：width+左右padding+左右boder<br> 盒子真实占有高度：height+上下padding+上下border<h3 id="标准文档流，html文档就是从上到下的流"><a href="#标准文档流，html文档就是从上到下的流" class="headerlink" title="标准文档流，html文档就是从上到下的流"></a>标准文档流，html文档就是从上到下的流</h3></li>
+</ol>
+</li>
+<li>文档流的微观表现<br> 1.空白折叠现象，图片元素是文本级，也有空白折叠现象<ol>
+<li>高矮不齐，基线对齐；</li>
+<li>自动换行，一行显示不完，会自动换行</li>
+</ol>
+</li>
+<li>标签元素的分类 —-以下分类,其实意义不大,仅供参考<ol>
+<li>html中标签元素的分类：<br> 文本级：p ，span，img，a，bius。。。<br> 容器级：可以存放其他任何标签，div，h系列，li，dt，dd…..</li>
+<li>css中标签的元素分类：<br> 行内元素：除了p之外的文本级标签都是行内元素，不可以设置宽高，多个行内元素可以在同一行；宽高和文本内容一致<br> 块级元素：独占一行，可以设置宽高，如果不设置宽高默认为父亲的100%; 容器级标签和p都是块级元素<br> 行内元素和块级元素可以通过属性display：inline或者block；来设置</li>
+<li>元素的显示方式 display可以改变元素的分类—<br> 修改display属性的值，可以改变标签的性质，脱离标准流的元素不行<pre><code>行内元素display：inline  ---&gt; 一行可以显示多个,无法设置宽高
+块元素 display：block       ---&gt;默认独占一行,可以设置宽高 ,一行上只能显示一个
+行内块元素display：inline-block ---&gt; 可以设置宽高，一行内显示多个
+元素的显示方式是可以相互转换的 display: inline-block
+行内元素  默认
+    a span b u i s  stong ins del em
+块元素 默认
+    div p  h1-h6  ul  li  ol dl  dt  dd 
+行内块 默认
+    input  img
+</code></pre>###标准流等级森严，行内元素和块级元素很多限制；能并排的行内元素不能设置宽高，所以只能脱离标准流，</li>
+</ol>
+</li>
+<li><p>脱标的常用三种方式：脱标之后没有行内和块级元素的等级了，</p>
+<ol>
+<li><p>float:left; float:right; 浮动的特点；</p>
+<ol>
+<li>浮动的元素脱离标准流，没有行内和块级之分</li>
+<li>浮动的元素互相贴靠，前提：在同一个结构下;比如上下两个浮动的元素中间隔着标准流，浮动不会越过标准流，去找另一个浮动的元素 —-&gt; 浮动的元素找浮动的元素，不浮动就找不浮动</li>
+<li>浮动的元素有字围效果，标准流中的 文字不会被浮动起来的 元素遮挡住；</li>
+<li>收缩:一个浮动的元素，如果没有设置width，那么将自动收缩为文字的宽度;特点和行内块一样;可以设置宽高,同时一行上可以显示多个</li>
+<li>清除浮动的方法 核心:clear:both —-&gt; 两个浮动的元素上下并列时,后面的元素会去贴靠前面的元素，有时候不需要这个特性<ol>
+<li>给处在标准流中的父元素设置高度：给父盒子加高度，缺点是不能适应页面的快速变化</li>
+<li>添加属性:clear:both, 表示自己内部的元素不受其他盒子的影响，缺点是margin失效了</li>
+<li>额外标签法，给这个额外的标签设置clear：both ;相当于在两部分浮动元素中间建一个墙，隔开两部分浮动，让后面的浮动元素，不去追前面的浮动元素。<pre><code>内部标签法：父亲有高度了 ----内墙法:给前面的浮动元素建立内墙
+外部标签法，父亲还是没有高度 ---在前后两个浮动的元素中间建墙
+</code></pre></li>
+<li>overflow:hedden; 在父元素中使用overflow:hidden来清除浮动。弊端：如果使用负值定位，会被隐藏 /<em>这个现象，不能解释，就是浏览器的小偏方</em>/</li>
+<li>使用伪元素来清除浮动</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>绝对定位</p>
+</li>
+<li>固定定位</li>
+</ol>
+</li>
+</ol>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><ol>
+<li>定位的属性值：x方向，left表示从左往右多少像素，right，表示从右往左有多少像素; y方向：top表示从上往下有多少像素；bottom表示从下往上有多少像素;当给定像素是负数时候，移动方向和正值相反</li>
+<li><p>定位的类型:</p>
+<ol>
+<li><p>static 静态定位，盒子默认static,元素不脱标</p>
+</li>
+<li><p>realatIve，相对定位 —-特点:不脱标，老家留坑，形影分离<br> 格式:position:realatIve;left100px:top200px;<br> 作用:1.微调元素，2.作为绝对定位的参考，子绝父相</p>
+</li>
+<li>absolute，绝对定位, —-绝对定位特点：脱离标准流<br> 绝对定位的元素，直接从父元素 border 作为定位值的起始参考<br> 如果小盒子在大盒子中要定位并且水平居中：left：50%；margin-left：负的宽度（width）的一半，同样垂直居中同理<br> 绝对定位的元素参考：<br> 1.如果元素没有父元素，2.如果绝对定位的元素有父元素，但是父元素没有定位，都”找干爹“<pre><code>参考点：如果用top描述，定位参考点是页面的左上角，不是浏览器的左上角
+如果是bottom描述，定位参考点是当前html文档的首屏窗口对应的左下角
+</code></pre><ol>
+<li>如果绝对定位的元素有父元素，而且父元素有定位（非static），那么这个绝对定位的元素偏移是以自己的父元素为基础<br> 一个绝对定位的元素，如果父辈元素中出现了定位了（可以是相对，绝对，固定）的元素，那么将以父辈这个元素，为参考，以最近的父辈元素为准</li>
+</ol>
+</li>
+<li><p>fixed，固定定位，固定定位脱离标准流<br> 固定定位，相对浏览器窗口定位，无论页面如何滚动，盒子显示的位置不变</p>
+<pre><code>trbl永远是相对于浏览器的边框来的
+</code></pre><p>5.和定位元素相关的属性:z-index，表示层级，只能设置在非static定位元素上，<br> 1.只有定位了的元素才有z-index<br> 2.如果大家都没有z-index值，或者z-index值一样，那么谁写在html后面，谁在上面能压住别人，定位了的元素永远能够压住没有定位的元素<br> 3.从父现象:父元素的z-index值小，儿子(子元素)再牛逼都没有用</p>
+<h3 id="行高-—-行高包括-顶线-中线-基线-底线"><a href="#行高-—-行高包括-顶线-中线-基线-底线" class="headerlink" title="行高 — 行高包括:顶线  中线  基线  底线"></a>行高 — 行高包括:顶线  中线  基线  底线</h3></li>
+</ol>
+</li>
+<li>w3c中定义行高：两行文本基线之间的距离</li>
+<li>我们自己理解的行高—两行文字之间的距离; 距离和w3c中规定的行高是一样的。</li>
+<li>行高用于居中:当行高等于容器的高度height,容器中文本就会在容器中垂直方向居中<h3 id="css精灵技术"><a href="#css精灵技术" class="headerlink" title="css精灵技术"></a>css精灵技术</h3></li>
+<li>“css精灵”，英语css sprite，所以也叫做“css雪碧”技术。是一种CSS图像合并技术，该方法是将小图标和背景图像合并到一张图片上，然后利用css的背景定位来显示需要显示的图片部分。</li>
+<li>css精灵有什么优点，就是减少了http请求。比如4张小图片，原本需要4个http请求。但是用了css精灵，小图片变为了一张图，http请求只有1个了。</li>
+<li>精灵图的使用:<ol>
+<li>盒子大小一定要和需要显示的小背景图大小一样</li>
+<li>background-position：-x -y</li>
+<li>制作精灵图，切片导出，用魔法棒把背景去掉，再倒入新的图片中<h3 id="超链接的美化，a标签，爱恨准则"><a href="#超链接的美化，a标签，爱恨准则" class="headerlink" title="超链接的美化，a标签，爱恨准则"></a>超链接的美化，a标签，爱恨准则</h3></li>
+</ol>
+</li>
+<li>去掉下划线：text-decoration：none；</li>
+<li>所有的a不继承text、font这些东西。因为a自己有一个伪类的权重;伪类，love，hate，</li>
+<li>伪类样式必须按照lvha顺序写，—–&gt; a标签中，描述盒子； 伪类中描述文字的样式、背景。使用顺序： lv  ha，买了个lv，hahaha<pre><code>:link，表示，用户没有点击过这个链接的样式
+:visited，表示， 用户访问过了这个链接的样式
+:hover，表示， 用户鼠标悬停的时候链接的样式
+:actived，表示， 用户用鼠标点击这个链接，但是不松手，此刻的样式
+实际使用中，：link，：viseted，：actived，都包含在对a标签的描述中，只写：hover伪类
+</code></pre></li>
+</ol>
+<h3 id="零散的—-知识点："><a href="#零散的—-知识点：" class="headerlink" title="零散的—-知识点："></a>零散的—-知识点：</h3><ol>
+<li>定位元素如果同时设置在x方向left和right那么以left为准，right不起作用，在y方向上同时设置top，bottom时以top为准</li>
+<li>盒子属性里、文本属性等属性里能设置负值的是margin，和z-index，text-indent</li>
+<li>给父盒子设置overflow：hidden属性后，原先溢出后横跨在父盒子border上的内容也会被隐藏，也就是只能显示父盒子border内的内容</li>
+<li>背景应用于由内容、padding、边框组成的区域，边框也可以被背景渲染。</li>
+<li>css样式初始化<ol>
+<li>清除标签的margin和padding:html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{margin:0;padding:0}</li>
+<li>清除img的边框img { border: 0};</li>
+<li>清除li标签之前的小点ul{list-style: none;}</li>
+<li>给页面设置一个统一的字体大小和颜色，还要设置body的背景颜色。body {font-size: 12px;color: #434343;font-family: “宋体”;background-color:“#ffffff”}</li>
+<li>清除浮动<br> .clearfix:after {content: “”;height: 0;line-height: 0;display: block;visibility: hidden;clear: both;};.clearfix {_zoom: 1;//兼容ie6}</li>
+<li>a标签设置字体颜色，去掉下划线，以及a:hover<br> a {color: #434343;text-decoration: none;}<br> a:hover {color: green;}</li>
+<li>设置浮动：<br> .fl {float: left;}<br> .fr {float: right;}</li>
+</ol>
+</li>
+<li>浏览器默认的字体大小为16px；默认行高18px</li>
+<li>浮动和绝对定位和固定定位的盒子，脱离标准流都不会再继承父亲的宽度,需要手动设置宽高;</li>
+<li>元素的嵌套<ol>
+<li>a标签可以嵌套所有的元素 —display:block;</li>
+<li>行内元素只能包含行内元素</li>
+<li>块级元素可以包含所有的行内元素和部分块级元素。</li>
+<li>p标签，h标签都不能包含其他块级元素; p标签里不可以嵌套div</li>
+</ol>
+</li>
+<li>元素的隐藏<br> overflow:hidden//将超出的部分裁剪掉<br> visibility: hidden//可以将元素隐藏，但是在页面上还保留着原来的位置。（停薪留职）<br> display: none;//可以将元素隐藏，并且在页面不占据位置。</li>
+<li>overflow:溢出<pre><code>hidden：会将超出容器的部分隐藏起来
+scroll：给容器加上滚动条
+auto：根据具体情况判断容器是否要加上滚动条
+visible，可见的，默认
+</code></pre></li>
+<li>vertical—align： —-在行内块元素在一行时经常使用这个属性；<ol>
+<li>如果文本与图片在同一行中，那么将来文字与图片的默认对齐方式是文字的基线对齐图片的底线。文字的基线对齐行内块的底部。行内块元素之间bottom对齐<br>top，顶线对齐<br>middle，中线对齐<br>bottom，底线对齐<br>baseline基线对齐，默认</li>
+</ol>
+</li>
+<li>浏览器默认样式：<br>1)body标签默认带有margin: 8px的属性<br>1)body标签默认带有margin: 8px的属性<br>2) h标签也默认带有margin-top和margin-bottom<br> 4)ul默认带有上下的margin以及左边的padding</li>
+<li>img input是行内块元素，当和行内元素在同一行时候，基线对齐。且行内块元素不可以转化为行内元素</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/03.css2知识点总结/" data-id="cj4zksgrp0001ykf4ytlzz52h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/11/17.vue框架/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/11/02.html5知识点总结&面试题.1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/11/前端一些常见面试问题/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常用插件/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常见的兼容性问题及解决方案/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/Node.js知识点总结/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/jQuery面试题/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

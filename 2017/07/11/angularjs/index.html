@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="angularjs1.angular在mvvm中的具体划分1234567View：它专注于界面的显示和渲染，在angular中则是包含一堆声明式Directive的视图模板。ViewModel：它是View和Model的粘合体，负责View和Model的交互和协作，它负责给View提供显示的数据，以及提供了View中Command事件操作Model的途径；在angular中$scope对象充当了这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/07/11/angularjs/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="angularjs1.angular在mvvm中的具体划分1234567View：它专注于界面的显示和渲染，在angular中则是包含一堆声明式Directive的视图模板。ViewModel：它是View和Model的粘合体，负责View和Model的交互和协作，它负责给View提供显示的数据，以及提供了View中Command事件操作Model的途径；在angular中$scope对象充当了这">
+<meta property="og:updated_time" content="2017-07-09T14:34:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="angularjs1.angular在mvvm中的具体划分1234567View：它专注于界面的显示和渲染，在angular中则是包含一堆声明式Directive的视图模板。ViewModel：它是View和Model的粘合体，负责View和Model的交互和协作，它负责给View提供显示的数据，以及提供了View中Command事件操作Model的途径；在angular中$scope对象充当了这">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-angularjs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/angularjs/" class="article-date">
+  <time datetime="2017-07-11T12:49:59.320Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="angularjs"><a href="#angularjs" class="headerlink" title="angularjs"></a>angularjs</h1><h3 id="1-angular在mvvm中的具体划分"><a href="#1-angular在mvvm中的具体划分" class="headerlink" title="1.angular在mvvm中的具体划分"></a>1.angular在mvvm中的具体划分</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">View：它专注于界面的显示和渲染，在angular中则是包含一堆声明式Directive的视图模板。</div><div class="line"></div><div class="line">ViewModel：它是View和Model的粘合体，负责View和Model的交互和协作，它负责给View提供显示的数据，以及提供了View中Command事件操作Model的途径；在angular中$scope对象充当了这个ViewModel的角色；</div><div class="line"></div><div class="line">Model：它是与应用程序的业务逻辑相关的数据的封装载体，它是业务领域的对象，Model并不关心会被如何显示或操作，所以模型也不会包含任何界面显示相关的逻辑。在web页面中，大部分Model都是来自Ajax的服务端返回数据或者是全局的配置对象；而angular中的service则是封装和处理这些与Model相关的业务逻辑的场所，这类的业务服务是可以被多个Controller或者其他service复用的领域服务。</div><div class="line"></div><div class="line">Controller：这并不是MVVM模式的核心元素，但它负责ViewModel对象的初始化，它将组合一个或者多个service来获取业务领域Model放在ViewModel对象上，使得应用界面在启动加载的时候达到一种可用的状态。</div></pre></td></tr></table></figure>
+<h3 id="2-在使用angularjs项目开发中-你使用过那些第三方的插件"><a href="#2-在使用angularjs项目开发中-你使用过那些第三方的插件" class="headerlink" title="2 在使用angularjs项目开发中 你使用过那些第三方的插件"></a>2 在使用angularjs项目开发中 你使用过那些第三方的插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AngularUi  ui-router oclazyload等等</div></pre></td></tr></table></figure>
+<p>附上一篇文章仔细去看看 <a href="https://segmentfault.com/a/1190000003858219" target="_blank" rel="external">https://segmentfault.com/a/1190000003858219</a></p>
+<h3 id="3-再写controlloer逻辑的时候-你需要注意什么？"><a href="#3-再写controlloer逻辑的时候-你需要注意什么？" class="headerlink" title="3 再写controlloer逻辑的时候 你需要注意什么？"></a>3 再写controlloer逻辑的时候 你需要注意什么？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1.简化代码（这个是所有开发人员都要具备的）</div><div class="line">2.坚决不能操作dom节点 这个时候可能会问 为什么不能啊</div><div class="line">你的回答是：DOM操作只能出现在指令（directive）中。最不应该出现的位置就是服务（service）中。Angular倡导以测试驱动开发，在service或者controller中出现了DOM操作，那么也就意味着的测试是无法通过的。当然，这只是一点，重要的是使用Angular的其中一个好处是啥，那就是双向数据绑定，这样就能专注于处理业务逻辑，无需关系一堆堆的DOM操作。如果在Angular的代码中还到处充斥着各种DOM操作，那为什么不直接使用jquery去开发呢。</div><div class="line"></div><div class="line">测试驱动开发是什么呢？普及一下：</div><div class="line">测试驱动开发，英文全称Test-Driven Development，简称TDD，是一种不同于传统软件开发流程的新型的开发方法。它要求在编写某个功能的代码之前先编写测试代码，然后只编写使测试通过的功能代码，通过测试来推动整个开发的进行。这有助于编写简洁可用和高质量的代码，并加速开发过程。</div></pre></td></tr></table></figure>
+<h3 id="4-AngularJS的数据双向绑定是怎么实现的？"><a href="#4-AngularJS的数据双向绑定是怎么实现的？" class="headerlink" title="4 AngularJS的数据双向绑定是怎么实现的？"></a>4 AngularJS的数据双向绑定是怎么实现的？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">简单说明：</div><div class="line">1、每个双向绑定的元素都有一个watcher</div><div class="line">2、在某些事件发生的时候，调用digest脏数据检测。</div><div class="line">这些事件有：表单元素内容变化、Ajax请求响应、点击按钮执行的函数等。</div><div class="line">3、脏数据检测会检测rootscope下所有被watcher的元素。</div><div class="line">$digest函数就是脏数据监测</div><div class="line"></div><div class="line"></div><div class="line">详细说明：</div><div class="line">$watch和$digest是相辅相成的。两者一起，构成了Angular作用域的核心：数据变化的响应：</div><div class="line">	1.使用$watch，可以在Scope上添加一个监听器。当Scope上发生变更时，监听器会收到提示。给$watch指定如下两个函数，就可以创建一个监听器（$watch会给所有绑定到同一$scope对象的UI元素都会添加一个监控器到$watch数组列表中）：</div><div class="line">          *一个监控函数，用于指定所关注的那部分数据。</div><div class="line">          *一个监听函数，用于在数据变更的时候接受提示，得到调用。</div><div class="line">	2.监听器的监听函数返回我们所关注的那部分数据的变化。</div><div class="line">	3.DOM事件，譬如用户输入文本，点击按钮等。( ng-click )，ajax请求或者 timeout 延迟事件，浏览器Location变更事件 ( $location )，Timer事件( $timeout , $interval )，触发脏检查,即调用$digest函数。</div><div class="line">	4.$digest函数的作用是调用这个监控函数，并且比较它返回的值和上一次返回值的差异。如果不相同，监听器就是脏的，它的监听函数就应当被调用。</div><div class="line">	5.$digest至少运行每个监听器一次了。如果第一次运行完，有监控值发生变更了，标记为dirty，所有监听器再运行第二次。这会一直运行，直到所有监控的值都不再变化，整个局面稳定下来了，这时候才在View渲染该有的数据。</div><div class="line">	6.$digest循环运行10次，Angular就会抛出这个异常，同时停止$digest循环。而10这个次数可以在config里面注入$rootScopeProvider服务并且配置:（如果你想运行15次）</div><div class="line">		*$rootScopeProvider.digestTtl(15);</div><div class="line">	7.也可以使用$apply()来手动触发$digest</div></pre></td></tr></table></figure>
+<p>又附上一篇原理性的文章 <a href="https://github.com/xufei/Make-Your-Own-AngularJS/blob/master/01.md" target="_blank" rel="external">https://github.com/xufei/Make-Your-Own-AngularJS/blob/master/01.md</a></p>
+<h3 id="5-controller之间怎么通讯"><a href="#5-controller之间怎么通讯" class="headerlink" title="5 controller之间怎么通讯"></a>5 controller之间怎么通讯</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">1、event</div><div class="line">这里可以有两种方式，一种是$scope.$emit，然后通过监听$rootScope的事件获取参数；另一种是$rootScope.$broadcast，通过监听$scope的事件获取参数。</div><div class="line">这两种方法在最新版本的Angular中已经没有性能区别了，主要就是事件发送的方向不同，可以按实际情况选择。</div><div class="line"></div><div class="line">2、service</div><div class="line">可以创建一个专用的事件Service，也可以按照业务逻辑切分，将数据存储在相应的Service中</div><div class="line">3、$rootScope</div><div class="line">这个方法可能会比较dirty一点，胜在方便，也就是把数据存在$rootScope中，这样各个子$scope都可以调用，不过需要注意一下生命周期</div><div class="line"></div><div class="line">4、直接使用$scope.$$nextSibling及类似的属性</div><div class="line">类似的还有$scope.$parent。这个方法的缺点就更多了，官方不推荐使用任何$$开头的属性，既增加了耦合，又需要处理异步的问题，而且scope的顺序也不是固定的。不推荐</div><div class="line"></div><div class="line">另外就是通过本地存储、全局变量或者现代浏览器的postMessage来传递参数了，除非特殊情况，请避免这类方式。</div></pre></td></tr></table></figure>
+<h3 id="6-自定义指令的几个参数"><a href="#6-自定义指令的几个参数" class="headerlink" title="6 自定义指令的几个参数"></a>6 自定义指令的几个参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">restrict:指令在dom中的声明形式 E（元素）A（属性）C（类名）M（注释）</div><div class="line"></div><div class="line">template：两种形式，一种HTML文本；一个可以接受两个参数的函数，tElemetn和tAttrs，并返回一个代表模板的字符串。模板		字符串必须存在一个根DOM元素</div><div class="line"></div><div class="line">templateUrl:两种形式，一种代表外部HTML文件路径的字符串；一个可以接受两个参数的函数，参数为tElement和tAttrs，并返		  回一个外部HTML文件路径的字符串</div><div class="line"></div><div class="line">compile (对象或函数)：</div><div class="line">	compile 选项可以返回一个对象或函数。如果设置了 compile 函数,说明我们希望在指令和实时数据被		放到DOM中之前进行DOM操作,在这个函数中进行诸如添加和删除节点等DOM操作是安全的。本质上,当我们设置了 link 选	   项,实	际上是创建了一个 postLink() 链接函数,以便 compile() 函数可以定义链接函数。</div><div class="line">然后又是传送门：http://www.cnblogs.com/mliudong/p/4180680.html</div><div class="line"></div><div class="line"> compile和link的区别：</div><div class="line">	  编译的时候，compile转换dom，碰到绑定监听器的地方就先存着，有几个存几个，到最后汇总成一个link函数，一并执行，提升了性能。</div></pre></td></tr></table></figure>
+<p>然后又是传送门：<a href="http://www.cnblogs.com/mliudong/p/4180680.html" target="_blank" rel="external">http://www.cnblogs.com/mliudong/p/4180680.html</a></p>
+<h3 id="7-angular中的-http"><a href="#7-angular中的-http" class="headerlink" title="7 angular中的$http"></a>7 angular中的$http</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$http 是 AngularJS 中的一个核心服务，用于读取远程服务器的数据。</div><div class="line">我们可以使用内置的$http服务直接同外部进行通信。$http服务只是简单的封装了浏览器原生的XMLHttpRequest对象。</div><div class="line"></div><div class="line">1、链式调用</div><div class="line"></div><div class="line">$http服务是只能接受一个参数的函数，这个参数是一个对象，包含了用来生成HTTP请求的</div><div class="line">配置内容。这个函数返回一个promise对象，具有success和error两个方法。</div><div class="line">2、返回一个promise对象</div><div class="line"></div><div class="line">3、快捷的get请求</div></pre></td></tr></table></figure>
+<p>传送门：[<a href="http://www.2cto.com/kf/201506/405137.html" target="_blank" rel="external">http://www.2cto.com/kf/201506/405137.html</a></p>
+<h3 id="8-angular和jquery的区别"><a href="#8-angular和jquery的区别" class="headerlink" title="8 angular和jquery的区别"></a>8 angular和jquery的区别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">angular是基于数据驱动，所以angular适合做数据操作比较繁琐的项目（这里可以再提一下单页面应用，如果你不会福利又来了 http://www.zhihu.com/question/20792064）</div><div class="line">jquery是基于dom驱动，jquery适合做dom操作多的项目</div></pre></td></tr></table></figure>
+<h3 id="9-对angular中的form表单了解多少"><a href="#9-对angular中的form表单了解多少" class="headerlink" title="9 对angular中的form表单了解多少"></a>9 对angular中的form表单了解多少</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">Angular对input元素的type进行了扩展，一共提供了以下10种类型： </div><div class="line">text</div><div class="line">number</div><div class="line">url</div><div class="line">email</div><div class="line">radio</div><div class="line">checkbox</div><div class="line">hidden</div><div class="line">button</div><div class="line">submit</div><div class="line">reset</div><div class="line">Angular为表单内置了4中CSS样式。 </div><div class="line">ng-valid 校验合法状态</div><div class="line">ng-invalid 校验非法状态</div><div class="line">ng-pristine 如果要使用原生的form，需要设置这个值</div><div class="line">ng-dirty     表单处于脏数据状态</div><div class="line">Angular在对表单进行自动校验的时候会校验Model上的属性，如果不设置ng-model，则Angular无法知道myForm.$invalid这个值是否为真。</div><div class="line">校验的一下内容</div><div class="line">required 表示是否输入内容</div><div class="line">ng-maxlength 最大长度</div><div class="line">ng-minlength 最小长度</div></pre></td></tr></table></figure>
+<p>例子：传送门[<a href="https://github.com/18500047564/clutter" target="_blank" rel="external">https://github.com/18500047564/clutter</a></p>
+<h3 id="10-ng-show-ng-hide-与-ng-if-的区别？"><a href="#10-ng-show-ng-hide-与-ng-if-的区别？" class="headerlink" title="10 ng-show/ng-hide 与 ng-if 的区别？"></a>10 ng-show/ng-hide 与 ng-if 的区别？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">我们都知道ng-show/ng-hide实际上是通过 display 来进行隐藏和显示的。而ng-if实际上控制dom节点的增删除来实现的。因此如果我们是根据不同的条件来进行dom节点的加载确认的话，那么ng-if的性能好过ng-show.</div></pre></td></tr></table></figure>
+<h3 id="解释下什么是-rootScrope-和-scope-的区别？"><a href="#解释下什么是-rootScrope-和-scope-的区别？" class="headerlink" title="解释下什么是 $rootScrope 和$scope 的区别？"></a>解释下什么是 $rootScrope 和$scope 的区别？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$rootScrope是所有$scope的父对象</div></pre></td></tr></table></figure>
+<h3 id="表达式-是如何工作的"><a href="#表达式-是如何工作的" class="headerlink" title="表达式  是如何工作的?"></a>表达式  是如何工作的?</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">它依赖于 $interpolation服务，在初始化页面html后，它会找到这些表达式，并且进行标记，于是每遇见一个 &#123;&#123;&#125;&#125; ，则会设置一个 $watch 。而 $interpolation 会返回一个带有上下文参数的函数，最后该函数执行，则算是表达式 $parse 到那个作用域上。</div></pre></td></tr></table></figure>
+<h3 id="fliter是什么你了解的有多少？实现一个自定义fliter"><a href="#fliter是什么你了解的有多少？实现一个自定义fliter" class="headerlink" title="fliter是什么你了解的有多少？实现一个自定义fliter"></a>fliter是什么你了解的有多少？实现一个自定义fliter</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">ng 内置的 filter 有九种：</div><div class="line"></div><div class="line">date（日期）</div><div class="line"></div><div class="line">currency（货币）</div><div class="line"></div><div class="line">limitTo（限制数组或字符串长度）</div><div class="line"></div><div class="line">orderBy（排序）</div><div class="line"></div><div class="line">lowercase（小写）</div><div class="line"></div><div class="line">uppercase（大写）</div><div class="line"></div><div class="line">number（格式化数字，加上千位分隔符，并接收参数限定小数点位数）</div><div class="line"></div><div class="line">filter（处理一个数组，过滤出含有某个子串的元素）</div><div class="line"></div><div class="line">json（格式化 json 对象）</div><div class="line"></div><div class="line">filter 有两种使用方法，</div><div class="line">一种是直接在页面里：</div><div class="line"></div><div class="line">&lt;p&gt;&#123;&#123;now | date : ‘yyyy-MM-dd’&#125;&#125;&lt;/p&gt;</div><div class="line"></div><div class="line">另一种是在 js 里面用：</div><div class="line"></div><div class="line">$filter(&apos;过滤器名称&apos;)(需要过滤的对象, 参数1, 参数2,...)</div><div class="line"></div><div class="line">$filter(&apos;date&apos;)(now, &apos;yyyy-MM-dd hh:mm:ss’);</div><div class="line"></div><div class="line">自定义一个去重数组的</div><div class="line"></div><div class="line"></div><div class="line">app.filter(&apos;unique&apos;, function()&#123;</div><div class="line">    return function(arr)&#123;</div><div class="line">        var n = [];</div><div class="line">        var obj = &#123;&#125;;</div><div class="line"></div><div class="line">        for(var i = 0;i&lt;arr.length;i++)&#123;</div><div class="line">           if(!obj[arr[i]])&#123;</div><div class="line">            n.push(arr[i])</div><div class="line">            obj[arr[i]] = 1;</div><div class="line">           &#125; </div><div class="line">        &#125;</div><div class="line"></div><div class="line">       return n;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/angularjs/" data-id="cj4zksgs40006ykf4mm6xyl8a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/11/http协议/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/11/ajax面试题总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/11/前端一些常见面试问题/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常用插件/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常见的兼容性问题及解决方案/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/Node.js知识点总结/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/jQuery面试题/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

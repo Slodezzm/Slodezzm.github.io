@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="###基本知识点: 1.常用的移动设备屏幕尺寸:12345678910根据屏幕尺寸，换算开发时需要用到的rem单位，图片尺寸; 	@media screen and (max-width=375px)&amp;#123;      html &amp;#123;        font-size: (375/20)px;      &amp;#125;     &amp;#125;	rem: (sass样式)	@function">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/07/11/移动web总结/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="###基本知识点: 1.常用的移动设备屏幕尺寸:12345678910根据屏幕尺寸，换算开发时需要用到的rem单位，图片尺寸; 	@media screen and (max-width=375px)&amp;#123;      html &amp;#123;        font-size: (375/20)px;      &amp;#125;     &amp;#125;	rem: (sass样式)	@function">
+<meta property="og:updated_time" content="2017-07-09T00:04:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="###基本知识点: 1.常用的移动设备屏幕尺寸:12345678910根据屏幕尺寸，换算开发时需要用到的rem单位，图片尺寸; 	@media screen and (max-width=375px)&amp;#123;      html &amp;#123;        font-size: (375/20)px;      &amp;#125;     &amp;#125;	rem: (sass样式)	@function">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-移动web总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/移动web总结/" class="article-date">
+  <time datetime="2017-07-11T12:49:59.068Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###基本知识点:</p>
+<p>1.常用的移动设备屏幕尺寸:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">根据屏幕尺寸，换算开发时需要用到的rem单位，图片尺寸; </div><div class="line">	@media screen and (max-width=<span class="number">375</span>px)&#123;</div><div class="line">      html &#123;</div><div class="line">        font-size: (<span class="number">375</span>/<span class="number">20</span>)px;</div><div class="line">      &#125;</div><div class="line">     &#125;</div><div class="line">	rem: (sass样式)</div><div class="line">	@<span class="function"><span class="keyword">function</span> <span class="title">p2r</span>(<span class="params">$size</span>) </span>&#123;</div><div class="line">    	@<span class="keyword">return</span> $size / <span class="number">32</span> * <span class="number">1</span>rem;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>主流安卓屏幕尺寸:<ol>
+<li>屏幕:  540 <em> 960 [倍率1.5]  =  逻辑像素: 360 </em> 640;</li>
+<li>屏幕:  720<em> 1280[倍率2]  =  逻辑像素: 360 </em> 640;</li>
+<li>屏幕:  1080<em> 1920[倍率3]  =  逻辑像素: 360 </em> 640;</li>
+</ol>
+</li>
+<li>iphone屏幕尺寸:<ol>
+<li>机型: 3GS  屏幕:  320 <em> 480 [倍率1]  =  逻辑像素: 320 </em> 480;</li>
+<li>机型: iphone4  屏幕:  640 <em> 960 [倍率2]  =  逻辑像素: 320 </em> 480;</li>
+<li>机型: iphone5  屏幕:  640 <em> 1136 [倍率2]  =  逻辑像素: 320 </em> 568;</li>
+<li>机型: iphone6  屏幕:  750<em> 1334 [倍率2]  =  逻辑像素: 375 </em> 667; </li>
+<li>机型: iphone6Puls  屏幕:  1080 <em> 1920 [倍率3]  =  逻辑像素: 414 </em> 736;<br>###问答题:<br>#####1、简述移动开发的注意点,如何做好不同手机的适配,你以前的项目是怎么做的?<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">注意点:</div><div class="line">	<span class="number">1.</span>单位的使用,根据手机屏幕的大小，显示的像素有区别</div><div class="line">    如:iPhone3G及以下  <span class="number">1</span>点==<span class="number">1</span>个像素</div><div class="line">	  iPhone4 Retain  <span class="number">1</span>点==<span class="number">2</span>个像素   </div><div class="line">	  iPhone6/<span class="number">7</span> Plus  <span class="number">1</span>点==<span class="number">3</span>个像素</div><div class="line">    <span class="number">2.</span>细节的处理: </div><div class="line">      <span class="number">3.1</span> 禁止自动识别电话和android自动识别邮箱</div><div class="line">      <span class="number">3.2</span> 禁止长按链接与图片弹出菜单</div><div class="line">      <span class="number">3.3</span> 去除A连接input标签,点击出现自带的阴影样式</div><div class="line">      <span class="number">3.4</span> 单击延迟;click 事件因为要等待双击确认,会有 <span class="number">300</span>ms 的延迟,体验并不是很好。</div><div class="line">制作项目的过程与适配不同的屏幕:</div><div class="line">    <span class="number">1.</span>适配不同的屏幕一般使用css3的媒体查询@media screen and (max-width=xxx)&#123;.icon&#123;some styles&#125;&#125;,然后根据当前屏幕尺寸换算成使用于当前页面的rem值;</div><div class="line">    <span class="number">2.</span>细节处理:</div><div class="line">     <span class="number">2.1</span> 禁止自动识别电话和android自动识别邮箱:</div><div class="line">         &lt;meta content="telephone=no" name="format-detection" /&gt;</div><div class="line">         &lt;meta content="email=no" name="format-detection" /&gt;</div><div class="line">     2.2 禁止长按链接与图片弹出菜单:</div><div class="line">          a, img &#123;</div><div class="line">            -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */</div><div class="line">          &#125;</div><div class="line">     2.3 去除A连接input标签,点击出现自带的阴影样式:</div><div class="line">         a,input&#123;</div><div class="line">            -webkit-tap-highlight-color:rgba(0,0,0,0);</div><div class="line">         &#125;</div><div class="line">     2.4 单击延迟:</div><div class="line">            使用封装的 tap 事件来代替click 事件,所谓的 tap 事件由 touchstart 事件+ touchmove判断+            touchend 事件封装组成。</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h5 id="2-px和em的区别。"><a href="#2-px和em的区别。" class="headerlink" title="2.px和em的区别。"></a>2.px和em的区别。</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">px和em都是长度单位，区别是，px的值是固定的，指定是多少就是多少，计算比较容易。em得值不是固定的，并且em会继承父级元素的字体大小。</div><div class="line">浏览器的默认字体高都是<span class="number">16</span>px。所以未经调整的浏览器都符合: <span class="number">1</span>em=<span class="number">16</span>px。那么<span class="number">12</span>px=<span class="number">0.75</span>em, <span class="number">10</span>px=<span class="number">0.625</span>em。</div></pre></td></tr></table></figure>
+<h5 id="3-移动端常用类库及优缺点"><a href="#3-移动端常用类库及优缺点" class="headerlink" title="3.移动端常用类库及优缺点"></a>3.移动端常用类库及优缺点</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">normalize</div><div class="line">http:<span class="comment">//necolas.github.io/normalize.css/</span></div><div class="line">最受欢迎的css reset</div><div class="line">保留有用的默认值，这个区别于其他的CSS resets 标准化大范围的HTML elements的样式纠正bugs，使浏览器具体通用性 通过一些巧妙的改进来增强可用性 用具体的说明来讲解代码的用处</div><div class="line"></div><div class="line">topcoat</div><div class="line">http:<span class="comment">//topcoat.io/topcoat/</span></div><div class="line">一套非常精致的UI元素类库，提供了常用了基础组件</div><div class="line"></div><div class="line">Bootstrap</div><div class="line">http:<span class="comment">//getbootstrap.com/2.3.2/</span></div><div class="line">这个就不说了，他的最大问题是名气太大，看多了就有点反胃。</div><div class="line"></div><div class="line">Zurb Foundation</div><div class="line">http:<span class="comment">//foundation.zurb.com/</span></div><div class="line">Zurb Foundation和Bootstrap一样，也是一款非常知名的css框架。</div><div class="line">Foundation 最大的特色是 Mobile first。它对不同终端支持非常好，对内容结构在不同类型设备中的的呈现方式进行了相应的预设。 (js组件依赖Zepto)</div><div class="line">Foundation还有很多预设模块http:<span class="comment">//foundation.zurb.com/templates.html.</span></div><div class="line">如果你打算快速开发一个适应多个平台响应式的网站，Foundation绝对是你的首选。</div><div class="line"></div><div class="line">Semantic UI framework</div><div class="line">http:<span class="comment">//semantic-ui.com/</span></div><div class="line">Semantic UI framework是一款拥有丰富组件的UI框架，JS的易用性非常好，而且流畅（我没用过，他自己这说的）。</div><div class="line">组件确实丰富，展开左侧的菜单，我们想要用到的组件基本上都有。</div><div class="line">他的官方网站上没放案例，大家自己去体验吧。</div><div class="line"></div><div class="line">Gumby</div><div class="line">http:<span class="comment">//gumbyframework.com/</span></div><div class="line">Gumby与bootstrap比较类似，唯一不同的是他比较注重移动设备。</div><div class="line">另外Gumby也有一个在线自定义的工具 http:<span class="comment">//gumbyframework.com/customize</span></div><div class="line"></div><div class="line">Ratchet</div><div class="line">http:<span class="comment">//maker.github.io/ratchet/</span></div><div class="line">Ratchet是一个帮助开发人员仅使用简单 HTML，CSS 和 Javascript 组件就能够快速的制作出 iPhone 应用程序的原型。Ratchet 提供了众多效果类似原生应用的界面组件！开发简单的手机应用可以试试。</div><div class="line">作为一个高保证的原型工具也不错。</div><div class="line"></div><div class="line">HTML kickstart</div><div class="line">http:<span class="comment">//www.99lime.com/elements/</span></div><div class="line">极简的网站开发框架，适合只掌握了CSS和HTML的开发者。</div><div class="line">不是很有特色，就是提供一堆常用控件让你组合成一个站点。</div><div class="line"></div><div class="line">Responsable</div><div class="line">http:<span class="comment">//responsablecss.com/</span></div><div class="line">看名字就能明白，Responsable提供响应式布局解决方案。</div><div class="line">相对其他整合比较深入的库，这个更加单纯。</div><div class="line"></div><div class="line">responsiveaeon</div><div class="line">http:<span class="comment">//newaeonweb.com.br/responsiveaeon/</span></div><div class="line">ResponsiveAeon 是一个基于 HTML5/CSS3的框架，可以用来快速创建响应式布局。需要JavaScript框架支持IE、模态盒（modal boxex）以及PSD/AIPNG文件。</div><div class="line"></div><div class="line">Clank</div><div class="line">http:<span class="comment">//getclank.com/</span></div><div class="line">与上面介绍的Ratchet差不多，能帮我们快速的制作出手机应用程序的原型。</div><div class="line"></div><div class="line">metroui</div><div class="line">http:<span class="comment">//metroui.org.ua/</span></div><div class="line">Metro UI CSS是一个独立的开发框架，开发者可以使用它开发出Windows8样式的UI，也可以搭配其它框架使用。</div><div class="line"></div><div class="line">Flat-UI</div><div class="line">http:<span class="comment">//designmodo.github.io/Flat-UI/</span></div><div class="line">Flat UI是一套精美的扁平风格 UI 工具包，基于 Twitter Bootstrap 实现。这套界面工具包含许多基本的和复杂的 UI 部件，例如按钮，输入框，组合按钮，复选框，单选按钮，标签，菜单，进度条和滑块，导航元素等等。</div><div class="line"></div><div class="line">zepto</div><div class="line">http:<span class="comment">//www.css88.com/doc/zeptojs_api/</span></div><div class="line">类jQuery的库,主要是以操作dom元素为主,有点在于操作dom元素比较便捷,有选择性的添加需要使用的文件，轻便,缺点就是添加需要使用的文件就以为着需要增加发送请求的问题;</div></pre></td></tr></table></figure>
+<p>#####4. Zepto库和JQ区别<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">两者都是用于操作dom元素,但是Zepto相对jQuery更加轻量，主要用在移动端，可以自行选择需要的组件，jQuery也有对应的jQuerymobile移动端框架，jQuery是一个包含了所有功能的整体;</div></pre></td></tr></table></figure></p>
+<p>#####5. 移动端（比如：Android IOS）怎么做好用户体验?<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>知道目标用户的动机或者需求</div><div class="line">产品能够满足某些人的某类需要，能够为他们创造自己产品所倡导的价值，</div><div class="line">这是头等重要的用户体验，没有这一点一切产品形态的东西都会是空谈。</div><div class="line">我曾经的文章：用户动机是“以用户为中心”的方法论</div><div class="line"><span class="number">2.</span>确保移动产品信息结构清晰</div><div class="line">产品总共有多少个主体要素，这些要素以何种方式组织起来最为轻巧简练，</div><div class="line">让用户只通过简单的使用就能形成一些基本结构化的印象，</div><div class="line">知道它是怎么回事儿了，知道什么东西可能应该在哪儿了融入自己的设计理念，注重用户体验，选择合适的技术</div><div class="line"><span class="number">3.</span>流畅的用户操作流程</div><div class="line">这是交互设计中的重中之重，如何让用户的操作流程在上边信息结构简练的基础上，</div><div class="line">让用户的每一条指令，每一步操作，都基本符合他的预期，</div><div class="line">以更自然、流畅的方式完成了他所要操作的任务，中间尽可能让用户少犯错误。</div><div class="line">我曾经的一篇文章，提到了交互过程的三要素：</div><div class="line">学会三点，即可打造良好的交互设计效果</div><div class="line"><span class="number">4.</span>保证产品的可靠性、稳定性</div><div class="line">在用户已经熟悉、依赖上一个产品以后，</div><div class="line">没有什么比可靠性、稳定性的问题更令人感到憎恶了。</div><div class="line">这也不难理解为什么iPhone4的天线问题会有如此大的关注。</div><div class="line"><span class="number">5.</span>合理的页面布局，合理内容的主次位置</div><div class="line">产品的每一个页面有它存在的意思，那是因为它肯定要完成一个它必须能完成的任务。</div><div class="line">这个必须能完成的任务，是不是放在了页面的主体首要位置是这个页面体验好坏的关键。</div><div class="line">有的设计总想拐着弯的抢占它的主体位置，你这就是在挑战用户的忍耐程度。</div><div class="line">我曾经的一篇文章：交互设计的主与次</div><div class="line"><span class="number">6.</span>推荐内容的相关性程度精准度，增加用户黏性</div><div class="line">页面布局除了保证主体内容的主体位置以外，</div><div class="line">相对次要的侧栏位置也是好好利用的设计空间所在。</div><div class="line">如何通过机器或人为参与，提高侧栏内容的相关性程度，</div><div class="line">能给用户带来意外性的体验提升。</div><div class="line"><span class="number">7.</span> 统一界面的配色、风格、字号、间距等。</div><div class="line">如果你设计的产品不是在创作一副油画或者某些产品的形象工程，</div><div class="line">如果你设计的产品是确定直接给用户操作使用，</div><div class="line">那么，那些无关的UI修饰则是能抽象的抽象能淡化的淡化。</div><div class="line">只要尽可能保持设计使用上的一致性以及坚持下去这种一致性就可以了（别反复换）。</div><div class="line">世界一流公司的产品，Microsoft、Google、Apple等等，无一不是如此。</div><div class="line">如果上边第<span class="number">1</span>条用户动机你抓准了，用户不会因为你的配色，你能否换肤而弃用你的产品的。</div><div class="line">那些优秀的平面设计师、手绘插图设计师，在互联网产品上发挥视觉设计的余地真的不是很大。</div><div class="line">曾经的文章：淡化UI、部分还原精实感的设计</div><div class="line"><span class="number">8.</span> 合适的客服出现位置与咨询按钮</div><div class="line">机器能够让用户自主完成的事情总是有限的人，但对于用户来说总有例外，</div><div class="line">就是那些用户无法自主完成或产品暂时无法很好满足的服务，机器做不好的，要靠人来补上。</div><div class="line">就像如果你到一个大卖场里去买东西，尽管店里的物品摆放已经经过非常合理的布置了，</div><div class="line">但是你赶时间，你依然希望第一时间买完东西就走，</div><div class="line">这时候你最可信赖的就是直接问店里的店员了。所以，在产品交互体验设计当中，合理的布局在线客服出现位置与咨询按钮非常的重要。</div></pre></td></tr></table></figure></p>
+<p>#####6. px，em，rem的区别？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">答： <span class="number">1</span>）px像素（Pixel）。绝对单位。像素px是相对于显示器屏幕分辨率而言的，是一个虚拟长度单位，是计算机系统的数字化图像长度单位，如果px要换算成物理长度，需要指定精度DPI。</div><div class="line"><span class="number">2</span>）em是相对长度单位，相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。它会继承父级元素的字体大小，因此并不是一个固定的值。</div><div class="line"><span class="number">3</span>）rem是CSS3新增的一个相对单位（root em，根em），使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。</div><div class="line"><span class="number">4</span>）区别：IE无法调整那些使用px作为单位的字体大小，而em和rem可以缩放，rem相对的只是HTML根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，除了IE8及更早版本外，所有浏览器均已支持rem。</div></pre></td></tr></table></figure></p>
+<p>#####7. 能否简述一下如何使一套设计方案，适应不同的分辨率，有哪些方法可以实现？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">答：流式布局：</div><div class="line">    使用非固定像素来定义网页内容，也就是百分比布局，通过盒子的宽度设置成百分比来根据屏幕的宽度来进行伸缩，不受固定像素的限制，内容向两侧填充。</div><div class="line">    这样的布局方式，就是移动web开发使用的常用布局方式。这样的布局可以适配移动端不同的分辨率设备。</div><div class="line">    响应式开发：</div><div class="line">    那么Ethan Marcotte在<span class="number">2010</span>年<span class="number">5</span>月份提出的一个概念，简而言之，就是一个网站能够兼容多个终端。越来越多的设计师也采用了这种设计。 </div><div class="line">	CSS3中的Media Query（媒介查询），通过查询screen的宽度来指定某个宽度区间的网页布局。 </div><div class="line">超小屏幕（移动设备）    <span class="number">768</span>px以下 </div><div class="line">小屏设备    <span class="number">768</span>px<span class="number">-992</span>px</div><div class="line">中等屏幕    <span class="number">992</span>px<span class="number">-1200</span>px</div><div class="line">宽屏设备    <span class="number">1200</span>px以上 </div><div class="line">    由于响应式开发显得繁琐些，一般使用第三方响应式框架来完成，比如bootstrap来完成一部分工作，当然也可以自己写响应式。</div><div class="line">    阐述下移动web和响应式的区别：</div><div class="line">移动web： </div><div class="line">	应用场景一般在已经有的pc端的网站，开发移动的时候，只需单独开发移动端，开发方面针对想较强，开发效率高，只适配移动设备pad上体验相对较差，代码简洁加载快;</div><div class="line">响应式布局：</div><div class="line">	针对新建站的一些网站，现在要求适配移动端，所以就一套页面兼容各种终端，灵活。兼容各种终端，效率低，可以适配各种终端;代码相对比较复杂，加载慢;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/移动web总结/" data-id="cj4zksgsd000bykf4mgwdg5cx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/11/02.html5知识点总结&面试题.1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/11/前端一些常见面试问题/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常用插件/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常见的兼容性问题及解决方案/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/Node.js知识点总结/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/jQuery面试题/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

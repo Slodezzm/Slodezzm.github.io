@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对框架的理解   “渲染机制”、”数据绑定”、”组件化”、”模块化”这些关键技术点 html页面抽象来看就是就是用来展示页面，呈递信息；所以html可以看成是数据到视图的一种映射；数据变化–&amp;gt;对应的视图变化； 实际上所谓的MVVM框架的关键技术就一个;也就是数据与视图的绑定，angular、vue、react等前端框架中的核心思想都有数据绑定、数据驱动这个概念； 1.)在Angular/po">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/07/11/17.vue框架/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="对框架的理解   “渲染机制”、”数据绑定”、”组件化”、”模块化”这些关键技术点 html页面抽象来看就是就是用来展示页面，呈递信息；所以html可以看成是数据到视图的一种映射；数据变化–&amp;gt;对应的视图变化； 实际上所谓的MVVM框架的关键技术就一个;也就是数据与视图的绑定，angular、vue、react等前端框架中的核心思想都有数据绑定、数据驱动这个概念； 1.)在Angular/po">
+<meta property="og:updated_time" content="2017-07-10T00:25:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="对框架的理解   “渲染机制”、”数据绑定”、”组件化”、”模块化”这些关键技术点 html页面抽象来看就是就是用来展示页面，呈递信息；所以html可以看成是数据到视图的一种映射；数据变化–&amp;gt;对应的视图变化； 实际上所谓的MVVM框架的关键技术就一个;也就是数据与视图的绑定，angular、vue、react等前端框架中的核心思想都有数据绑定、数据驱动这个概念； 1.)在Angular/po">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-17.vue框架" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/17.vue框架/" class="article-date">
+  <time datetime="2017-07-11T12:49:59.275Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="对框架的理解-“渲染机制”、”数据绑定”、”组件化”、”模块化”这些关键技术点"><a href="#对框架的理解-“渲染机制”、”数据绑定”、”组件化”、”模块化”这些关键技术点" class="headerlink" title="对框架的理解   “渲染机制”、”数据绑定”、”组件化”、”模块化”这些关键技术点"></a>对框架的理解   “渲染机制”、”数据绑定”、”组件化”、”模块化”这些关键技术点</h2><ol>
+<li>html页面抽象来看就是就是用来展示页面，呈递信息；所以html可以看成是数据到视图的一种映射；数据变化–&gt;对应的视图变化；</li>
+<li>实际上所谓的MVVM框架的关键技术就一个;也就是<strong>数据与视图</strong>的绑定，angular、vue、react等前端框架中的核心思想都有<strong>数据绑定、数据驱动</strong>这个概念；<br> 1.)在Angular/polymer/knockout/vue/avalon 中，这项技术的实现又可以拆分成两个关键点：模板分析和数据监测。<ol>
+<li>)而React本质上只是View（视图层），它是Facebook所开发的JavaScript框架，它的唯一目标就是构建高性能的用户接口。开发React就是为了解决其他JavaScript框架都未能解决的一个问题-高效地渲染大型数据集。它采用了<strong>虚拟文档对象模型(DOM)</strong>和<strong>拼接机制</strong>，这样，每一次对网页做了更改后，React就只更新与更改相关的部分，而不需要重新对整个站点进行渲染。</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="Vue-js是一个提供MVVM数据双向绑定的库，专注于UI层面，核心思想是：数据驱动和组件系统。"><a href="#Vue-js是一个提供MVVM数据双向绑定的库，专注于UI层面，核心思想是：数据驱动和组件系统。" class="headerlink" title="Vue.js是一个提供MVVM数据双向绑定的库，专注于UI层面，核心思想是：数据驱动和组件系统。"></a>Vue.js是一个提供MVVM数据双向绑定的库，专注于UI层面，核心思想是：<strong>数据驱动</strong>和<strong>组件系统</strong>。</h2><h3 id="数据驱动的实现："><a href="#数据驱动的实现：" class="headerlink" title="数据驱动的实现："></a>数据驱动的实现：</h3><p>官方解释：</p>
+<ol>
+<li>传给 Vue 实例的 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。</li>
+<li>watcher:每个组件实例都有相应的 watcher 实例对象，它会在组件渲染的过程中把<strong>实例属性</strong>记录为依赖，之后当依赖项（实例属性）的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新。<br>网上摘抄：</li>
+<li>首先，需要利用Object.defineProperty，将要观察的对象，转化成getter/setter，以便拦截 对象赋值与取值操作，称之为Observer；</li>
+<li>需要将DOM解析，提取其中的指令与占位符，并赋与不同的操作，称之为Compiler；</li>
+<li>需要将Compile的解析结果，与Observer所观察的对象连接起来，建立关系，在Observer观察到对象数据变化时，接收通知，同时更新DOM，称之为Watcher；</li>
+<li>最后，需要一个公共入口对象，接收配置，协调上述三者，称为Vue;</li>
+</ol>
+<h3 id="组件系统："><a href="#组件系统：" class="headerlink" title="组件系统："></a>组件系统：</h3><p>应用类UI可以看作全部是由组件树构成的。<br>注册一个组件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">    Vue.component(<span class="string">'my-component'</span>, &#123;</div><div class="line">    <span class="comment">// 模板</span></div><div class="line">    template: <span class="string">'&lt;div&gt;&#123;&#123;msg&#125;&#125; &#123;&#123;privateMsg&#125;&#125;&lt;/div&gt;'</span>,</div><div class="line">    <span class="comment">// 接受参数</span></div><div class="line">    props: &#123;</div><div class="line">        <span class="attr">msg</span>: <span class="built_in">String</span>    </div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 私有数据，需要在函数中返回以避免多个实例共享一个对象</span></div><div class="line">    data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            <span class="attr">privateMsg</span>: <span class="string">'component!'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line">&lt;my-component msg=<span class="string">"hello"</span>&gt;&lt;/my-component&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="组件的核心选项"><a href="#组件的核心选项" class="headerlink" title="组件的核心选项"></a>组件的核心选项</h3><p>1 模板（template）：模板声明了数据和最终展现给用户的DOM之间的映射关系。<br>2 初始数据（data）：一个组件的初始数据状态。对于可复用的组件来说，这通常是私有的状态。<br>3 接受的外部参数(props)：组件之间通过参数来进行数据的传递和共享。<br>4 方法（methods）：对数据的改动操作一般都在组件的方法内进行。<br>5 生命周期钩子函数（lifecycle hooks）：一个组件会触发多个生命周期钩子函数，最新2.0版本对于生命周期函数名称改动很大。<br>6 私有资源（assets）：Vue.js当中将用户自定义的指令、过滤器、组件等统称为资源。一个组件可以声明自己的私有资源。私有资源只有该组件和它的子组件可以调用。</p>
+<p>###vue其他特性：</p>
+<ol>
+<li>异步批量DOM更新：当大量数据变动时，所有受到影响的watcher会被推送到一个队列中，并且每个watcher只会推进队列一次。这个队列会在进程的下一个 tick异步执行。这个机制可以避免同一个数据多次变动产生的多余DOM操作，也可以保证所有的DOM写操作在一起执行，避免DOM读写切换可能导致的layout。</li>
+<li>动画系统：Vue.js提供了简单却强大的动画系统，当一个元素的可见性变化时，用户不仅可以很简单地定义对应的CSS Transition或Animation效果，还可以利用丰富的JavaScript钩子函数进行更底层的动画处理。</li>
+<li>可扩展性：除了自定义指令、过滤器和组件，Vue.js还提供了灵活的mixin机制，让用户可以在多个组件中复用共同的特性。</li>
+</ol>
+<h1 id="构建Vue-WebApp技术栈：vuejs-vuex-vue-router-vue-resource-axios-vux-UI库-预编译-scss-less-stylus-webpack-nodejs"><a href="#构建Vue-WebApp技术栈：vuejs-vuex-vue-router-vue-resource-axios-vux-UI库-预编译-scss-less-stylus-webpack-nodejs" class="headerlink" title="构建Vue WebApp技术栈：vuejs + vuex + vue-router + vue-resource(axios) + vux(UI库) + 预编译(scss/less/stylus) + webpack +_nodejs"></a>构建Vue WebApp技术栈：vuejs + vuex + vue-router + vue-resource(axios) + vux(UI库) + 预编译(scss/less/stylus) + webpack +_nodejs</h1><p>##vue 构建⼤型应⽤ vue 构建⼤型应⽤? ———–使⽤脚⼿架⼯具 </p>
+<ol>
+<li><p>vue-cli 可以快速地构建项⽬：单⽂件 Vue 组件，热加载，保存时检查代码，单元测试等。 Vue.js 的设计思想是专注与灵活——它只是⼀个界⾯库，不强制使⽤哪个架构。它能很好地与已有项⽬整合，不过对于经验⽋缺的开发者，从头开始构建⼤型应⽤可能是⼀个挑战。 </p>
+</li>
+<li><p>模块化 对于⼤型项⽬，为了更好地管理代码使⽤模块构建系统⾮常必要。推荐代码使⽤CommonJS 或 ES6 模块，然后使⽤ Webpack 或 Browserify 打包。 Webpack 和 Browserify 不只是模块打包器。两者都提供了源码转换 API，通过它可以⽤其它预处理器转换源码。例如，借助 babel-loader 或 babelify 代码可以使⽤ES2015/2016 语法。 如果你之前没有⽤过它们，</p>
+</li>
+<li><p>单⽂件组件 在典型的 Vue.js 项⽬中，把界⾯拆分为多个⼩组件，每个组件在同⼀地⽅封装它的 CSS 样式、模板、 JavaScript 定义;使⽤ Webpack 或Browserify 以及合适的源码转换器可以把模板、css、js统统都转换为js</p>
+</li>
+<li><p>如果你喜欢预处理器，甚⾄可以这么做： vueify 构建这些单⽂件 Vue 组件。推荐使⽤ Webpack，因为它的加载器 API 提供更好的⽂件依赖追踪/缓存以及⼀些 Browserify 没有的转换功能。 最快的构建⽅式是使⽤官⽅出品的脚⼿架⼯具 </p>
+<ol>
+<li>vue-cli。你也可以在 GitHub 上找到⼀些构建⽰例</li>
+<li>Webpack + vue-loader</li>
+<li>Browserify + vueify</li>
+</ol>
+</li>
+<li><p>路由 对于单页应⽤，推荐使⽤官⽅库; vue-router。详细请查看它的⽂档。 如果你只需要⾮常简单的路由逻辑，可以这么做:监听 hashchange 事件并使⽤动态组件 利⽤这种机制也可以⾮常容易地配合其它路由库，如 Page.js 或 Director</p>
+</li>
+<li><p>与服务器通信 Vue 实例的原始数据 $data 能直接⽤ JSON.stringify() 序列化。社区贡献了⼀个插件<br> vue-resource，提供⼀种容易的⽅式与 RESTful APIs 配合。也可以使⽤任何⾃⼰喜欢的 Ajax 库，如 $.ajax 或<br> SuperAgent。Vue.js 也能很好地与⽆后端服务配合，如 Firebase 和 Parse</p>
+</li>
+<li><p>状态管理 在⼤型应⽤中，状态管理常常变得复杂，因为状态分散在许多组件内。常常忽略Vue.js 应⽤的来源是原⽣的数据对象—— Vue 实例代理访问它。因此，如果⼀个状态要被多个实例共享，应避免复制它</p>
+</li>
+</ol>
+<h2 id="vue-对⽐其它框架"><a href="#vue-对⽐其它框架" class="headerlink" title="vue  对⽐其它框架"></a>vue  对⽐其它框架</h2><ol>
+<li><p>Angular 选择 Vue ⽽不选择 Angular;有下⾯⼏个原因，当然不是对每个⼈都适合：<br> 1.在 API 与设计两⽅⾯上 Vue.js 都⽐ Angular 简单得多，因此你可以快速地掌握它的全部特性并投⼊开发。<br>  Vue.js 是⼀个更加灵活开放的解决⽅案。它允许你以希望的⽅式组织应⽤程序，⽽不是任何时候都必须遵循 Angular 制定的规则。它仅仅是⼀个视图层，所以你可以将它嵌⼊⼀个现有页⾯⽽不⼀定要做成⼀个庞⼤的单页应⽤。在配合其他库⽅⾯它给了你更⼤的的空间，但相应，你也需要做更多的架构决策。例如，Vue.js 核⼼默认不包含路由和 Ajax 功能，并且通常假定你在应⽤中使⽤了⼀个模块构建系统。这可能是最重要的区别。 </p>
+<ol>
+<li>Angular 使⽤双向绑定，Vue 也⽀持双向绑定，不过默认为单向绑定，数据从⽗组件单向传给⼦组件。在⼤型应⽤中使⽤单向绑定让数据流易于理解。在 Vue.js 中指令和组件分得更清晰。指令只封装 DOM 操作，⽽组件代表⼀个⾃给⾃⾜的独⽴单元 —— 有⾃⼰的视图和数据逻辑。在 Angular 中两者有不少相混的地⽅。 </li>
+<li><p>Vue.js 有更好的性能，并且⾮常⾮常容易优化，因为它不使⽤脏检查。 Angular，当 watcher 越来越多时会变得越来越慢，因为作⽤域内的每⼀次变化，所有 watcher 都要重新计算。并且，如果⼀些 watcher 触发另⼀个更新，脏检查循环（digest cycle）可能要运⾏多次。 Angular ⽤户常常要使⽤深奥的技术，以解决脏检查循环的问题。有时没有简单的办法来优化有⼤量 watcher 的作⽤域。Vue.js 则根本没有这个问题，因为它使⽤基于依赖追踪的观察系统并且异步列队更新，所有的数据变化都是独⽴地触发，除⾮它们之间有明确的依赖关系。唯⼀需要做的优化是在 v-for 上使⽤ track-by。 有意思的是，Angular 2 和 Vue ⽤相似的设计解决了⼀些 Angular 1 中存在的问题</p>
+</li>
+<li><p>React React.js 和 Vue.js 确实有⼀些相似 —— 它们都提供数据驱动、可组合搭建的视图组件。当然它们也有许多不同。 ⾸先，内部实现本质上不同。React 的渲染建⽴在 Virtual DOM 上——⼀种在内存中描述 DOM 树状态的数据结构。当状态发⽣变化时，React 重新渲染 Virtual DOM，⽐较计算之后给真实 DOM 打补丁。 Virtual DOM 提供了⼀个函数式的⽅法描述视图，这真的很棒。因为它不使⽤数据观察机制，每次更新都会重新渲染整个应⽤，因此从定义上保证了视图与数据的同步。它也开辟了 JavaScript 同构应⽤的可能性。 Vue.js 不使⽤ Virtual DOM ⽽是使⽤真实 DOM 作为模板，数据绑定到真实节点。Vue.js 的应⽤环境必须提供 DOM。但是，相对于常见的误解——Virtual DOM 让React ⽐其它的都快， Vue.js 实际上性能⽐ React 好，⽽且⼏乎不⽤⼿⼯优化。⽽React，为了最优化的渲染需要处处实现 shouldComponentUpdate 或使⽤不可变数据结构。<br>在 API ⽅⾯，React（或 JSX）的⼀个问题是，渲染函数常常包含⼤量的逻辑，最终看着更像是程序⽚断（实际上就是）⽽不是界⾯的视觉呈现。对于部分开发者来说，他们可能觉得这是个优点，但对那些像我⼀样兼顾设计和开发的⼈来说，模板能让我们更好地在视觉上思考设计和 CSS。JSX 和 JavaScript 逻辑的混合⼲扰了我将代码映射到设计的思维过程。相反，Vue.js 通过在模板中加⼊⼀个轻量级的 DSL (指令系统)，换来⼀个依旧直观的模板，且能将逻辑封装进指令和过滤器中。React ⽐其它的都快， Vue.js 实际上性能⽐ React 好，⽽且⼏乎不⽤⼿⼯优化。⽽React，为了最优化的渲染需要处处实现 shouldComponentUpdate 或使⽤不可变数据结构。 在 API ⽅⾯，React（或 JSX）的⼀个问题是，渲染函数常常包含⼤量的逻辑，最终看着更像是程序⽚断（实际上就是）⽽不是界⾯的视觉呈现。对于部分开发者来说，他们可能觉得这是个优点，但对那些像我⼀样兼顾设计和开发的⼈来说，模板能让我们更好地在视觉上思考设计和 CSS。JSX 和 JavaScript 逻辑的混合⼲扰了我将代码映射到设计的思维过程。相反，Vue.js 通过在模板中加⼊⼀个轻量级的 DSL (指令系统)，换来⼀个依旧直观的模板，且能将逻辑封装进指令和过滤器中。 React 的另⼀个问题是：由于 DOM 更新完全交给 Virtual DOM 管理，当想要⾃⼰控制DOM 时就有点棘⼿了（虽然理论上可以做到，但是这样做就本质上违背了 React 的设计思想）。如果应⽤需要特别的⾃定义 DOM 操作，特别是复杂时间控制的动画，这个限制就很讨厌。在这⽅⾯，Vue.js 更灵活，<br>再多说⼏句： React 团队雄⼼勃勃，计划让 React 成为通⽤平台的 UI 开发⼯具，⽽ Vue 专注于为 Web<br>提供实⽤的解决⽅案。 React，由于它的函数式特质，可以很好地使⽤函数式编程模式。但是对于初级开发者和初学者这也导致较⼤的学习难度。Vue<br>更易学习并能快速投⼊开发。对于⼤型应⽤，React 社区已经创造了⼤量的状态管理⽅案，例如 Flux/Redux。Vue 本⾝不解决这个问题（React 内核也是），但是可以轻松地修改状态管理模式，实现⼀个类似的架构。我已经看到有⽤户以 Vue 使⽤ Redux。Optimizely的⼯程师也以 Vue 使⽤ NuclearJS (他们的 Flux 实现)<br>。 React 的开发趋势是将所有东西都放在 JavaScript 中，包括 CSS。已经有许多CSS-in-JS ⽅案，但是所有的⽅案多多少少都有它的问题。⽽且更重要的是，这么做脱离了标准的 CSS 开发经验，并且很难和 CSS 社区的已有⼯作配合。Vue的<br>单⽂件组件 在把 CSS 封装到组件模块的同时仍然允许你使⽤你喜欢的预处理器</p>
+</li>
+<li><p>Ember Ember 是⼀个全能框架。它提供⼤量的约定，⼀旦你熟悉了它们，开发会很⾼效。不过，这也意味着学习曲线较⾼，⽽且不灵活。在框架和库（加上⼀系列松散耦合的⼯具）之间权衡选择。后者更⾃由，但是也要求你做更多的架构决定。也就是说，最好⽐较 Vue.js 内核和 Ember<br>的模板与数据模型层： Vue 在普通 JavaScript 对象上建⽴响应，提供⾃动化的计算属性。在 Ember 中需要将所有东西放在 Ember<br>对象内，并且⼿⼯为计算属性声明依赖。Vue 的模板语法可以⽤全功能的 JavaScript 表达式，⽽ Handlebars 的语法和帮<br>助函数语法相⽐之下⾮常受限。 在性能上，Vue 甩开 Ember ⼏条街，即使是 Ember 2.0 最新的 Glimmer 引擎。Vue ⾃动批量更新，在性能⽐较关键时 Ember 要⼿⼯管理循环</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="vuejs的几大难点："><a href="#vuejs的几大难点：" class="headerlink" title="vuejs的几大难点："></a>vuejs的几大难点：</h3><ol>
+<li><p>vue-router –用于实现前端路由,根据url不同请求不同的页面显示(SPA)；类似于angular的$routerProvider</p>
+</li>
+<li><p>组件间通信:  </p>
+<ol>
+<li>小型应用：<ol>
+<li>父子组件间通信：父传子–&gt; props;子传父—&gt; 子组件发射事件：vm.$emit(‘event’,args), 父组件接收事件：v-on:event;</li>
+<li>官方没有提供兄组件之间的有效直接通信方式：可以使用父组件作为中转，解决</li>
+</ol>
+</li>
+<li>中型应用：<ol>
+<li>新建一个全局的Vue实例专门用于通信；Vue_State = new Vue();</li>
+<li>在需要主动发送状态第组件中：通过这个Vue_State实例调用$emit(event,args)发送事件,在需要接收状态的地方使用$on(event,function(args){})来接收事件</li>
+</ol>
+</li>
+<li><p>大型应用：<br> 1.使用官方推荐第三方插件：vuex来构建一个状态仓库：</p>
+<p>  vuex  — 各个组件数据的共享</p>
+<pre><code>1. props传参的方法对于多层嵌套的组件将会非常繁琐，并且对于兄弟组件间的状态传递无能为力。而且也会导致代码难以维护
+
+2. 解决方法：采用vuex进行状态管理，把所有事件和状态存储在store对象中，在组件中通过计算属性获得事件，因此就有了实时性。
+
+Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。
+
+3. 每一个 Vuex 应用的核心就是 store（仓库）。&quot;store&quot; 基本上就是一个容器，它包含着应用中大部分的状态(state)。
+
+4. Vuex 的状态存储是响应式的。当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。
+
+5. 你不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地提交(commit) mutations。这样使得我们可以方便地跟踪每一个状态的变化。
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<hr>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">vuex的使用示例：</div><div class="line">//vuex/modules/user.js</div><div class="line">import api from '../../fetch/api'</div><div class="line">import * as types from '../types'</div><div class="line"></div><div class="line">const state = &#123;</div><div class="line">    // 用户登录状态</div><div class="line">    loginStatus: JSON.parse(localStorage.getItem('loginStatus')) || false,</div><div class="line">&#125;</div><div class="line"></div><div class="line">const actions = &#123;</div><div class="line">    /**</div><div class="line">     * 用户登录</div><div class="line">     */</div><div class="line">    setUserInfo(&#123; commit &#125;, res) &#123;</div><div class="line">        localStorage.setItem('loginStatus', true)</div><div class="line">        commit(types.SET_LOGIN_STATUS, true)</div><div class="line">    &#125;,</div><div class="line">    /**</div><div class="line">     * 退出登录</div><div class="line">     */</div><div class="line">    setSignOut(&#123; commit &#125;) &#123;</div><div class="line">        localStorage.removeItem('loginStatus')</div><div class="line">        commit(types.SET_LOGIN_STATUS, false)</div><div class="line">    &#125;,</div><div class="line">&#125;</div><div class="line"></div><div class="line">const getters = &#123;</div><div class="line">    loginStatus: state =&gt; state.loginStatus</div><div class="line">&#125;</div><div class="line"></div><div class="line">const mutations = &#123;</div><div class="line">    [types.SET_LOGIN_STATUS](state, status) &#123;</div><div class="line">        state.loginStatus = status</div><div class="line">    &#125;   </div><div class="line">&#125;</div><div class="line"></div><div class="line">export default &#123;</div><div class="line">    state,</div><div class="line">    actions,</div><div class="line">    getters,</div><div class="line">    mutations</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">//User.vue</div><div class="line">&lt;template&gt;</div><div class="line">    &lt;div class="user"&gt;</div><div class="line">        &lt;div v-if="!loginStatus"&gt;</div><div class="line">            ...</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div v-else&gt;    </div><div class="line">            ...        </div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">import &#123; mapGetters &#125; from 'vuex'</div><div class="line">export default &#123;</div><div class="line">    computed: &#123;</div><div class="line">        ...mapGetters([</div><div class="line">            'loginStatus'</div><div class="line">        ])</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li><p>自定义事件</p>
+</li>
+<li><p>动态组件: 通过is属性来切换使用不同的组件</p>
+</li>
+<li><p>组件合并时stor内容分发</p>
+</li>
+<li><p>vue-resource(axios)<br> 1.发送ajax请求的第三方插件，类似于angular的$http服务；采用promise结构；</p>
+</li>
+<li><p>webpack ————-&gt; nb的自动化构建工具；<br> Webpack是一个开源的前端模块构建工具，它提供了强大的loader API来定义对不同文件格式的预处理逻辑，这是.vue后缀单文件组件形式的基础。所以在此基础上，Vue官方开发的vue-loader允许将模板、样式、逻辑三要素整合在同一个文件中，以.vue文件后缀形成单文件组件格式，方便项目架构和开发引用。</p>
+</li>
+</ol>
+<p>##Vue面试题 </p>
+<ol>
+<li>vue中的MVVM模式<br> 即Model-View-ViewModel。  Vue是以数据为驱动的，Vue自身将DOM和数据进行绑定，一旦创建绑定，DOM和数据将保持同步，每当数据发生变化，DOM会跟着变化。  ViewModel是Vue的核心，它是Vue的一个实例。Vue实例时作用域某个HTML元素上的，这个HTML元素可以是body，也可以是某个id所指代的元素。 DOM Listeners和Data Bindings是实现双向绑定的关键。DOM Listeners监听页面所有View层DOM元素的变化，当发生变化，Model层的数据随之变化；Data Bindings监听Model层的数据，当数据发生变化，View层的DOM元素随之变化。 </li>
+<li>v-show指令与v-if的区别  条件渲染指令，<br> 与v-if不同的是，无论v-show的值为true或false，元素都会存在于HTML代码中；而只有当v-if的值为true，元素才会存在于HTML代码中。v-show指令只是设置了元素CSS的style.display = ‘none’ ;v-show的初始渲染消耗高，v-if的频繁切换消耗高；</li>
+<li>如何让css只在当前组件中起作用  在每一个vue组件中都可以定义各自的css，js，如果希望组件内写的css只对当前组件起作用，只需要在style中写入scoped，即： <style scoped></style> </li>
+<li>组件keep-alive  在vue-router写着keep-alive，keep-alive的含义：<br> 如果把切换出去的组件保留在内存中，可以保留它的状态或避免重新渲染。为此可以添加一个keep-alive指令  <component :is="curremtView" keep-alive=""></component> </li>
+<li>Vuejs组件<br> vuejs构建组件使用<br> //声明创建组件：<br> Vue.component(‘componentName’,{ /<em>component</em>/ })；<br> 这里注意一点，组件要先注册再使用<br> Vue.component(‘mine’,{template:’#mineTpl’,props:[‘name’,’title’,’city’,’content’]});<br> //在实例上注册组件<br> var  v = new Vue({<pre><code>    el: &apos;#vueInstance&apos;,
+    data: {
+        name: &apos;zhang&apos;,
+        title: &apos;this is title&apos;,
+        city: &apos;Beijing&apos;,
+        content: &apos;these are some desc about Blog&apos;
+    }
+});  
+</code></pre></li>
+<li><p>路由嵌套<br> 路由嵌套会将其他组件渲染到该组件内，而不是进行整个页面跳转;router-view本身就是将组件渲染到该位置，想要进行页面跳转，就要将页面渲染到根组件，在起始配置路由时候写到:var App = Vue.extend({ root }); router.start(App,’#app’); 这里首先将根组件注册进来，用于将路由中配置好的各个页面渲染出来，然后将根组件挂载到与#app匹配的元素上。</p>
+</li>
+<li><p>指令ref的使用  有时候我们想就像使用jquery那样去访问一个元素，此时就可以使用ref指令，去给这个元素注册一个索引，方便通过所属实例的$refs访问这个元素。</p>
+</li>
+<li><p>vuejs中使用事件名  在vuejs中，我们经常要绑定一些事件，有时候给DOM元素绑定，有时候给组件绑定。绑定事件在HTML中用v-on:click=”event”,这时event的名字不要出现大写，因为在1.x中不区分大小写，所以如果我们在HTML写v-on:click=”myEvent”而在js中写myEvent就出错误，所以在vuejs的1.x绑定事件时候，要尽量避免使用大写字母。在2.0中没有该限制！ </p>
+</li>
+<li><p>Vue.js是什么?<br>  Vue.js（是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用单文件组件和Vue生态系统支持的库开发的复杂单页应用。  Vue.js 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件 </p>
+</li>
+<li><p>VueJS 特性：<br>I: MVVM模式（数据变量（model）发生改变 视图（view）也改变， 视图（view）改变，数据变量（model）也发生改变）  使用MVVM模式有几大好处：    1. 低耦合。View可以独立于Model变化和修改，一个ViewModel可以绑定到不同的View上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。    </p>
+<ol>
+<li>可重用性。可以把一些视图的逻辑放在ViewModel里面，让很多View重用这段视图逻辑。    </li>
+<li>独立开发。开发人员可以专注与业务逻辑和数据的开发(ViewModel)。设计人员可以专注于界面(View)的设计。    4. 可测试性。可以针对ViewModel来对界面(View)进行测试<br>II: 组件化<br>III 指令系统<br>IIII: vue2.0开始支持虚拟dom  vue1.0是操作的是真的dom元素而不是虚拟的 虚拟dom:可以提升页面的刷新速度虚拟DOM有利也有弊。  A：大小 - 其中之一就是更多的功能意味着代码包中更多行的代码。幸运的是，Vue.js 2.0 依旧比 较小（当前版本 21.4kb），并  且也正在删除很多东西。  B: 内存 -同样，虚拟DOM需要将现有的DOM拷贝后保存在内存中，这是一个在DOM更新速度和内存使用中的权衡。  C: 并不适用所有情况 -如果虚拟DOM可以一次性进行批量的修改是非常好的。但是如果是单独的、稀少的更新呢？这样的任何  DOM更新都将会使虚拟DOM带来无意义的预计算</li>
+</ol>
+</li>
+<li><p>Vue.js特点?  </p>
+<ol>
+<li>简洁：页面由HTML模板+Json数据+Vue实例组成 </li>
+<li>数据驱动：自动计算属性和追踪依赖的模板表达式 </li>
+<li>组件化：用可复用、解耦的组件来构造页面 </li>
+<li>轻量：代码量小，不依赖其他库 </li>
+<li>快速：精确有效批量DOM更新  </li>
+<li>模板友好：可通过npm，bower等多种方式安装，很容易融入  </li>
+</ol>
+</li>
+<li><p>Vue.js 和 AngularJS 之间的区别是什么? </p>
+<p>下面是一些选择 Vue 而不是 Angular 的可能原因；  Vue.js 是一个更加灵活开放的解决方案。它允许你以希望的方式组织你的应用程序，而不是任何时候都必须遵循 Angular 制定的规则。它仅仅是一个视图层，所以你可以将它嵌入一个现有页面而不一定要做成一个庞大的单页应用。在结合其他库方面它给了你更大的的空间，<br>但相应，你也需要做更多的架构决策。例如，Vue.js 核心默认不包含路由和 ajax 功能，并且通常假定你在用应用中使用了一个外部的模块构建系统。这可能是最重要的区别<br>在 API 和内部设计方面，Vue.js 比 Angular 简单得多, 因此你可以快速地掌握它的全部特性并投入开发。<br>Vue.js 拥有更好的性能，因为它不使用脏检查。当 watcher 越来越多时, Angular 会变得越来越慢，因为作用域内的每一次数据变更，所有的 watcher 都需要被重新求值。Vue 则根本没有这个问题，因为它采用的是基于依赖追踪的观察系统，所以所有的数据变更触发都是独立的，除非它们之间有明确的依赖关系。<br>Vue.js 中指令和组件的概念区分得更为清晰。指令只负责封装 DOM 操作，而组件代表一个自给自足的独立单元 —— 它拥有自己的视图和数据逻辑。在 Angular 中它们两者间有不少概念上的混淆</p>
+<p>13.Vue.js 和 React.js 有什么区别?  React.js 和 Vue.js 确实有一些相似——它们都提供数据驱动、可组合搭建的视图组件。然而，它们的内部实现是完全不同的。React 是基于 Virtual DOM——一种在内存中描述 DOM 树状态的数据结构。React 中的数据通常被看作是不可变的，而 DOM 操作则是通过 Virtual DOM 的 diff 来计算的。与之相比，Vue.js 中的数据默认是可变的，而数据的变更会直接出发对应的 DOM 更新。相比于 Virtual DOM，Vue.js 使用实际的 DOM 作为模板，并且保持对真实节点的引用来进行数据绑定。  Virtual DOM 提供了一个函数式的描述视图的方法，这很 cool。因为它不使用数据观察机制，每次更新都会重新渲染整个应用，因此从定义上保证了视图通与数据的同步。它也开辟了 JavaScript 同构应用的可能性</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/17.vue框架/" data-id="cj4zksgrs0002ykf49czl5gqs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/07/11/ajax面试题总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/11/03.css2知识点总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/11/前端一些常见面试问题/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常用插件/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/前端常见的兼容性问题及解决方案/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/Node.js知识点总结/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/jQuery面试题/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
