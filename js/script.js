@@ -183,11 +183,11 @@ function dateFormat(beforeDay, long, optionDate) {
         });
     }
     if (beforeDay == 0) {
-        newDate[0].today = 1;
+        newDates[0].today = 1;
     } else {
         if (beforeDay < long) {
-            newDate[beforeDay].today = 1;
+            newDates[beforeDay].today = 1;
         }
     }
-    return newDate;
+    return newDates;
 }
