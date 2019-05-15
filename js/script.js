@@ -135,3 +135,59 @@
     $container.removeClass('mobile-nav-on');
   });
 })(jQuery);
+function dateFormat(beforeDay, long, optionDate) {
+    long = long || 7;
+    beforeDay = beforeDay || 0;
+    optionDate = optionDate || new Date().valueOf();
+    optionDate = Math.floor(optionDate / 100000) * 100000;
+    var newDate = new Date(optionDate), newDates = new Array(), dates, monthes, days, weeks, timestampes;
+    var timestamp = newDate.valueOf() - 86400000 * beforeDay;
+    for (var i = 0; i < long; i++) {
+        timestampes = timestamp + 86400000 * i;
+        dates = new Date(timestampes);
+        monthes = (dates.getMonth() + 1) > 9 ? (dates.getMonth() + 1) : "0" + (dates.getMonth() + 1).toString();
+        days = dates.getDate() > 9 ? dates.getDate() : "0" + dates.getDate().toString();
+        switch (dates.getDay()) {
+        case 1:
+            weeks = "星期一";
+            break;
+        case 2:
+            weeks = "星期二";
+            break;
+        case 3:
+            weeks = "星期三";
+            break;
+        case 4:
+            weeks = "星期四";
+            break;
+        case 5:
+            weeks = "星期五";
+            break;
+        case 6:
+            weeks = "星期六";
+            break;
+        case 0:
+            weeks = "星期日";
+            break;
+        default:
+            weeks = "星期日";
+        }
+        ;newDates.push({
+            month_day: monthes + "月" + days + "日",
+            week: weeks,
+            timestamp: timestampes,
+            date: dates.getFullYear().toString() + "-" + monthes + "-" + days,
+            today: 0,
+            month: monthes,
+            day: days
+        });
+    }
+    if (beforeDay == 0) {
+        newDate[0].today = 1;
+    } else {
+        if (beforeDay < long) {
+            newDate[beforeDay].today = 1;
+        }
+    }
+    return newDate;
+}
